@@ -1,2 +1,2 @@
-// Validación simple opcional
+// Animación al cargar
 console.log("Página cargada correctamente");
