@@ -1,2 +1,1 @@
-// Animación al cargar
-console.log("Página cargada correctamente");
+console.log("Página cargada correctamente (versión futurista).");
