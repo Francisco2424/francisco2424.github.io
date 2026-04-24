@@ -1,1 +1,121 @@
 
+/* PALETA DE COLORES */
+:root {
+    --azul: #0A3D62;
+    --gris: #2E2E2E;
+    --naranja: #F39C12;
+    --blanco: #FFFFFF;
+}
+
+/* RESET */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--gris);
+    background: var(--blanco);
+}
+
+/* HEADER */
+.hero {
+    background: var(--azul);
+    color: var(--blanco);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero h2 {
+    font-size: 22px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* BOTÓN CTA */
+.btn-cta {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: var(--naranja);
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.btn-cta:hover {
+    background: #D98200;
+}
+
+/* SECCIONES */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* SERVICIOS */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.servicio {
+    padding: 20px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    background: #FAFAFA;
+}
+
+/* SISTEMAS */
+.sistemas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.sistema {
+    padding: 20px;
+    border-left: 5px solid var(--azul);
+    background: #F7F9FA;
+    border-radius: 6px;
+}
+
+/* METODOLOGÍA */
+.metodologia ul {
+    max-width: 600px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* CONTACTO */
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 14px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 140px;
+}
