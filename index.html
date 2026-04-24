@@ -2,9 +2,98 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Francisco Mallea - Sistemas & Automatización</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Página en construcción</h1>
+
+    <!-- HEADER -->
+    <header class="hero">
+        <h1>Francisco Mallea</h1>
+        <h2>Sistemas · Automatización · Análisis de Datos</h2>
+        <a href="#contacto" class="btn-cta">Enviar consulta</a>
+    </header>
+
+    <!-- SERVICIOS -->
+    <section class="servicios">
+        <h2>Servicios</h2>
+
+        <div class="servicios-grid">
+            <div class="servicio">
+                <h3>Automatización de Procesos</h3>
+                <p>Optimización de flujos operativos, macros VBA, automatización de reportes y reducción de errores.</p>
+            </div>
+
+            <div class="servicio">
+                <h3>Desarrollo de Sistemas</h3>
+                <p>Arquitectura modular, diseño de flujos, integración con archivos y sistemas internos.</p>
+            </div>
+
+            <div class="servicio">
+                <h3>Análisis de Datos</h3>
+                <p>Normalización, dashboards, modelos de cálculo y reportes ejecutivos.</p>
+            </div>
+
+            <div class="servicio">
+                <h3>Optimización de Excel</h3>
+                <p>Tablas estructuradas, plantillas profesionales, validaciones y estandarización visual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SISTEMAS REALIZADOS -->
+    <section class="sistemas">
+        <h2>Sistemas Realizados</h2>
+
+        <div class="sistemas-grid">
+
+            <div class="sistema">
+                <h3>Sistema MTM Automático</h3>
+                <p><strong>Qué resuelve:</strong> Consolidación CCS/FWD, normalización y cálculo MTM.</p>
+                <p><strong>Impacto:</strong> Reduce tiempos de 2 horas a 3 minutos.</p>
+            </div>
+
+            <div class="sistema">
+                <h3>Sistema de Inversiones</h3>
+                <p><strong>Qué resuelve:</strong> Seguimiento, cálculo y análisis de portafolios.</p>
+                <p><strong>Impacto:</strong> Control total del riesgo y rendimiento en tiempo real.</p>
+            </div>
+
+            <div class="sistema">
+                <h3>Sistema Financiero</h3>
+                <p><strong>Qué resuelve:</strong> Reportes ejecutivos, conciliaciones, flujos y análisis.</p>
+                <p><strong>Impacto:</strong> Reducción de errores y visibilidad inmediata.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- METODOLOGÍA -->
+    <section class="metodologia">
+        <h2>Cómo Trabajo</h2>
+        <ul>
+            <li>Arquitectura clara y modular.</li>
+            <li>Sin suposiciones: todo definido explícitamente.</li>
+            <li>Soluciones deterministas y auditables.</li>
+            <li>Documentación incluida.</li>
+            <li>Diseño centrado en el usuario final.</li>
+        </ul>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+
+        <form name="contacto" method="POST" netlify>
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="correo" placeholder="Tu correo" required>
+            <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+            <button type="submit" class="btn-cta">Enviar consulta</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
