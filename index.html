@@ -96,17 +96,27 @@
         </ul>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="contacto fade-in">
-        <h2>Contacto</h2>
+<!-- CONTACTO -->
+<section id="contacto" class="contacto fade-in">
+    <h2>Contacto</h2>
 
-        <form name="contacto" method="POST" netlify>
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="correo" placeholder="Tu correo" required>
-            <textarea name="mensaje" placeholder="Cuéntame brevemente tu contexto y necesidad" required></textarea>
-            <button type="submit" class="btn-cta">Enviar consulta</button>
-        </form>
-    </section>
+    <!-- FORMULARIO FORMSubmit -->
+    <form action="https://formsubmit.co/Fco.malleayanez@gmail.com" method="POST">
+
+        <!-- Configuración oculta -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Nueva consulta desde tu sitio web">
+        <input type="hidden" name="_next" value="https://francisco2424.github.io/gracias.html">
+
+        <!-- Campos visibles -->
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="correo" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Cuéntame brevemente tu contexto y necesidad" required></textarea>
+
+        <button type="submit" class="btn-cta">Enviar consulta</button>
+    </form>
+</section>
 
     <!-- FOOTER -->
     <footer class="footer fade-in">
