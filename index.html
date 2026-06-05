@@ -1,145 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Mallea - Sistemas & Automatización</title>
-
-    <!-- Fuente Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francisco Mallea — Sistemas & Automatización</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- NAV -->
-    <nav class="nav">
-        <div class="nav-logo">Francisco Mallea</div>
-        <div class="nav-links">
-            <a href="#capas">Servicios</a>
-            <a href="#quien-soy">Quién Soy</a>
-            <a href="#contacto" class="btn-nav">Contacto</a>
-        </div>
-    </nav>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">Francisco Mallea</div>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#informacion">Información</a>
+      <a href="#quien-soy">Quién Soy</a>
+      <a href="#contacto" class="btn-nav">Contacto</a>
+    </div>
+  </nav>
 
-    <!-- HERO -->
-    <header class="hero">
-        <h1>Soluciones Tecnológicas y Financieras para PYMEs y Emprendedores</h1>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Arquitectura de Sistemas, Automatización y Finanzas para negocios que quieren crecer en serio.</h1>
         <p class="hero-sub">
-            Sistemas a medida, automatización, análisis de datos y optimización financiera para potenciar tu negocio.
+          Soluciones a medida, desde la información hasta los resultados financieros, para emprendedores y PYMEs que necesitan orden, claridad y crecimiento sostenido.
         </p>
-        <a href="#capas" class="btn-cta">Ver Servicios</a>
-    </header>
+        <a href="#servicios" class="btn-cta">Ver capas de servicios</a>
+      </div>
+      <div class="hero-layers">
+        <div class="hero-layer layer-1"></div>
+        <div class="hero-layer layer-2"></div>
+        <div class="hero-layer layer-3"></div>
+      </div>
+    </div>
+  </header>
 
-    <!-- CAPAS DE PRODUCTOS -->
-    <section id="capas" class="capas">
-        <h2>Nuestras Capas de Productos</h2>
+  <!-- SERVICIOS (STACK TIPO ELEKS) -->
+  <section id="servicios" class="servicios">
+    <h2>Capas de Productos y Servicios</h2>
+    <p class="servicios-intro">
+      Cada capa está diseñada para un nivel distinto de complejidad y madurez del negocio, desde automatizaciones pequeñas hasta soluciones financieras y contables avanzadas.
+    </p>
 
-        <div class="capas-grid">
-
-            <div class="capa">
-                <h3>Software a Medida (End‑to‑End)</h3>
-                <p>
-                    Desarrollo completo: levantamiento, validación, arquitectura, optimización de flujos, análisis de datos,
-                    automatización avanzada, reportes ejecutivos y entregables PDF.
-                </p>
-            </div>
-
-            <div class="capa">
-                <h3>Automatización Pequeña</h3>
-                <p>
-                    Soluciones rápidas para BD pequeñas o pocos archivos. Validación, cálculos básicos y reportes simples.
-                </p>
-            </div>
-
-            <div class="capa">
-                <h3>Actualización de Software Heredado</h3>
-                <p>
-                    Modernización de sistemas antiguos: módulos nuevos, parches, mejoras y optimización sin reconstruir todo.
-                </p>
-            </div>
-
-            <div class="capa">
-                <h3>Software Financieros</h3>
-                <p>
-                    Enfoque en eficacia del negocio: identificar fugas, ordenar procesos, análisis financiero y optimización
-                    para mejorar ganancias mensuales.
-                </p>
-            </div>
-
-            <div class="capa">
-                <h3>Software Contables Personalizados</h3>
-                <p>
-                    Integración con APIs (SII, TGR, Previred). Emisión y carga de documentos, validación contable y paneles
-                    de control del negocio.
-                </p>
-            </div>
-
-            <div class="capa">
-                <h3>Análisis de Datos</h3>
-                <p>
-                    Normalización, modelamiento, dashboards, reportes y eliminación de plantillas complejas. Menos estrés,
-                    más productividad.
-                </p>
-            </div>
-
+    <div class="servicios-stack">
+      <article class="servicio-card">
+        <div class="servicio-header">
+          <span class="servicio-tag">End‑to‑End</span>
+          <h3>Software a Medida</h3>
         </div>
-    </section>
+        <p>Ciclo completo: levantamiento, orden de información, validación de datos, optimización de flujos, análisis de datos, automatización avanzada y reportes ejecutivos.</p>
+      </article>
 
-    <!-- QUIÉN SOY -->
-    <section id="quien-soy" class="quien-soy">
-        <h2>Quién Soy</h2>
-
-        <div class="perfil">
-            <div class="perfil-texto">
-                <h3>Francisco Mallea</h3>
-                <p class="perfil-cargos">
-                    Analista de Sistemas · Administrador Financiero · Programador/Desarrollador · Analista de Datos
-                </p>
-
-                <p>
-                    Poseo más de 20 años de experiencia profesional, siempre enfocado en mejorar la experiencia de mis
-                    clientes con sus clientes, optimizando procesos, ordenando información y construyendo sistemas que
-                    realmente funcionan en la operación diaria.
-                </p>
-
-                <p>
-                    He trabajado con grandes empresas de estudios de mercado y profesionales de alto nivel, aprendiendo
-                    metodologías, rigurosidad y visión estratégica.
-                </p>
-
-                <p>
-                    Hoy enfoco toda esa experiencia en emprendedores, PYMEs y quienes más lo necesiten. Estoy convencido
-                    de que la automatización, el orden financiero y los sistemas bien diseñados pueden transformar un
-                    negocio, mejorar su rentabilidad y darle a las personas más tiempo, menos estrés y más crecimiento.
-                </p>
-            </div>
+      <article class="servicio-card">
+        <div class="servicio-header">
+          <span class="servicio-tag">Operaciones pequeñas</span>
+          <h3>Automatización Pequeña</h3>
         </div>
-    </section>
+        <p>Soluciones rápidas para bases pequeñas o pocos archivos. Organización y validación de datos, cálculos básicos y reportes simples.</p>
+      </article>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
+      <article class="servicio-card">
+        <div class="servicio-header">
+          <span class="servicio-tag">Modernización</span>
+          <h3>Actualización de Software Heredado</h3>
+        </div>
+        <p>Evaluación de sistemas existentes, inclusión de módulos nuevos, parches y mejoras. Optimización sin necesidad de reconstruir todo desde cero.</p>
+      </article>
 
-        <form action="https://formsubmit.co/Fco.malleayanez@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_subject" value="Nueva consulta desde tu sitio web">
-            <input type="hidden" name="_next" value="https://francisco2424.github.io/gracias.html">
+      <article class="servicio-card">
+        <div class="servicio-header">
+          <span class="servicio-tag">Finanzas</span>
+          <h3>Software Financieros</h3>
+        </div>
+        <p>Identificación de fugas, orden de procedimientos, análisis financiero y generación de oportunidades de mejora que se reflejen en las ganancias mensuales.</p>
+      </article>
 
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="correo" placeholder="Tu correo" required>
-            <textarea name="mensaje" placeholder="Cuéntame tu necesidad" required></textarea>
+      <article class="servicio-card">
+        <div class="servicio-header">
+          <span class="servicio-tag">Contabilidad</span>
+          <h3>Software Contables Personalizados</h3>
+        </div>
+        <p>Sistemas conectados vía APIs a SII, TGR, Previred, etc. Emisión y subida de documentación básica, información por pantalla para mantener siempre el control y la visión del negocio.</p>
+      </article>
 
-            <button type="submit" class="btn-cta">Enviar consulta</button>
-        </form>
-    </section>
+      <article class="servicio-card">
+        <div class="servicio-header">
+          <span class="servicio-tag">Datos</span>
+          <h3>Análisis de Datos</h3>
+        </div>
+        <p>Normalización, modelamiento, orden y soluciones analíticas. Menos estrés, menos manejo de plantillas y menos Excel: el foco se traslada a analizar y decidir.</p>
+      </article>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        © 2026 Francisco Mallea — Sistemas & Automatización
-    </footer>
+  <!-- INFORMACIÓN ADICIONAL (BARRAS + RECUADROS) -->
+  <section id="informacion" class="informacion">
+    <h2>Información Adicional y de Interés</h2>
+
+    <!-- Barras horizontales -->
+    <div class="barra barra-strong">
+      IPSA · Minería · Petróleo
+    </div>
+    <div class="barra barra-strong">
+      El tiempo: Coyhaique · Chiloé · Temuco · Chillán · Rancagua · Santiago · Viña del Mar · La Serena · Antofagasta · Arica
+    </div>
+    <div class="barra barra-strong">
+      Precio de la bencina: información de las bencineras más baratas por ciudad (fuente sugerida: Comisión Nacional de Energía / Bencina en Línea).
+    </div>
+
+    <!-- Recuadros -->
+    <div class="recuadros-grid">
+      <div class="recuadro-card">
+        <h3>Calles y Tránsito</h3>
+        <p>Información de calles cerradas, tacos y accidentes por ciudad. Fuentes posibles: Transporte Informa Valparaíso, Transporte Informa RM y Waze.</p>
+      </div>
+
+      <div class="recuadro-card">
+        <h3>Soy de Miraflores Alto</h3>
+        <p>Ofertas de precios, noticias de ferias y horarios del consultorio / CESFAM Miraflores Alto.</p>
+      </div>
+
+      <div class="recuadro-card">
+        <h3>Deportes</h3>
+        <p>Noticias deportivas del país y lo más relevante del mundo. Incluye fútbol amateur de Viña del Mar (ASOFUT) y amateur nacional (ANFA Tercera División).</p>
+      </div>
+
+      <div class="recuadro-card recuadro-youtube">
+        <h3>Tips y Experiencias — YouTube</h3>
+        <p>Espacio multimedia con videos de tu canal personal: consejos de informática, automatización y experiencias reales con clientes.</p>
+        <div class="video-frame">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/" title="Videos de Francisco Mallea" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉN SOY -->
+  <section id="quien-soy" class="quien-soy">
+    <h2>Quién Soy</h2>
+    <div class="perfil-card">
+      <h3>Francisco Mallea</h3>
+      <p class="perfil-cargos">
+        Analista de Sistemas · Administrador Financiero · Programador/Desarrollador · Analista de Datos
+      </p>
+      <p>
+        Más de 20 años de experiencia profesional, siempre relacionado con mejorar la experiencia de mis clientes con sus clientes y potenciar sus marcas a través de su éxito.
+      </p>
+      <p>
+        He trabajado en grandes empresas de estudios de mercado y con profesionales de alto nivel, aprendiendo metodologías, rigurosidad y visión estratégica.
+      </p>
+      <p>
+        Hoy enfoco toda esa experiencia en emprendedores, PYMEs y quienes más lo necesiten, convencido de que la automatización, las asesorías financieras y contables y los sistemas bien diseñados pueden dar un empuje significativo al entorno, mientras disfruto profundamente mi trabajo.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <form action="https://formsubmit.co/Fco.malleayanez@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="Nueva consulta desde tu sitio web">
+      <input type="hidden" name="_next" value="https://francisco2424.github.io/gracias.html">
+
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="correo" placeholder="Tu correo" required>
+      <textarea name="mensaje" placeholder="Cuéntame tu contexto y necesidad" required></textarea>
+
+      <button type="submit" class="btn-cta">Enviar consulta</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Francisco Mallea — Sistemas & Automatización
+  </footer>
 
 </body>
 </html>
