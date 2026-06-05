@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Francisco Mallea — Sistemas & Automatización</title>
+  <title>Prototipo — Francisco Mallea</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,175 +12,124 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <div class="nav-logo">Francisco Mallea</div>
+    <div class="nav-logo">FM</div>
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#informacion">Información</a>
       <a href="#quien-soy">Quién Soy</a>
-      <a href="#contacto" class="btn-nav">Contacto</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1>Arquitectura de Sistemas, Automatización y Finanzas para negocios que quieren crecer en serio.</h1>
-        <p class="hero-sub">
-          Soluciones a medida, desde la información hasta los resultados financieros, para emprendedores y PYMEs que necesitan orden, claridad y crecimiento sostenido.
-        </p>
-        <a href="#servicios" class="btn-cta">Ver capas de servicios</a>
-      </div>
-      <div class="hero-layers">
-        <div class="hero-layer layer-1"></div>
-        <div class="hero-layer layer-2"></div>
-        <div class="hero-layer layer-3"></div>
-      </div>
-    </div>
+    <h1>Prototipo de Navegación</h1>
+    <p>Validación de estructura, bloques y comportamiento antes del diseño final.</p>
   </header>
 
-  <!-- SERVICIOS (STACK TIPO ELEKS) -->
-  <section id="servicios" class="servicios">
-    <h2>Capas de Productos y Servicios</h2>
-    <p class="servicios-intro">
-      Cada capa está diseñada para un nivel distinto de complejidad y madurez del negocio, desde automatizaciones pequeñas hasta soluciones financieras y contables avanzadas.
-    </p>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <h2>Servicios</h2>
 
-    <div class="servicios-stack">
-      <article class="servicio-card">
-        <div class="servicio-header">
-          <span class="servicio-tag">End‑to‑End</span>
-          <h3>Software a Medida</h3>
-        </div>
-        <p>Ciclo completo: levantamiento, orden de información, validación de datos, optimización de flujos, análisis de datos, automatización avanzada y reportes ejecutivos.</p>
-      </article>
+    <div class="card" onclick="toggle('s1')">
+      <h3>Software a Medida</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s1" class="content">
+      Desarrollo completo end‑to‑end, validación, flujos, reportes, automatización avanzada.
+    </div>
 
-      <article class="servicio-card">
-        <div class="servicio-header">
-          <span class="servicio-tag">Operaciones pequeñas</span>
-          <h3>Automatización Pequeña</h3>
-        </div>
-        <p>Soluciones rápidas para bases pequeñas o pocos archivos. Organización y validación de datos, cálculos básicos y reportes simples.</p>
-      </article>
+    <div class="card" onclick="toggle('s2')">
+      <h3>Automatización Pequeña</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s2" class="content">
+      Automatizaciones rápidas, validación de datos, cálculos simples, reportes básicos.
+    </div>
 
-      <article class="servicio-card">
-        <div class="servicio-header">
-          <span class="servicio-tag">Modernización</span>
-          <h3>Actualización de Software Heredado</h3>
-        </div>
-        <p>Evaluación de sistemas existentes, inclusión de módulos nuevos, parches y mejoras. Optimización sin necesidad de reconstruir todo desde cero.</p>
-      </article>
+    <div class="card" onclick="toggle('s3')">
+      <h3>Actualización de Software Heredado</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s3" class="content">
+      Modernización, parches, módulos nuevos, optimización sin reconstruir todo.
+    </div>
 
-      <article class="servicio-card">
-        <div class="servicio-header">
-          <span class="servicio-tag">Finanzas</span>
-          <h3>Software Financieros</h3>
-        </div>
-        <p>Identificación de fugas, orden de procedimientos, análisis financiero y generación de oportunidades de mejora que se reflejen en las ganancias mensuales.</p>
-      </article>
+    <div class="card" onclick="toggle('s4')">
+      <h3>Software Financieros</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s4" class="content">
+      Identificación de fugas, orden financiero, análisis y optimización de ganancias.
+    </div>
 
-      <article class="servicio-card">
-        <div class="servicio-header">
-          <span class="servicio-tag">Contabilidad</span>
-          <h3>Software Contables Personalizados</h3>
-        </div>
-        <p>Sistemas conectados vía APIs a SII, TGR, Previred, etc. Emisión y subida de documentación básica, información por pantalla para mantener siempre el control y la visión del negocio.</p>
-      </article>
+    <div class="card" onclick="toggle('s5')">
+      <h3>Software Contables Personalizados</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s5" class="content">
+      Integración con APIs (SII, TGR, Previred), control contable y documentación.
+    </div>
 
-      <article class="servicio-card">
-        <div class="servicio-header">
-          <span class="servicio-tag">Datos</span>
-          <h3>Análisis de Datos</h3>
-        </div>
-        <p>Normalización, modelamiento, orden y soluciones analíticas. Menos estrés, menos manejo de plantillas y menos Excel: el foco se traslada a analizar y decidir.</p>
-      </article>
+    <div class="card" onclick="toggle('s6')">
+      <h3>Análisis de Datos</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s6" class="content">
+      Normalización, dashboards, reportes, decisiones rápidas y menos estrés.
     </div>
   </section>
 
-  <!-- INFORMACIÓN ADICIONAL (BARRAS + RECUADROS) -->
-  <section id="informacion" class="informacion">
-    <h2>Información Adicional y de Interés</h2>
+  <!-- INFORMACIÓN ADICIONAL -->
+  <section id="informacion" class="section">
+    <h2>Información Adicional</h2>
 
-    <!-- Barras horizontales -->
-    <div class="barra barra-strong">
-      IPSA · Minería · Petróleo
-    </div>
-    <div class="barra barra-strong">
-      El tiempo: Coyhaique · Chiloé · Temuco · Chillán · Rancagua · Santiago · Viña del Mar · La Serena · Antofagasta · Arica
-    </div>
-    <div class="barra barra-strong">
-      Precio de la bencina: información de las bencineras más baratas por ciudad (fuente sugerida: Comisión Nacional de Energía / Bencina en Línea).
-    </div>
+    <div class="bar">IPSA · Minería · Petróleo</div>
+    <div class="bar">El tiempo: Coyhaique · Chiloé · Temuco · Chillán · Rancagua · Santiago · Viña del Mar · La Serena · Antofagasta · Arica</div>
+    <div class="bar">Precio de la bencina (fuente: CNE / Bencina en Línea)</div>
 
-    <!-- Recuadros -->
-    <div class="recuadros-grid">
-      <div class="recuadro-card">
+    <div class="grid">
+      <div class="box" onclick="toggle('i1')">
         <h3>Calles y Tránsito</h3>
-        <p>Información de calles cerradas, tacos y accidentes por ciudad. Fuentes posibles: Transporte Informa Valparaíso, Transporte Informa RM y Waze.</p>
+      </div>
+      <div id="i1" class="content">
+        Información de calles cerradas, tacos y accidentes.
       </div>
 
-      <div class="recuadro-card">
+      <div class="box" onclick="toggle('i2')">
         <h3>Soy de Miraflores Alto</h3>
-        <p>Ofertas de precios, noticias de ferias y horarios del consultorio / CESFAM Miraflores Alto.</p>
+      </div>
+      <div id="i2" class="content">
+        Ofertas locales, ferias, horarios CESFAM.
       </div>
 
-      <div class="recuadro-card">
+      <div class="box" onclick="toggle('i3')">
         <h3>Deportes</h3>
-        <p>Noticias deportivas del país y lo más relevante del mundo. Incluye fútbol amateur de Viña del Mar (ASOFUT) y amateur nacional (ANFA Tercera División).</p>
+      </div>
+      <div id="i3" class="content">
+        Noticias deportivas y fútbol amateur de Viña del Mar.
       </div>
 
-      <div class="recuadro-card recuadro-youtube">
-        <h3>Tips y Experiencias — YouTube</h3>
-        <p>Espacio multimedia con videos de tu canal personal: consejos de informática, automatización y experiencias reales con clientes.</p>
-        <div class="video-frame">
-          <iframe width="100%" height="200" src="https://www.youtube.com/embed/" title="Videos de Francisco Mallea" frameborder="0" allowfullscreen></iframe>
-        </div>
+      <div class="box" onclick="toggle('i4')">
+        <h3>YouTube — Tips y Experiencias</h3>
+      </div>
+      <div id="i4" class="content">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- QUIÉN SOY -->
-  <section id="quien-soy" class="quien-soy">
+  <section id="quien-soy" class="section">
     <h2>Quién Soy</h2>
-    <div class="perfil-card">
-      <h3>Francisco Mallea</h3>
-      <p class="perfil-cargos">
-        Analista de Sistemas · Administrador Financiero · Programador/Desarrollador · Analista de Datos
-      </p>
-      <p>
-        Más de 20 años de experiencia profesional, siempre relacionado con mejorar la experiencia de mis clientes con sus clientes y potenciar sus marcas a través de su éxito.
-      </p>
-      <p>
-        He trabajado en grandes empresas de estudios de mercado y con profesionales de alto nivel, aprendiendo metodologías, rigurosidad y visión estratégica.
-      </p>
-      <p>
-        Hoy enfoco toda esa experiencia en emprendedores, PYMEs y quienes más lo necesiten, convencido de que la automatización, las asesorías financieras y contables y los sistemas bien diseñados pueden dar un empuje significativo al entorno, mientras disfruto profundamente mi trabajo.
-      </p>
-    </div>
+    <p>Francisco Mallea — 20+ años de experiencia en sistemas, finanzas, automatización y análisis de datos.</p>
   </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <form action="https://formsubmit.co/Fco.malleayanez@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_subject" value="Nueva consulta desde tu sitio web">
-      <input type="hidden" name="_next" value="https://francisco2424.github.io/gracias.html">
-
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="correo" placeholder="Tu correo" required>
-      <textarea name="mensaje" placeholder="Cuéntame tu contexto y necesidad" required></textarea>
-
-      <button type="submit" class="btn-cta">Enviar consulta</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    © 2026 Francisco Mallea — Sistemas & Automatización
-  </footer>
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+  </script>
 
 </body>
 </html>
