@@ -128,6 +128,7 @@
     <p>Francisco Mallea — 20+ años de experiencia en sistemas, finanzas, automatización y análisis de datos.</p>
   </section>
 
+  <!-- SCRIPT -->
   <script>
     function toggle(id) {
       const el = document.getElementById(id);
@@ -151,6 +152,7 @@
       try {
         const res = await fetch("https://mindicador.cl/api");
         const data = await res.json();
+
         const dolar = data.dolar?.valor;
         const uf = data.uf?.valor;
         const utm = data.utm?.valor;
@@ -170,6 +172,7 @@
 
     async function getWeatherForComunas() {
       let parts = [];
+
       for (const c of COMMUNAS) {
         try {
           const url = `https://franciscomallea-automatizaciones-backend.onrender.com/api/weather?city=${encodeURIComponent(c.city)}&country=${c.country}`;
@@ -181,11 +184,14 @@
             const desc = data.description;
             const icon = getWeatherIcon(desc);
             parts.push(`${icon} ${c.name}: ${temp}°C, ${desc}`);
+          } else {
+            parts.push(`⚠️ ${c.name}: sin datos`);
           }
         } catch (e) {
           parts.push(`⚠️ ${c.name}: sin datos`);
         }
       }
+
       return parts.join(" | ");
     }
 
@@ -207,7 +213,8 @@
       const weather = await getWeatherForComunas();
 
       const text = `${econ} | ${weather}`;
-      track.textContent = `${text} | ${text}`;
+
+      track.textContent = `${text} | ${text} | ${text}`;
     }
 
     buildTicker();
