@@ -9,22 +9,10 @@
 </head>
 
 <body>
-<body>
   <!-- TICKER HORIZONTAL SUPERIOR -->
   <div class="ticker">
     <div class="ticker-track" id="ticker-track"></div>
   </div>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-logo">Francisco Mallea</div>
-    <div class="nav-links">
-      <a href="#servicios">Servicios</a>
-      <a href="#informacion">Información</a>
-      <a href="#quien-soy">Quién Soy</a>
-    </div>
-  </nav>
-
 
   <!-- NAV -->
   <nav class="nav">
@@ -145,6 +133,85 @@
       const el = document.getElementById(id);
       el.style.display = el.style.display === "block" ? "none" : "block";
     }
+
+    const COMMUNAS = [
+      { name: "Coyhaique", city: "Coyhaique", country: "CL" },
+      { name: "Chiloé", city: "Castro", country: "CL" },
+      { name: "Temuco", city: "Temuco", country: "CL" },
+      { name: "Chillán", city: "Chillan", country: "CL" },
+      { name: "Rancagua", city: "Rancagua", country: "CL" },
+      { name: "Santiago", city: "Santiago", country: "CL" },
+      { name: "Viña del Mar", city: "Vina del Mar", country: "CL" },
+      { name: "La Serena", city: "La Serena", country: "CL" },
+      { name: "Antofagasta", city: "Antofagasta", country: "CL" },
+      { name: "Arica", city: "Arica", country: "CL" }
+    ];
+
+    async function getEconomics() {
+      try {
+        const res = await fetch("https://mindicador.cl/api");
+        const data = await res.json();
+        const dolar = data.dolar?.valor;
+        const uf = data.uf?.valor;
+        const utm = data.utm?.valor;
+        const ipsa = data.ipsa?.valor;
+
+        let parts = [];
+        if (ipsa) parts.push(`📈 IPSA: ${ipsa.toFixed(2)}`);
+        if (dolar) parts.push(`💵 Dólar: $${dolar.toFixed(2)}`);
+        if (uf) parts.push(`📊 UF: $${uf.toFixed(2)}`);
+        if (utm) parts.push(`📊 UTM: $${utm.toFixed(2)}`);
+
+        return parts.join(" | ");
+      } catch (e) {
+        return "⚠️ Datos económicos no disponibles";
+      }
+    }
+
+    async function getWeatherForComunas() {
+      let parts = [];
+      for (const c of COMMUNAS) {
+        try {
+          const url = `https://franciscomallea-automatizaciones-backend.onrender.com/api/weather?city=${encodeURIComponent(c.city)}&country=${c.country}`;
+          const res = await fetch(url);
+          const data = await res.json();
+
+          if (data.temperature && data.description) {
+            const temp = Math.round(data.temperature);
+            const desc = data.description;
+            const icon = getWeatherIcon(desc);
+            parts.push(`${icon} ${c.name}: ${temp}°C, ${desc}`);
+          }
+        } catch (e) {
+          parts.push(`⚠️ ${c.name}: sin datos`);
+        }
+      }
+      return parts.join(" | ");
+    }
+
+    function getWeatherIcon(desc) {
+      const d = desc.toLowerCase();
+      if (d.includes("despejado")) return "☀️";
+      if (d.includes("nube")) return "☁️";
+      if (d.includes("lluvia")) return "🌧️";
+      if (d.includes("tormenta")) return "⛈️";
+      if (d.includes("nieve")) return "❄️";
+      return "🌡️";
+    }
+
+    async function buildTicker() {
+      const track = document.getElementById("ticker-track");
+      if (!track) return;
+
+      const econ = await getEconomics();
+      const weather = await getWeatherForComunas();
+
+      const text = `${econ} | ${weather}`;
+      track.textContent = `${text} | ${text}`;
+    }
+
+    buildTicker();
+    setInterval(buildTicker, 15 * 60 * 1000);
   </script>
 
 </body>

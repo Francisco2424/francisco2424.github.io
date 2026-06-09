@@ -1,3 +1,4 @@
+/* GLOBAL */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -14,12 +15,23 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: 1px solid #1b233a;
+}
+
+.nav-logo {
+  font-weight: 600;
+  color: #e5e9ff;
 }
 
 .nav-links a {
   margin-left: 1.5rem;
   color: #cbd5f5;
   text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
 }
 
 /* HERO */
@@ -30,8 +42,9 @@ body {
 }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 /* SECTIONS */
@@ -44,20 +57,23 @@ body {
 .section h2 {
   text-align: center;
   margin-bottom: 2rem;
+  font-weight: 600;
 }
 
 /* CARDS */
 .card {
   background: #111827;
   padding: 1rem 1.5rem;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 1rem;
   cursor: pointer;
   border: 1px solid #1f2937;
+  transition: 0.25s ease;
 }
 
 .card:hover {
   background: #1e293b;
+  transform: translateY(-2px);
 }
 
 .hint {
@@ -65,13 +81,14 @@ body {
   color: #9ca3af;
 }
 
-/* CONTENT HIDDEN */
+/* CONTENT */
 .content {
   display: none;
   background: #1e293b;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 1rem;
+  border: 1px solid #273449;
 }
 
 /* BARRAS */
@@ -81,6 +98,7 @@ body {
   border-radius: 999px;
   margin-bottom: 1rem;
   border: 1px solid #1e293b;
+  font-size: 0.95rem;
 }
 
 /* GRID */
@@ -93,16 +111,18 @@ body {
 .box {
   background: #111827;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   border: 1px solid #1f2937;
+  transition: 0.25s ease;
 }
 
 .box:hover {
   background: #1e293b;
+  transform: translateY(-2px);
 }
 
-/* TICKER HORIZONTAL SUPERIOR */
+/* TICKER */
 .ticker {
   width: 100%;
   background: #0d1b2a;
