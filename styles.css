@@ -102,24 +102,29 @@ body {
   background: #1e293b;
 }
 
-/* ========================================================= */
-/* BARRA HORIZONTAL SUPERIOR */
-/* ========================================================= */
-
-.top-bar {
+/* TICKER HORIZONTAL SUPERIOR */
+.ticker {
   width: 100%;
-  background: #0d1b2a; /* azul oscuro premium */
+  background: #0d1b2a;
   color: #e0e6ed;
-  font-size: 14px;
-  padding: 6px 12px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  overflow: hidden;
   border-bottom: 1px solid #1b263b;
+  padding: 4px 0;
+  font-size: 14px;
 }
 
-.top-item {
+.ticker-track {
+  display: inline-block;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding-left: 100%;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
