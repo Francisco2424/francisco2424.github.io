@@ -101,3 +101,25 @@ body {
 .box:hover {
   background: #1e293b;
 }
+
+/* ========================================================= */
+/* BARRA HORIZONTAL SUPERIOR */
+/* ========================================================= */
+
+.top-bar {
+  width: 100%;
+  background: #0d1b2a; /* azul oscuro premium */
+  color: #e0e6ed;
+  font-size: 14px;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #1b263b;
+}
+
+.top-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
