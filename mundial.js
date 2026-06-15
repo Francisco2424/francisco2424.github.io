@@ -3,17 +3,19 @@
 // 1. URL base del backend
 const API_BASE = "https://franciscomallea-automatizaciones-backend.onrender.com";
 
+// ------------------------------------------------------------
 // 2. Inicialización del módulo
+// ------------------------------------------------------------
 function iniciarModoMundial() {
     console.log("✅ Modo Mundial 2026 iniciado correctamente.");
     mostrarGrupos(); // Carga segura y no bloqueante
 }
 
-// 3. Ejecutar al cargar la página
+// Ejecutar al cargar la página
 document.addEventListener("DOMContentLoaded", iniciarModoMundial);
 
 // ------------------------------------------------------------
-// 4. Obtener grupos del backend (seguro y no bloqueante)
+// 3. Obtener grupos del backend (seguro y no bloqueante)
 // ------------------------------------------------------------
 async function obtenerGrupos() {
     try {
@@ -26,7 +28,7 @@ async function obtenerGrupos() {
         }
 
         const data = await res.json();
-        return data;
+        return data; // data.grupos es el array real
 
     } catch (error) {
         console.error("❌ Error al obtener los grupos:", error);
@@ -35,7 +37,7 @@ async function obtenerGrupos() {
 }
 
 // ------------------------------------------------------------
-// 5. Renderizar grupos en el contenedor
+// 4. Renderizar grupos en el contenedor
 // ------------------------------------------------------------
 async function mostrarGrupos() {
     const contenedor = document.getElementById("contenedor-grupos");
@@ -49,16 +51,21 @@ async function mostrarGrupos() {
 
     const grupos = await obtenerGrupos();
 
-    if (!grupos) {
+    if (!grupos || !grupos.grupos) {
         contenedor.innerHTML = "<p>No se pudieron cargar los grupos en este momento.</p>";
         return;
     }
 
-    contenedor.innerHTML = grupos.map(g => `
+    // Renderizado correcto usando la estructura REAL del JSON
+    contenedor.innerHTML = grupos.grupos.map(g => `
         <div class="grupo-card">
-            <h3>${g.grupo}</h3>
+            <h3>Grupo ${g.grupo}</h3>
             <ul>
-                ${g.equipos.map(eq => `<li>${eq}</li>`).join("")}
+                ${g.paises.map(p => `
+                    <li>
+                        ${p.nombre} (${p.codigo})
+                    </li>
+                `).join("")}
             </ul>
         </div>
     `).join("");
