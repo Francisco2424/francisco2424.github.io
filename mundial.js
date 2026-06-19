@@ -1,24 +1,17 @@
-// 🌍 mundial.js — JS principal del Modo Mundial 2026
+// 🌍 mundial.js — Modo Mundial 2026
 
-// ------------------------------------------------------------
-// 1. URL base del backend
-// ------------------------------------------------------------
 const API_BASE = "https://franciscomallea-automatizaciones-backend.onrender.com";
 
-// ------------------------------------------------------------
-// 2. Inicialización del módulo
-// ------------------------------------------------------------
-function iniciarModoMundial() {
-  console.log("✅ Modo Mundial 2026 iniciado correctamente.");
-  mostrarGrupos(); // Carga segura y no bloqueante
-}
-
-// Ejecutar al cargar la página
 document.addEventListener("DOMContentLoaded", iniciarModoMundial);
 
-// ------------------------------------------------------------
-// 3. Obtener grupos del backend (seguro y no bloqueante)
-// ------------------------------------------------------------
+function iniciarModoMundial() {
+  console.log("✅ Modo Mundial 2026 iniciado correctamente.");
+  mostrarGrupos();
+}
+
+// ============================
+// 🔹 Obtener grupos del backend
+// ============================
 async function obtenerGrupos() {
   try {
     const url = `${API_BASE}/mundial/grupos`;
@@ -29,17 +22,16 @@ async function obtenerGrupos() {
       return null;
     }
 
-    const data = await res.json();
-    return data; // data.grupos es el array real
+    return await res.json(); // Devuelve directamente un array
   } catch (error) {
     console.error("❌ Error al obtener los grupos:", error);
     return null;
   }
 }
 
-// ------------------------------------------------------------
-// 4. Renderizar grupos en el contenedor
-// ------------------------------------------------------------
+// ============================
+// 🔹 Mostrar grupos en pantalla
+// ============================
 async function mostrarGrupos() {
   const contenedor = document.getElementById("contenedor-grupos");
 
@@ -50,23 +42,47 @@ async function mostrarGrupos() {
 
   contenedor.innerHTML = "<p>Cargando grupos del Mundial...</p>";
 
-  const respuesta = await obtenerGrupos();
+  const grupos = await obtenerGrupos();
 
-  if (!respuesta || !respuesta.grupos) {
-    contenedor.innerHTML = "<p>No se pudieron cargar los grupos en este momento.</p>";
+  if (!grupos || !Array.isArray(grupos)) {
+    contenedor.innerHTML = "<p>No se pudieron cargar los grupos.</p>";
     return;
   }
 
-  // Renderizado seguro y dinámico
-  contenedor.innerHTML = respuesta.grupos.map(g => {
-    const equipos = Array.isArray(g.equipos) ? g.equipos : [];
-    return `
-      <div class="grupo-card">
-        <h3>${g.grupo}</h3>
-        <ul>
-          ${equipos.map(equipo => `<li>${equipo}</li>`).join("")}
-        </ul>
-      </div>
-    `;
-  }).join("");
+  contenedor.innerHTML = grupos.map(g => `
+    <div class="grupo-card">
+      <h3>Grupo ${g.grupo}</h3>
+
+      <table class="tabla-grupo">
+        <thead>
+          <tr>
+            <th>Selección</th>
+            <th>PJ</th>
+            <th>PG</th>
+            <th>PE</th>
+            <th>PP</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>DG</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${g.paises.map(p => `
+            <tr>
+              <td>${p.nombre}</td>
+              <td>${p.pj}</td>
+              <td>${p.pg}</td>
+              <td>${p.pe}</td>
+              <td>${p.pp}</td>
+              <td>${p.gf}</td>
+              <td>${p.gc}</td>
+              <td>${p.dg}</td>
+              <td><strong>${p.puntos}</strong></td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `).join("");
 }
