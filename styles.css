@@ -131,18 +131,19 @@ body {
   border-bottom: 1px solid #1b263b;
   padding: 4px 0;
   font-size: 14px;
+  position: relative;
 }
 
 .ticker-track {
-  display: inline-block;
+  display: inline-flex;
   white-space: nowrap;
-  padding-left: 100%;
   animation: ticker-scroll 40s linear infinite;
+  will-change: transform;
 }
 
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  to { transform: translateX(-50%); }
 }
 
 /* ========================================================= */
