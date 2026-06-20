@@ -122,7 +122,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* TICKER */
+/* ========================================================= */
+/* 🟦 TICKER SUPERIOR — LOOP PERFECTO + PAUSA AL HOVER */
+/* ========================================================= */
+
 .ticker {
   width: 100%;
   background: #0d1b2a;
@@ -141,6 +144,13 @@ body {
   will-change: transform;
 }
 
+/* Pausar al pasar el cursor */
+.ticker-track:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+/* Loop perfecto sin cortes */
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
