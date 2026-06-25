@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nombre": "Impresora térmica 58mm",
+    "categoria": "impresoras",
+    "descripcion": "Impresora térmica económica ideal para boletas y tickets.",
+    "precio": 24000,
+    "imagen": "img/impresora_58mm.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Impresora térmica 80mm",
+    "categoria": "impresoras",
+    "descripcion": "Impresora térmica profesional compatible con sistemas POS.",
+    "precio": 49000,
+    "imagen": "img/impresora_80mm.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Papel térmico 57x40 (caja 50)",
+    "categoria": "insumos",
+    "descripcion": "Caja de 50 rollos de papel térmico 57x40.",
+    "precio": 16000,
+    "imagen": "img/papel_57x40.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Papel térmico 80x80 (caja 50)",
+    "categoria": "insumos",
+    "descripcion": "Caja de 50 rollos de papel térmico 80x80.",
+    "precio": 29000,
+    "imagen": "img/papel_80x80.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Cartucho compatible HP",
+    "categoria": "cartuchos",
+    "descripcion": "Cartucho compatible HP de alta calidad.",
+    "precio": 8000,
+    "imagen": "img/cartucho_hp.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Cartucho compatible Canon",
+    "categoria": "cartuchos",
+    "descripcion": "Cartucho compatible Canon para impresoras domésticas.",
+    "precio": 9000,
+    "imagen": "img/cartucho_canon.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Tinta universal 100ml",
+    "categoria": "tintas",
+    "descripcion": "Botella de tinta universal para impresoras Epson, Canon y HP.",
+    "precio": 3500,
+    "imagen": "img/tinta_universal.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Repuestos de impresoras",
+    "categoria": "repuestos",
+    "descripcion": "Rodillos, fusores y repuestos compatibles.",
+    "precio": 18000,
+    "imagen": "img/repuestos_impresoras.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Cable USB-B para impresoras",
+    "categoria": "cables",
+    "descripcion": "Cable USB-B estándar para impresoras.",
+    "precio": 2500,
+    "imagen": "img/cable_usb_b.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Lector de código de barras 1D",
+    "categoria": "lectores",
+    "descripcion": "Lector de código de barras 1D de alta velocidad.",
+    "precio": 19000,
+    "imagen": "img/lector_codigos.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Mini impresora térmica portátil",
+    "categoria": "impresoras",
+    "descripcion": "Impresora térmica portátil ideal para delivery.",
+    "precio": 26000,
+    "imagen": "img/impresora_portatil.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Rollos de etiquetas térmicas",
+    "categoria": "insumos",
+    "descripcion": "Rollos de etiquetas adhesivas térmicas.",
+    "precio": 5000,
+    "imagen": "img/etiquetas_termicas.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Etiquetadora térmica portátil",
+    "categoria": "etiquetadoras",
+    "descripcion": "Etiquetadora térmica portátil para inventarios.",
+    "precio": 22000,
+    "imagen": "img/etiquetadora_portatil.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Kit de limpieza para impresoras",
+    "categoria": "insumos",
+    "descripcion": "Kit de limpieza para impresoras y cabezales.",
+    "precio": 4500,
+    "imagen": "img/kit_limpieza.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Fuente de poder universal para impresoras",
+    "categoria": "repuestos",
+    "descripcion": "Fuente de poder universal compatible con múltiples modelos.",
+    "precio": 10000,
+    "imagen": "img/fuente_impresora.jpg"
+  }
+]
