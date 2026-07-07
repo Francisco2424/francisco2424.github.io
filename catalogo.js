@@ -49,12 +49,9 @@ function crearTarjeta(producto) {
       <h3 class="producto-nombre">${escapeHtml(producto.nombre)}</h3>
       <p class="producto-sku">SKU: ${escapeHtml(producto.sku_interno || producto.sku_proveedor || '')}</p>
 
-      <!-- Ver en proveedor ocultado -->
-      <!-- Precio del proveedor ocultado -->
-      <!-- Proveedor: ocultado -->
+      <!-- 🔥 Se eliminaron las líneas de “Ver en proveedor”, “Proveedor:” y precio del proveedor -->
 
       <p>Precio: <strong>${formatCLP(precioSugerido)}</strong></p>
-
       <p>${producto.stock_disponible ? 'Stock: ' + producto.stock_disponible : 'Sin stock'}</p>
 
       <div class="btns">
