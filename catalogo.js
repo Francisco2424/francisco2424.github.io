@@ -49,12 +49,12 @@ function crearTarjeta(producto) {
       <h3 class="producto-nombre">${escapeHtml(producto.nombre)}</h3>
       <p class="producto-sku">SKU: ${escapeHtml(producto.sku_interno || producto.sku_proveedor || '')}</p>
 
-      ${producto.url_producto_proveedor
-        ? `<p><a href="${escapeHtml(producto.url_producto_proveedor)}" target="_blank">Ver en proveedor</a></p>`
-        : ""}
+      <!-- Ver en proveedor ocultado -->
+      <!-- Precio del proveedor ocultado -->
+      <!-- Proveedor: ocultado -->
 
-      <p>Proveedor: <strong>${formatCLP(precioProveedor)}</strong></p>
-      <p>Sugerido: <strong>${formatCLP(precioSugerido)}</strong></p>
+      <p>Precio: <strong>${formatCLP(precioSugerido)}</strong></p>
+
       <p>${producto.stock_disponible ? 'Stock: ' + producto.stock_disponible : 'Sin stock'}</p>
 
       <div class="btns">
@@ -103,7 +103,6 @@ async function initCatalogo() {
   try {
     console.log("Cargando JSON desde:", window.location.origin + "/json/interno.json");
 
-    // 🔥 CORRECCIÓN FINAL: ruta correcta para GitHub Pages y servidor local
     const res = await fetch("json/interno.json", { cache: "no-store" });
 
     if (!res.ok) {
