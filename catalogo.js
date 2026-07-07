@@ -103,7 +103,8 @@ async function initCatalogo() {
   try {
     console.log("Cargando JSON desde:", window.location.origin + "/json/interno.json");
 
-    const res = await fetch("./interno.json", { cache: "no-store" });
+    // 🔥 CORRECCIÓN FINAL: ruta correcta para GitHub Pages y servidor local
+    const res = await fetch("json/interno.json", { cache: "no-store" });
 
     if (!res.ok) {
       throw new Error("Error HTTP " + res.status);
