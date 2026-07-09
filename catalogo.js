@@ -49,22 +49,29 @@ function crearTarjeta(producto) {
       <h3 class="producto-nombre">${escapeHtml(producto.nombre)}</h3>
       <p class="producto-sku">SKU: ${escapeHtml(producto.sku_interno || producto.sku_proveedor || '')}</p>
 
-      <!-- 🔥 Se eliminaron las líneas de “Ver en proveedor”, “Proveedor:” y precio del proveedor -->
-
       <p>Precio: <strong>${formatCLP(precioSugerido)}</strong></p>
       <p>${producto.stock_disponible ? 'Stock: ' + producto.stock_disponible : 'Sin stock'}</p>
 
       <div class="btns">
+
+        <!-- Botón WhatsApp -->
         <a class="btn btn-whatsapp"
            href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, quiero consultar por ' + producto.nombre + ' - SKU: ' + (producto.sku_interno || producto.sku_proveedor))}"
            target="_blank">
           WhatsApp
         </a>
 
+        <!-- Botón Consultar -->
         <a class="btn btn-info"
            href="formulario.html?producto=${encodeURIComponent(producto.sku_interno || producto.sku_proveedor || producto.id)}">
           Consultar
         </a>
+
+        <!-- Botón Comprar (modal futurista) -->
+        <button class="btn btn-info" onclick='abrirModal(${JSON.stringify(producto)})'>
+          Comprar
+        </button>
+
       </div>
     `;
 
@@ -123,3 +130,62 @@ async function initCatalogo() {
 }
 
 document.addEventListener("DOMContentLoaded", initCatalogo);
+
+
+/* ===========================
+   MODAL FUTURISTA
+   =========================== */
+
+function abrirModal(producto) {
+    const modal = document.getElementById("modal-producto");
+    const carousel = document.getElementById("modal-carousel");
+
+    // Limpiar carrusel
+    carousel.innerHTML = "";
+
+    // Cargar imágenes desde carpeta /img/
+    const baseName = producto.sku_interno || producto.sku_proveedor || producto.id;
+
+    for (let i = 1; i <= 8; i++) {
+        const imgPath = `img/${baseName}-${i}.jpg`;
+        const img = document.createElement("img");
+        img.src = imgPath;
+        img.onerror = () => img.remove();
+        carousel.appendChild(img);
+    }
+
+    // Información del producto
+    document.getElementById("modal-nombre").textContent = producto.nombre;
+    document.getElementById("modal-sku").textContent = "SKU: " + (producto.sku_interno || producto.sku_proveedor);
+    document.getElementById("modal-precio").textContent = "Precio: " + formatCLP(calcularPrecioSugerido(producto.precio_proveedor));
+    document.getElementById("modal-stock").textContent = producto.stock_disponible ? "Stock: " + producto.stock_disponible : "Sin stock";
+    document.getElementById("modal-despacho").textContent = "Despacho: 3 a 5 días hábiles";
+    document.getElementById("modal-descripcion").textContent = producto.descripcion || "Producto técnico de alta calidad.";
+
+    // WhatsApp
+    document.getElementById("modal-whatsapp").href =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+            "Hola, quiero comprar " + producto.nombre + " - SKU: " + (producto.sku_interno || producto.sku_proveedor)
+        )}`;
+
+    // Mostrar modal
+    modal.classList.remove("oculto");
+}
+
+// Cerrar modal con animación futurista
+document.querySelector(".modal-close").addEventListener("click", () => {
+    const modal = document.getElementById("modal-producto");
+    const content = modal.querySelector(".modal-content");
+
+    content.style.animation = "modalFadeOut 0.3s ease forwards";
+
+    setTimeout(() => {
+        modal.classList.add("oculto");
+        content.style.animation = "modalFadeIn 0.35s ease forwards";
+    }, 300);
+});
+
+// Botón pagar → despliega panel futurista
+document.getElementById("modal-pago").addEventListener("click", () => {
+    document.getElementById("panel-pago").classList.toggle("oculto");
+});

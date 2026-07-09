@@ -41,6 +41,55 @@
         </div>
     </main>
 
+    <!-- Modal futurista de producto -->
+    <div id="modal-producto" class="modal oculto">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+
+            <div class="modal-body">
+
+                <!-- Carrusel -->
+                <div class="modal-carousel" id="modal-carousel"></div>
+
+                <!-- Información del producto -->
+                <div class="modal-info">
+                    <h2 id="modal-nombre"></h2>
+                    <p id="modal-sku"></p>
+                    <p id="modal-precio" class="modal-precio"></p>
+                    <p id="modal-stock"></p>
+                    <p id="modal-despacho"></p>
+                    <p id="modal-descripcion"></p>
+
+                    <div class="modal-btns">
+                        <a id="modal-whatsapp" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+                        <button id="modal-pago" class="btn btn-info">Pagar ahora</button>
+                    </div>
+
+                    <!-- Panel de medios de pago -->
+                    <div id="panel-pago" class="panel-pago oculto">
+                        <h3>Medios de Pago</h3>
+
+                        <div class="pago-item">
+                            <h4>Transferencia Bancaria</h4>
+                            <p>Pago directo y seguro. Envíanos el comprobante por WhatsApp.</p>
+                        </div>
+
+                        <div class="pago-item">
+                            <h4>QR Bancario</h4>
+                            <p>Escanea el QR que te enviaremos para pagar sin escribir datos.</p>
+                        </div>
+
+                        <div class="pago-item">
+                            <h4>MACH</h4>
+                            <p>Pago rápido entre personas sin comisiones.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JS del catálogo -->
     <script src="catalogo.js"></script>
 </body>

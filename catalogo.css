@@ -172,3 +172,132 @@ body {
     height: 100%;
     width: 100%;
 }
+
+/* ===========================
+   MODAL FUTURISTA
+   =========================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 10, 30, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: modalBackgroundFade 0.4s ease forwards;
+}
+
+.oculto {
+    display: none !important;
+}
+
+.modal-content {
+    background: #0a0f1f;
+    border: 1px solid rgba(192,192,192,0.3);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    color: #e0e0e0;
+    box-shadow: 0 0 25px rgba(0,255,255,0.25), 0 0 60px rgba(0,150,255,0.15);
+    animation: modalFadeIn 0.35s ease forwards;
+}
+
+.modal-close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #c0c0c0;
+}
+
+.modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Carrusel */
+.modal-carousel {
+    flex: 1 1 350px;
+    background: #101a2f;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.modal-carousel img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: imgFadeUp 0.5s ease forwards;
+}
+
+/* Info */
+.modal-info {
+    flex: 1 1 300px;
+}
+
+.modal-precio {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00bfff;
+    margin: 10px 0;
+}
+
+.modal-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Panel de pago */
+.panel-pago {
+    margin-top: 20px;
+    padding: 15px;
+    background: #101a2f;
+    border-radius: 10px;
+    border: 1px solid rgba(192,192,192,0.3);
+    transform-origin: top;
+    animation: panelExpand 0.35s ease forwards;
+}
+
+.pago-item {
+    margin-bottom: 15px;
+}
+
+.pago-item h4 {
+    margin: 0 0 5px;
+    color: #00bfff;
+}
+
+/* ===========================
+   ANIMACIONES FUTURISTAS
+   =========================== */
+
+@keyframes modalFadeIn {
+    0% { opacity: 0; transform: scale(0.92); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes modalFadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.92); }
+}
+
+@keyframes modalBackgroundFade {
+    from { background: rgba(0, 10, 30, 0); }
+    to { background: rgba(0, 10, 30, 0.85); }
+}
+
+@keyframes imgFadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes panelExpand {
+    from { opacity: 0; transform: scaleY(0.6); }
+    to { opacity: 1; transform: scaleY(1); }
+}
