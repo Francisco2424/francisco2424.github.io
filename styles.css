@@ -305,3 +305,136 @@ body::before {
   vertical-align: middle;
   border-radius: 2px;
 }
+/* ========================================================= */
+/* 📱 OPTIMIZACIÓN MÓVIL PROFESIONAL FRANCISCO2424 */
+/* ========================================================= */
+
+/* 🔹 Ajustes generales para pantallas pequeñas */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  /* 🔹 Menú móvil */
+  .nav {
+    padding: 1rem 0.5rem;
+  }
+
+  .logo-img {
+    height: 48px;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 1.4rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding-bottom: 4px;
+  }
+
+  /* 🔹 HERO móvil */
+  .hero {
+    padding: 2.5rem 1rem;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* 🔹 Secciones */
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+
+  /* 🔹 Cards */
+  .card {
+    padding: 0.8rem 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
+  }
+
+  /* 🔹 Grid móvil */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    padding: 0.8rem;
+  }
+
+  /* 🔹 Ticker móvil */
+  .ticker {
+    font-size: 12px;
+    padding: 3px 0;
+  }
+
+  /* 🔹 Tablas Mundial */
+  .tabla-grupo th,
+  .tabla-grupo td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .bandera {
+    width: 20px;
+    height: 14px;
+  }
+}
+
+/* ========================================================= */
+/* 📱 OPTIMIZACIÓN EXTRA PARA PANTALLAS MUY PEQUEÑAS */
+/* ========================================================= */
+
+@media (max-width: 480px) {
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .content {
+    font-size: 0.9rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+  }
+}
