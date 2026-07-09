@@ -2,486 +2,247 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Francisco2424 - Servicios</title>
-  <style>
-    :root {
-      --bg-main: #020617;
-      --blue-electric: #1d4ed8;
-      --blue-neon: #38bdf8;
-      --silver: #c0c7d1;
-      --text-main: #e5e7eb;
-      --card-bg: rgba(10, 25, 60, 0.85);
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francisco2424 | Sistemas y Automatización</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+  <!-- Fuente futurista profesional -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      background: radial-gradient(circle at top, #0f172a 0%, #020617 45%, #000000 100%);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Fondo global con imágenes mezcladas */
-    .bg-layer {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        url("img/globo_digital.png") center/60% no-repeat,
-        url("img/mapa_redes.png") left bottom/45% no-repeat,
-        url("img/cielo_estrellado.png") right top/55% no-repeat;
-      opacity: 0.35;
-      filter: saturate(1.3);
-    }
-
-    .bg-lines {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background-image:
-        linear-gradient(120deg, rgba(192,199,209,0.18) 1px, transparent 1px),
-        linear-gradient(300deg, rgba(56,189,248,0.12) 1px, transparent 1px);
-      background-size: 120px 120px;
-      mix-blend-mode: screen;
-      opacity: 0.6;
-    }
-
-    header {
-      padding: 18px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(148,163,184,0.35);
-      backdrop-filter: blur(12px);
-      background: linear-gradient(
-        90deg,
-        rgba(15,23,42,0.85),
-        rgba(15,23,42,0.65),
-        rgba(15,23,42,0.85)
-      );
-    }
-
-    .logo-block {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .logo-block img {
-      height: 52px;
-      filter: drop-shadow(0 0 12px rgba(56,189,248,0.7));
-    }
-
-    .logo-text {
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      color: var(--silver);
-    }
-
-    .header-tagline {
-      font-size: 0.85rem;
-      color: var(--blue-neon);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    main {
-      padding: 32px 40px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      margin-bottom: 24px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-    }
-
-    .service-card {
-      position: relative;
-      padding: 18px 18px 20px;
-      border-radius: 14px;
-      background: var(--card-bg);
-      border: 1px solid rgba(148,163,184,0.55);
-      box-shadow:
-        0 0 0 1px rgba(15,23,42,0.9),
-        0 18px 40px rgba(15,23,42,0.9);
-      overflow: hidden;
-      cursor: pointer;
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(56,189,248,0.18) 0, transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(192,199,209,0.22) 0, transparent 55%);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56,189,248,0.85);
-      box-shadow:
-        0 0 0 1px rgba(56,189,248,0.45),
-        0 22px 50px rgba(15,23,42,0.95);
-      background: rgba(10,25,60,0.95);
-    }
-
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .service-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .service-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .service-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--silver);
-    }
-
-    .service-divider {
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        rgba(192,199,209,0.1),
-        rgba(56,189,248,0.7),
-        rgba(192,199,209,0.1)
-      );
-      margin-bottom: 10px;
-    }
-
-    .service-body {
-      font-size: 0.86rem;
-      line-height: 1.45;
-      color: #d1d5db;
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(6px);
-      transition:
-        max-height 0.35s ease,
-        opacity 0.35s ease,
-        transform 0.35s ease;
-    }
-
-    .service-card.active .service-body {
-      max-height: 260px;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .service-footer {
-      margin-top: 10px;
-      display: flex;
-      justify-content: flex-end;
-      font-size: 0.75rem;
-      color: var(--blue-neon);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .service-footer span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .service-footer span::after {
-      content: "⟶";
-      font-size: 0.8rem;
-    }
-
-    /* Bloque YouTube */
-    .youtube-block {
-      margin-top: 34px;
-      padding: 18px 20px;
-      border-radius: 14px;
-      background: rgba(10,25,60,0.9);
-      border: 1px solid rgba(148,163,184,0.6);
-      box-shadow:
-        0 0 0 1px rgba(15,23,42,0.9),
-        0 18px 40px rgba(15,23,42,0.9);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .youtube-block::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(56,189,248,0.22) 0, transparent 55%),
-        radial-gradient(circle at 90% 100%, rgba(192,199,209,0.18) 0, transparent 55%);
-      opacity: 0.7;
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .youtube-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .youtube-subtitle {
-      font-size: 0.85rem;
-      color: #e5e7eb;
-      margin-bottom: 10px;
-    }
-
-    .youtube-note {
-      font-size: 0.8rem;
-      color: #cbd5f5;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 14px 40px 18px;
-      font-size: 0.75rem;
-      color: #9ca3af;
-      border-top: 1px solid rgba(148,163,184,0.35);
-      backdrop-filter: blur(10px);
-      background: linear-gradient(
-        90deg,
-        rgba(15,23,42,0.9),
-        rgba(15,23,42,0.7),
-        rgba(15,23,42,0.9)
-      );
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-logo img {
-      height: 26px;
-      filter: drop-shadow(0 0 8px rgba(56,189,248,0.7));
-    }
-
-    .footer-text {
-      font-size: 0.72rem;
-      color: #9ca3af;
-    }
-
-    @media (max-width: 768px) {
-      header, main, footer {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-    }
-  </style>
+  <!-- Estilos futuristas -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="bg-layer"></div>
-  <div class="bg-lines"></div>
 
-  <header>
-    <div class="logo-block">
-      <!-- Reemplaza la ruta del logo -->
-      <img src="img/logo_francisco2424.png" alt="Francisco2424">
-      <div class="logo-text">Francisco2424 · Soluciones técnicas y financieras</div>
+<body>
+
+  <!-- TICKER FUTURISTA -->
+  <div class="ticker">
+    <div class="ticker-track" id="ticker-track"></div>
+  </div>
+
+  <!-- NAV FUTURISTA (centrado y agrandado) -->
+  <nav class="nav">
+    <div class="nav-logo">Francisco2424</div>
+
+    <div class="nav-links">
+      <a href="#servicios" id="menu-servicios">Servicios</a>
+      <a href="#informacion">Información</a>
+      <a href="#quien-soy">Quién Soy</a>
+      <a href="catalogo.html">Catálogo</a>
     </div>
-    <div class="header-tagline">Sistemas · Automatización · Finanzas</div>
+  </nav>
+
+  <!-- HERO FUTURISTA -->
+  <header class="hero">
+    <h1>Soluciones Avanzadas en Sistemas y Automatización</h1>
+    <p>Software, análisis, automatización y herramientas para PyMEs y profesionales.</p>
   </header>
 
-  <main>
-    <h1 class="section-title">Servicios profesionales</h1>
-    <p class="section-subtitle">
-      Soluciones diseñadas según la realidad operativa de cada empresa, con foco en orden, eficiencia y continuidad.
-    </p>
+  <!-- SERVICIOS FUTURISTAS (oculto al inicio) -->
+  <section id="servicios" class="section" style="display:none;">
+    <h2>Servicios</h2>
 
-    <div class="services-grid">
-      <!-- Software a Medida (End to End) -->
-      <div class="service-card" onclick="toggleCard(this)">
-        <div class="service-header">
-          <div class="service-title">Software a Medida (End to End)</div>
-          <div class="service-tag">Diseño integral</div>
-        </div>
-        <div class="service-divider"></div>
-        <div class="service-body">
-          Desarrollo completo de soluciones empresariales creadas desde cero según la realidad de cada cliente.
-          Incluye levantamiento detallado de información, validación de procesos, diseño de flujos eficientes,
-          construcción de módulos funcionales, integración con sistemas existentes y automatización avanzada.
-          Cada proyecto finaliza con reportes ejecutivos, paneles de control y documentación clara para asegurar
-          continuidad operativa. Este servicio está pensado para empresas que necesitan orden, control y eficiencia,
-          sin depender de plantillas genéricas o sistemas que no se ajustan a su negocio.
-        </div>
-        <div class="service-footer">
-          <span>Ver detalle</span>
-        </div>
-      </div>
-
-      <!-- Automatización Pequeña -->
-      <div class="service-card" onclick="toggleCard(this)">
-        <div class="service-header">
-          <div class="service-title">Automatización Pequeña</div>
-          <div class="service-tag">Optimización puntual</div>
-        </div>
-        <div class="service-divider"></div>
-        <div class="service-body">
-          Soluciones rápidas y precisas para tareas repetitivas, bases de datos pequeñas o cálculos operativos que
-          consumen tiempo. Incluye organización y validación de datos, generación automática de reportes básicos y
-          eliminación de procesos manuales que generan errores. Ideal para emprendedores, Pymes y áreas administrativas
-          que buscan ordenar su trabajo diario y reducir carga operativa sin invertir en un sistema completo.
-        </div>
-        <div class="service-footer">
-          <span>Ver detalle</span>
-        </div>
-      </div>
-
-      <!-- Actualización de Software Heredado -->
-      <div class="service-card" onclick="toggleCard(this)">
-        <div class="service-header">
-          <div class="service-title">Actualización de Software Heredado</div>
-          <div class="service-tag">Modernización</div>
-        </div>
-        <div class="service-divider"></div>
-        <div class="service-body">
-          Modernización de sistemas antiguos que siguen siendo críticos para la operación, pero que necesitan mejoras
-          para mantenerse vigentes. Incluye incorporación de nuevos módulos, corrección de errores, optimización de
-          rendimiento, actualización de tecnologías y parches que extienden la vida útil del software sin reconstruirlo
-          desde cero. Este servicio permite proteger la inversión histórica y mejorar la estabilidad sin interrumpir
-          la operación.
-        </div>
-        <div class="service-footer">
-          <span>Ver detalle</span>
-        </div>
-      </div>
-
-      <!-- Software Financieros -->
-      <div class="service-card" onclick="toggleCard(this)">
-        <div class="service-header">
-          <div class="service-title">Software Financieros</div>
-          <div class="service-tag">Gestión financiera</div>
-        </div>
-        <div class="service-divider"></div>
-        <div class="service-body">
-          Desarrollo de herramientas enfocadas en la eficiencia del negocio y la toma de decisiones. Incluye
-          identificación de fugas operativas, ordenamiento de procedimientos, análisis financiero profundo,
-          automatización de cálculos, control de gastos y generación de oportunidades de mejora que impactan
-          directamente en las ganancias mensuales. Diseñado para empresas que necesitan ver su negocio con claridad,
-          detectar problemas y actuar con datos reales.
-        </div>
-        <div class="service-footer">
-          <span>Ver detalle</span>
-        </div>
-      </div>
-
-      <!-- Software Contables Personalizados -->
-      <div class="service-card" onclick="toggleCard(this)">
-        <div class="service-header">
-          <div class="service-title">Software Contables Personalizados</div>
-          <div class="service-tag">Contabilidad adaptada</div>
-        </div>
-        <div class="service-divider"></div>
-        <div class="service-body">
-          Sistemas contables diseñados para adaptarse a la operación real de cada empresa. Incluye integración con APIs
-          oficiales (SII, TGR, Previred), emisión y carga automática de documentos, conciliaciones, paneles de control
-          y herramientas para mantener una visión clara del negocio. Este servicio permite ordenar la contabilidad,
-          reducir errores y asegurar cumplimiento normativo sin depender de plataformas rígidas.
-        </div>
-        <div class="service-footer">
-          <span>Ver detalle</span>
-        </div>
-      </div>
-
-      <!-- Análisis de Datos -->
-      <div class="service-card" onclick="toggleCard(this)">
-        <div class="service-header">
-          <div class="service-title">Análisis de Datos</div>
-          <div class="service-tag">Inteligencia operativa</div>
-        </div>
-        <div class="service-divider"></div>
-        <div class="service-body">
-          Normalización, modelamiento y estructuración de datos para convertir información dispersa en conocimiento útil.
-          Incluye dashboards, reportes ejecutivos, indicadores clave y herramientas que permiten tomar decisiones rápidas
-          sin depender de múltiples archivos Excel. Este servicio está orientado a empresas que necesitan menos estrés,
-          menos manejo de plantillas y más productividad.
-        </div>
-        <div class="service-footer">
-          <span>Ver detalle</span>
-        </div>
-      </div>
+    <div class="card futurista" onclick="toggle('s1')">
+      <h3>Software a Medida</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s1" class="content futurista-content">
+      Desarrollo completo end‑to‑end, validación, flujos, reportes, automatización avanzada.
     </div>
 
-    <!-- Tips y Experiencias — Recuadro YouTube -->
-    <div class="youtube-block">
-      <div class="youtube-title">Tips y Experiencias — Recuadro YouTube</div>
-      <div class="youtube-subtitle">
-        Espacio multimedia con contenido práctico basado en tu experiencia real con clientes. Incluye consejos de
-        informática, automatización, ordenamiento de procesos, buenas prácticas y casos reales explicados de forma simple.
-      </div>
-      <div class="youtube-note">
-        Aquí puedes incrustar tus videos de YouTube (iframes) para que los visitantes vean ejemplos concretos de cómo
-        trabajas y cómo tus soluciones resuelven problemas reales.
-      </div>
+    <div class="card futurista" onclick="toggle('s2')">
+      <h3>Automatización Pequeña</h3>
+      <p class="hint">Click para ver más</p>
     </div>
-  </main>
+    <div id="s2" class="content futurista-content">
+      Automatizaciones rápidas, validación de datos, cálculos simples, reportes básicos.
+    </div>
 
-  <footer>
-    <div class="footer-logo">
-      <!-- Logo pequeño -->
-      <img src="img/logo_francisco2424.png" alt="Francisco2424">
-      <span class="footer-text">Francisco2424 · Sistemas, automatización y gestión financiera.</span>
+    <div class="card futurista" onclick="toggle('s3')">
+      <h3>Actualización de Software Heredado</h3>
+      <p class="hint">Click para ver más</p>
     </div>
-    <div class="footer-text">
-      Diseño azul‑eléctrico con reflejos plateados · Entorno tecnológico futurista.
+    <div id="s3" class="content futurista-content">
+      Modernización, parches, módulos nuevos, optimización sin reconstruir todo.
     </div>
-  </footer>
 
+    <div class="card futurista" onclick="toggle('s4')">
+      <h3>Software Financieros</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s4" class="content futurista-content">
+      Identificación de fugas, orden financiero, análisis y optimización de ganancias.
+    </div>
+
+    <div class="card futurista" onclick="toggle('s5')">
+      <h3>Software Contables Personalizados</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s5" class="content futurista-content">
+      Integración con APIs (SII, TGR, Previred), control contable y documentación.
+    </div>
+
+    <div class="card futurista" onclick="toggle('s6')">
+      <h3>Análisis de Datos</h3>
+      <p class="hint">Click para ver más</p>
+    </div>
+    <div id="s6" class="content futurista-content">
+      Normalización, dashboards, reportes, decisiones rápidas y menos estrés.
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN ADICIONAL FUTURISTA -->
+  <section id="informacion" class="section">
+    <h2>Información Adicional</h2>
+
+    <div class="bar futurista-bar">IPSA · Minería · Petróleo</div>
+    <div class="bar futurista-bar">El tiempo: Coyhaique · Chiloé · Temuco · Chillán · Rancagua · Santiago · Viña del Mar · La Serena · Antofagasta · Arica</div>
+    <div class="bar futurista-bar">Precio de la bencina (fuente: CNE / Bencina en Línea)</div>
+
+    <div class="grid">
+      <div class="box futurista" onclick="toggle('i1')">
+        <h3>Calles y Tránsito</h3>
+      </div>
+      <div id="i1" class="content futurista-content">
+        Información de calles cerradas, tacos y accidentes.
+      </div>
+
+      <div class="box futurista" onclick="toggle('i2')">
+        <h3>Soy de Miraflores Alto</h3>
+      </div>
+      <div id="i2" class="content futurista-content">
+        Ofertas locales, ferias, horarios CESFAM.
+      </div>
+
+      <div class="box futurista" onclick="toggle('i3')">
+        <h3>Deportes</h3>
+      </div>
+      <div id="i3" class="content futurista-content">
+        Noticias deportivas y fútbol amateur de Viña del Mar.
+      </div>
+
+      <div class="box futurista" onclick="toggle('i4')">
+        <h3>YouTube — Tips y Experiencias</h3>
+      </div>
+      <div id="i4" class="content futurista-content">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉN SOY -->
+  <section id="quien-soy" class="section">
+    <h2>Quién Soy</h2>
+    <p>Francisco Mallea — 20+ años de experiencia en sistemas, finanzas, automatización y análisis de datos.</p>
+  </section>
+
+  <!-- MODO MUNDIAL -->
+  <section id="modo-mundial" class="section">
+    <h2>Modo Mundial 2026</h2>
+    <div id="contenedor-grupos"></div>
+  </section>
+
+  <!-- SCRIPT -->
   <script>
-    function toggleCard(card) {
-      const isActive = card.classList.contains('active');
-      document.querySelectorAll('.service-card').forEach(c => c.classList.remove('active'));
-      if (!isActive) {
-        card.classList.add('active');
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle("futurista-open");
+    }
+
+    // Mostrar sección Servicios al hacer clic en el menú
+    document.getElementById("menu-servicios").addEventListener("click", (e) => {
+      e.preventDefault();
+      const servicios = document.getElementById("servicios");
+      servicios.style.display = "block";
+      window.scrollTo({ top: servicios.offsetTop, behavior: "smooth" });
+    });
+
+    const COMMUNAS = [
+      { name: "Coyhaique", city: "Coyhaique", country: "CL" },
+      { name: "Chiloé", city: "Castro", country: "CL" },
+      { name: "Temuco", city: "Temuco", country: "CL" },
+      { name: "Chillán", city: "Chillan", country: "CL" },
+      { name: "Rancagua", city: "Rancagua", country: "CL" },
+      { name: "Santiago", city: "Santiago", country: "CL" },
+      { name: "Viña del Mar", city: "Vina del Mar", country: "CL" },
+      { name: "La Serena", city: "La Serena", country: "CL" },
+      { name: "Antofagasta", city: "Antofagasta", country: "CL" },
+      { name: "Arica", city: "Arica", country: "CL" }
+    ];
+
+    async function getEconomics() {
+      try {
+        const res = await fetch("https://mindicador.cl/api");
+        const data = await res.json();
+
+        const dolar = data.dolar?.valor;
+        const uf = data.uf?.valor;
+        const utm = data.utm?.valor;
+        const ipsa = data.ipsa?.valor;
+
+        let parts = [];
+        if (ipsa) parts.push(`📈 IPSA: ${ipsa.toFixed(2)}`);
+        if (dolar) parts.push(`💵 Dólar: $${dolar.toFixed(2)}`);
+        if (uf) parts.push(`📊 UF: $${uf.toFixed(2)}`);
+        if (utm) parts.push(`📊 UTM: $${utm.toFixed(2)}`);
+
+        return parts.join(" | ");
+      } catch (e) {
+        return "⚠️ Datos económicos no disponibles";
       }
     }
+
+    async function getWeatherForComunas() {
+      let parts = [];
+
+      for (const c of COMMUNAS) {
+        try {
+          const url = `https://franciscomallea-automatizaciones-backend.onrender.com/api/weather?city=${encodeURIComponent(c.city)}&country=${c.country}`;
+          const res = await fetch(url);
+          const data = await res.json();
+
+          if (data.temperature && data.description) {
+            const temp = Math.round(data.temperature);
+            const desc = data.description;
+            const icon = getWeatherIcon(desc);
+            parts.push(`${icon} ${c.name}: ${temp}°C, ${desc}`);
+          } else {
+            parts.push(`⚠️ ${c.name}: sin datos`);
+          }
+        } catch (e) {
+          parts.push(`⚠️ ${c.name}: sin datos`);
+        }
+      }
+
+      return parts.join(" | ");
+    }
+
+    function getWeatherIcon(desc) {
+      const d = desc.toLowerCase();
+      if (d.includes("despejado")) return "☀️";
+      if (d.includes("nube")) return "☁️";
+      if (d.includes("lluvia")) return "🌧️";
+      if (d.includes("tormenta")) return "⛈️";
+      if (d.includes("nieve")) return "❄️";
+      return "🌡️";
+    }
+
+    async function buildTicker() {
+      const track = document.getElementById("ticker-track");
+      if (!track) return;
+
+      const econ = await getEconomics();
+      const weather = await getWeatherForComunas();
+
+      const text = `${econ} | ${weather}`;
+
+      track.textContent = `${text} | ${text} | ${text}`;
+    }
+
+    buildTicker();
+    setInterval(buildTicker, 15 * 60 * 1000);
   </script>
+
+  <script src="mundial.js"></script>
+
 </body>
 </html>
