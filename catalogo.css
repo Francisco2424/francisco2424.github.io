@@ -4,11 +4,12 @@ body {
     background: #f4f4f4;
 }
 
-/* Header */
+/* Header futurista */
 .header {
-    background: #1a237e;
+    background: linear-gradient(90deg, #0a0f1f 0%, #101a2f 100%);
     color: white;
     padding: 10px 20px;
+    border-bottom: 1px solid rgba(192,192,192,0.3);
 }
 
 .header-inner {
@@ -19,16 +20,33 @@ body {
     justify-content: space-between;
 }
 
+/* Marca futurista */
+.marca {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #c0c0c0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0,255,255,0.4);
+}
+
+/* Logo original (no se elimina, solo queda sin uso) */
 .logo span {
     font-weight: bold;
     font-size: 18px;
 }
 
+/* Navegación */
 .nav a {
     color: white;
     text-decoration: none;
     margin-left: 15px;
     font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #00bfff;
 }
 
 .nav a.activo {
@@ -76,10 +94,10 @@ body {
     transform: translateY(-5px);
 }
 
-/* Contenedor de imagen con ratio para evitar saltos de layout */
+/* Contenedor de imagen con ratio */
 .producto .img-wrap {
     width: 100%;
-    padding-top: 66.66%; /* 3:2 ratio; ajusta si prefieres 4:3 -> 75% */
+    padding-top: 66.66%;
     position: relative;
     background: #fafafa;
     border-radius: 6px;
@@ -87,7 +105,6 @@ body {
     display: block;
 }
 
-/* Imagen: ocupa todo el contenedor, mantiene proporción y no se deforma */
 .producto .img-wrap img {
     position: absolute;
     inset: 0;
@@ -98,7 +115,6 @@ body {
     background: #fff;
 }
 
-/* Si quieres forzar una altura fija en pantallas grandes */
 @media (min-width: 900px) {
   .producto .img-wrap { padding-top: 60%; }
 }
@@ -145,7 +161,7 @@ body {
     background: #1a237e;
 }
 
-/* Placeholder visual cuando la imagen falla (se aplica vía onerror en <img>) */
+/* Placeholder visual */
 .img-placeholder {
     display: flex;
     align-items: center;
