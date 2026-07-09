@@ -19,11 +19,12 @@
     <div class="ticker-track" id="ticker-track"></div>
   </div>
 
-  <!-- NAV FUTURISTA -->
+  <!-- NAV FUTURISTA (centrado y agrandado) -->
   <nav class="nav">
     <div class="nav-logo">Francisco2424</div>
+
     <div class="nav-links">
-      <a href="#servicios">Servicios</a>
+      <a href="#servicios" id="menu-servicios">Servicios</a>
       <a href="#informacion">Información</a>
       <a href="#quien-soy">Quién Soy</a>
       <a href="catalogo.html">Catálogo</a>
@@ -32,12 +33,12 @@
 
   <!-- HERO FUTURISTA -->
   <header class="hero">
-    <h1>Soluciones Futuristas en Sistemas y Automatización</h1>
-    <p>Software, análisis, automatización y herramientas para PyMEs y profesionales.</p>
+    <h1>Soluciones Avanzadas en Sistemas y Automatización</h1>
+    <p>Software, Análisis, Automatización y Herramientas para PyMEs y Profesionales.</p>
   </header>
 
-  <!-- SERVICIOS FUTURISTAS -->
-  <section id="servicios" class="section">
+  <!-- SERVICIOS FUTURISTAS (oculto al inicio) -->
+  <section id="servicios" class="section" style="display:none;">
     <h2>Servicios</h2>
 
     <div class="card futurista" onclick="toggle('s1')">
@@ -146,6 +147,14 @@
       const el = document.getElementById(id);
       el.classList.toggle("futurista-open");
     }
+
+    // Mostrar sección Servicios al hacer clic en el menú
+    document.getElementById("menu-servicios").addEventListener("click", (e) => {
+      e.preventDefault();
+      const servicios = document.getElementById("servicios");
+      servicios.style.display = "block";
+      window.scrollTo({ top: servicios.offsetTop, behavior: "smooth" });
+    });
 
     const COMMUNAS = [
       { name: "Coyhaique", city: "Coyhaique", country: "CL" },
