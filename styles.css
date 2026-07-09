@@ -7,10 +7,11 @@ body {
   margin: 0;
   background: #0a0f1f;
   color: #e5e9ff;
+  overflow-x: hidden;
 }
 
 /* ========================================================= */
-/* 🌌 FONDO FUTURISTA CON LÍNEAS PLATEADAS ANIMADAS */
+/* 🌌 FONDO FUTURISTA LIMPIO (SIN EFECTO TV) */
 /* ========================================================= */
 
 body::before {
@@ -18,21 +19,10 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 70%),
-    repeating-linear-gradient(
-      120deg,
-      rgba(192,192,192,0.15) 0px,
-      rgba(192,192,192,0.15) 1px,
-      transparent 2px,
-      transparent 6px
-    );
-  animation: moveLines 22s linear infinite;
+    linear-gradient(180deg, rgba(255,255,255,0.03), transparent),
+    linear-gradient(120deg, rgba(192,192,192,0.12) 0%, transparent 70%);
   z-index: -1;
-}
-
-@keyframes moveLines {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 900px 900px, 200px 400px; }
+  pointer-events: none;
 }
 
 /* ========================================================= */
@@ -57,11 +47,12 @@ body::before {
 
 /* LOGO */
 .logo-img {
-  height: 55px;
-  filter: drop-shadow(0 0 6px rgba(192,192,192,0.35));
+  height: 65px;
   margin-bottom: 0.8rem;
+  filter: drop-shadow(0 0 8px rgba(192,192,192,0.45));
 }
 
+/* Título alternativo si no hay logo */
 .nav-logo {
   font-size: 1.3rem;
   font-weight: 600;
