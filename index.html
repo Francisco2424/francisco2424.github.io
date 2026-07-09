@@ -25,8 +25,8 @@
 
     <div class="nav-links">
       <a href="#servicios" id="menu-servicios">Servicios</a>
-      <a href="#informacion">Información</a>
-      <a href="#quien-soy">Quién Soy</a>
+      <a href="#informacion" id="menu-informacion">Información</a>
+      <a href="#quien-soy" id="menu-quien">Quién Soy</a>
       <a href="catalogo.html">Catálogo</a>
     </div>
   </nav>
@@ -90,8 +90,8 @@
     </div>
   </section>
 
-  <!-- INFORMACIÓN ADICIONAL FUTURISTA -->
-  <section id="informacion" class="section">
+  <!-- INFORMACIÓN ADICIONAL (oculto al inicio) -->
+  <section id="informacion" class="section" style="display:none;">
     <h2>Información Adicional</h2>
 
     <div class="bar futurista-bar">IPSA · Minería · Petróleo</div>
@@ -129,14 +129,14 @@
     </div>
   </section>
 
-  <!-- QUIÉN SOY -->
-  <section id="quien-soy" class="section">
+  <!-- QUIÉN SOY (oculto al inicio) -->
+  <section id="quien-soy" class="section" style="display:none;">
     <h2>Quién Soy</h2>
     <p>Francisco Mallea — 20+ años de experiencia en sistemas, finanzas, automatización y análisis de datos.</p>
   </section>
 
-  <!-- MODO MUNDIAL -->
-  <section id="modo-mundial" class="section">
+  <!-- MODO MUNDIAL (oculto al inicio) -->
+  <section id="modo-mundial" class="section" style="display:none;">
     <h2>Modo Mundial 2026</h2>
     <div id="contenedor-grupos"></div>
   </section>
@@ -148,14 +148,31 @@
       el.classList.toggle("futurista-open");
     }
 
-    // Mostrar sección Servicios al hacer clic en el menú
+    // Mostrar sección Servicios
     document.getElementById("menu-servicios").addEventListener("click", (e) => {
       e.preventDefault();
-      const servicios = document.getElementById("servicios");
-      servicios.style.display = "block";
-      window.scrollTo({ top: servicios.offsetTop, behavior: "smooth" });
+      const s = document.getElementById("servicios");
+      s.style.display = "block";
+      window.scrollTo({ top: s.offsetTop, behavior: "smooth" });
     });
 
+    // Mostrar sección Información
+    document.getElementById("menu-informacion").addEventListener("click", (e) => {
+      e.preventDefault();
+      const i = document.getElementById("informacion");
+      i.style.display = "block";
+      window.scrollTo({ top: i.offsetTop, behavior: "smooth" });
+    });
+
+    // Mostrar sección Quién Soy
+    document.getElementById("menu-quien").addEventListener("click", (e) => {
+      e.preventDefault();
+      const q = document.getElementById("quien-soy");
+      q.style.display = "block";
+      window.scrollTo({ top: q.offsetTop, behavior: "smooth" });
+    });
+
+    // Ticker económico + clima
     const COMMUNAS = [
       { name: "Coyhaique", city: "Coyhaique", country: "CL" },
       { name: "Chiloé", city: "Castro", country: "CL" },
