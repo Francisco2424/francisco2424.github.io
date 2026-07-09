@@ -11,7 +11,7 @@ body {
 }
 
 /* ========================================================= */
-/* 🌌 FONDO FUTURISTA LIMPIO (SIN EFECTO TV) */
+/* 🌌 FONDO GENERAL CON IMAGEN SUAVE */
 /* ========================================================= */
 
 body::before {
@@ -19,8 +19,11 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.03), transparent),
-    linear-gradient(120deg, rgba(192,192,192,0.12) 0%, transparent 70%);
+    linear-gradient(180deg, rgba(10,15,31,0.85), rgba(10,15,31,0.95)),
+    url("images/Imagen parte de planeta tierra .jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   z-index: -1;
   pointer-events: none;
 }
@@ -50,15 +53,6 @@ body::before {
   height: 65px;
   margin-bottom: 0.8rem;
   filter: drop-shadow(0 0 8px rgba(192,192,192,0.45));
-}
-
-/* Título alternativo si no hay logo */
-.nav-logo {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #e5e9ff;
-  margin-bottom: 0.6rem;
-  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -97,14 +91,26 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 HERO FUTURISTA */
+/* 🌌 HERO FUTURISTA CON IMAGEN */
 /* ========================================================= */
 
 .hero {
+  position: relative;
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(180deg, #0b1120, #050816);
   border-bottom: 1px solid rgba(192,192,192,0.25);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("images/Mundo en Base con enlaces luz.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  filter: brightness(1.2) saturate(1.1);
+  z-index: -1;
 }
 
 .hero h1 {
@@ -124,317 +130,4 @@ body::before {
 
 .section {
   padding: 3rem 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-weight: 600;
-  color: #e5e9ff;
-  border-bottom: 1px solid rgba(192,192,192,0.25);
-  padding-bottom: 0.5rem;
-}
-
-/* ========================================================= */
-/* 🌌 CARDS FUTURISTAS */
-/* ========================================================= */
-
-.card {
-  background: #111827;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  border: 1px solid rgba(192,192,192,0.25);
-  transition: 0.25s ease;
-}
-
-.card:hover {
-  background: #1e293b;
-  transform: translateY(-2px);
-}
-
-.hint {
-  font-size: 0.8rem;
-  color: #9ca3af;
-}
-
-/* ========================================================= */
-/* 🌌 CONTENIDO DESPLEGABLE FUTURISTA */
-/* ========================================================= */
-
-.content {
-  display: none;
-  background: #1e293b;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(192,192,192,0.25);
-  opacity: 0;
-  transform: scale(0.97);
-  transition: all 0.35s ease;
-}
-
-.futurista-open {
-  display: block !important;
-  opacity: 1 !important;
-  transform: scale(1) !important;
-}
-
-/* ========================================================= */
-/* 🌌 BARRAS FUTURISTAS */
-/* ========================================================= */
-
-.bar {
-  background: #0f172a;
-  padding: 0.8rem 1rem;
-  border-radius: 999px;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(192,192,192,0.25);
-  font-size: 0.95rem;
-}
-
-/* ========================================================= */
-/* 🌌 GRID FUTURISTA */
-/* ========================================================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-}
-
-.box {
-  background: #111827;
-  padding: 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  border: 1px solid rgba(192,192,192,0.25);
-  transition: 0.25s ease;
-}
-
-.box:hover {
-  background: #1e293b;
-  transform: translateY(-2px);
-}
-
-/* ========================================================= */
-/* 🌌 TICKER FUTURISTA */
-/* ========================================================= */
-
-.ticker {
-  width: 100%;
-  background: #0d1b2a;
-  color: #e0e6ed;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(192,192,192,0.25);
-  padding: 4px 0;
-  font-size: 14px;
-  position: relative;
-}
-
-.ticker-track {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: ticker-scroll 40s linear infinite;
-  will-change: transform;
-}
-
-.ticker-track:hover {
-  animation-play-state: paused;
-  cursor: pointer;
-}
-
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ========================================================= */
-/* 🌌 TABLAS MUNDIAL FUTURISTAS */
-/* ========================================================= */
-
-.grupo-card {
-  margin-bottom: 40px;
-  padding: 20px;
-  background: #111827;
-  border-radius: 12px;
-  border: 1px solid rgba(192,192,192,0.25);
-}
-
-.grupo-card h3 {
-  margin-bottom: 1rem;
-  font-weight: 600;
-  color: #e5e9ff;
-  text-align: center;
-}
-
-.tabla-grupo {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  background: #0f172a;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.tabla-grupo th,
-.tabla-grupo td {
-  padding: 10px;
-  border-bottom: 1px solid rgba(192,192,192,0.25);
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.tabla-grupo th {
-  background: #1b233a;
-  color: #cbd5f5;
-  font-weight: 600;
-}
-
-.tabla-grupo tr:hover {
-  background: #1e293b;
-}
-
-.bandera {
-  width: 24px;
-  height: 16px;
-  margin-right: 6px;
-  vertical-align: middle;
-  border-radius: 2px;
-}
-/* ========================================================= */
-/* 📱 OPTIMIZACIÓN MÓVIL PROFESIONAL FRANCISCO2424 */
-/* ========================================================= */
-
-/* 🔹 Ajustes generales para pantallas pequeñas */
-@media (max-width: 768px) {
-
-  body {
-    font-size: 15px;
-  }
-
-  /* 🔹 Menú móvil */
-  .nav {
-    padding: 1rem 0.5rem;
-  }
-
-  .logo-img {
-    height: 48px;
-    margin-bottom: 0.5rem;
-  }
-
-  .nav-links {
-    gap: 1.4rem;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-    padding-bottom: 4px;
-  }
-
-  /* 🔹 HERO móvil */
-  .hero {
-    padding: 2.5rem 1rem;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  /* 🔹 Secciones */
-  .section {
-    padding: 2rem 1rem;
-  }
-
-  .section h2 {
-    font-size: 1.4rem;
-  }
-
-  /* 🔹 Cards */
-  .card {
-    padding: 0.8rem 1rem;
-  }
-
-  .card h3 {
-    font-size: 1.1rem;
-  }
-
-  .content {
-    font-size: 0.95rem;
-  }
-
-  /* 🔹 Grid móvil */
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .box {
-    padding: 0.8rem;
-  }
-
-  /* 🔹 Ticker móvil */
-  .ticker {
-    font-size: 12px;
-    padding: 3px 0;
-  }
-
-  /* 🔹 Tablas Mundial */
-  .tabla-grupo th,
-  .tabla-grupo td {
-    padding: 6px;
-    font-size: 0.8rem;
-  }
-
-  .bandera {
-    width: 20px;
-    height: 14px;
-  }
-}
-
-/* ========================================================= */
-/* 📱 OPTIMIZACIÓN EXTRA PARA PANTALLAS MUY PEQUEÑAS */
-/* ========================================================= */
-
-@media (max-width: 480px) {
-
-  .logo-img {
-    height: 40px;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .nav-links a {
-    font-size: 0.9rem;
-  }
-
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
-  .card h3 {
-    font-size: 1rem;
-  }
-
-  .content {
-    font-size: 0.9rem;
-  }
-
-  .section h2 {
-    font-size: 1.2rem;
-  }
-}
+  max-width: 900px
