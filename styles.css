@@ -251,3 +251,58 @@ body {
   vertical-align: middle;
   border-radius: 2px;
 }
+/* ========================================================= */
+/* 🌌 MENÚ PRINCIPAL CENTRADO Y DESTACADO */
+/* ========================================================= */
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #050816;
+  border-top: 1px solid rgba(192,192,192,0.25);
+  border-bottom: 1px solid rgba(192,192,192,0.25);
+  padding: 1.2rem 0;
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e5e9ff;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #cbd5f5;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #c0c0c0, #00bfff);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
