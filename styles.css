@@ -1,4 +1,7 @@
-/* GLOBAL */
+/* ========================================================= */
+/* 🌌 ESTILO GLOBAL FUTURISTA FRANCISCO2424 */
+/* ========================================================= */
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -6,7 +9,10 @@ body {
   color: #e5e9ff;
 }
 
-/* NAV */
+/* ========================================================= */
+/* 🌌 NAV FUTURISTA */
+/* ========================================================= */
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -15,12 +21,13 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid #1b233a;
+  border-bottom: 1px solid rgba(192,192,192,0.25);
 }
 
 .nav-logo {
   font-weight: 600;
   color: #e5e9ff;
+  letter-spacing: 1px;
 }
 
 .nav-links a {
@@ -34,11 +41,15 @@ body {
   color: #ffffff;
 }
 
-/* HERO */
+/* ========================================================= */
+/* 🌌 HERO FUTURISTA */
+/* ========================================================= */
+
 .hero {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(180deg, #0b1120, #050816);
+  border-bottom: 1px solid rgba(192,192,192,0.25);
 }
 
 .hero h1 {
@@ -47,7 +58,15 @@ body {
   font-weight: 600;
 }
 
-/* SECTIONS */
+.hero p {
+  font-size: 1.1rem;
+  color: #cbd5f5;
+}
+
+/* ========================================================= */
+/* 🌌 SECCIONES */
+/* ========================================================= */
+
 .section {
   padding: 3rem 2rem;
   max-width: 900px;
@@ -58,16 +77,22 @@ body {
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 600;
+  color: #e5e9ff;
+  border-bottom: 1px solid rgba(192,192,192,0.25);
+  padding-bottom: 0.5rem;
 }
 
-/* CARDS */
+/* ========================================================= */
+/* 🌌 CARDS FUTURISTAS */
+/* ========================================================= */
+
 .card {
   background: #111827;
   padding: 1rem 1.5rem;
   border-radius: 12px;
   margin-bottom: 1rem;
   cursor: pointer;
-  border: 1px solid #1f2937;
+  border: 1px solid rgba(192,192,192,0.25);
   transition: 0.25s ease;
 }
 
@@ -81,27 +106,46 @@ body {
   color: #9ca3af;
 }
 
-/* CONTENT */
+/* ========================================================= */
+/* 🌌 CONTENIDO DESPLEGABLE FUTURISTA */
+/* ========================================================= */
+
 .content {
   display: none;
   background: #1e293b;
   padding: 1rem;
   border-radius: 12px;
   margin-bottom: 1rem;
-  border: 1px solid #273449;
+  border: 1px solid rgba(192,192,192,0.25);
+  opacity: 0;
+  transform: scale(0.97);
+  transition: all 0.35s ease;
 }
 
-/* BARRAS */
+/* Estado abierto futurista */
+.futurista-open {
+  display: block !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* ========================================================= */
+/* 🌌 BARRAS FUTURISTAS */
+/* ========================================================= */
+
 .bar {
   background: #0f172a;
   padding: 0.8rem 1rem;
   border-radius: 999px;
   margin-bottom: 1rem;
-  border: 1px solid #1e293b;
+  border: 1px solid rgba(192,192,192,0.25);
   font-size: 0.95rem;
 }
 
-/* GRID */
+/* ========================================================= */
+/* 🌌 GRID FUTURISTA */
+/* ========================================================= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -113,7 +157,7 @@ body {
   padding: 1rem;
   border-radius: 12px;
   cursor: pointer;
-  border: 1px solid #1f2937;
+  border: 1px solid rgba(192,192,192,0.25);
   transition: 0.25s ease;
 }
 
@@ -123,7 +167,7 @@ body {
 }
 
 /* ========================================================= */
-/* 🟦 TICKER SUPERIOR — LOOP PERFECTO + PAUSA AL HOVER */
+/* 🌌 TICKER FUTURISTA */
 /* ========================================================= */
 
 .ticker {
@@ -131,7 +175,7 @@ body {
   background: #0d1b2a;
   color: #e0e6ed;
   overflow: hidden;
-  border-bottom: 1px solid #1b263b;
+  border-bottom: 1px solid rgba(192,192,192,0.25);
   padding: 4px 0;
   font-size: 14px;
   position: relative;
@@ -140,24 +184,22 @@ body {
 .ticker-track {
   display: inline-flex;
   white-space: nowrap;
-  animation: ticker-scroll 60s linear infinite;
+  animation: ticker-scroll 40s linear infinite;
   will-change: transform;
 }
 
-/* Pausar al pasar el cursor */
 .ticker-track:hover {
   animation-play-state: paused;
   cursor: pointer;
 }
 
-/* Loop perfecto sin cortes */
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
 /* ========================================================= */
-/* 🟩 TABLAS DEL MUNDIAL 2026 */
+/* 🌌 TABLAS MUNDIAL FUTURISTAS */
 /* ========================================================= */
 
 .grupo-card {
@@ -165,7 +207,7 @@ body {
   padding: 20px;
   background: #111827;
   border-radius: 12px;
-  border: 1px solid #1f2937;
+  border: 1px solid rgba(192,192,192,0.25);
 }
 
 .grupo-card h3 {
@@ -187,7 +229,7 @@ body {
 .tabla-grupo th,
 .tabla-grupo td {
   padding: 10px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid rgba(192,192,192,0.25);
   text-align: center;
   font-size: 0.9rem;
 }
