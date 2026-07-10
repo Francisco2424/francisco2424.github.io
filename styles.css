@@ -460,74 +460,13 @@ body::before {
   }
 }
 /* ========================================================= */
-/* 🌌 TARJETAS FUTURISTAS — ALINEACIÓN Y DESCRIPCIÓN SOBRE IMAGEN */
+/* 🌌 AJUSTE DE MARGEN INTERNO PARA SUBTÍTULO Y BOTÓN */
 /* ========================================================= */
 
-/* 🌌 Título principal “Servicios” centrado */
-.section h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #e5e9ff;
-  margin-bottom: 2.5rem;
-  letter-spacing: 1px;
-  text-shadow: 0 0 14px rgba(0,191,255,0.55);
-  border-bottom: 2px solid rgba(0,191,255,0.25);
-  padding-bottom: 0.6rem;
-}
-
-/* 🌌 Tarjeta futurista */
-.card {
-  position: relative;
-  background: #111827;
-  border-radius: 14px;
-  margin-bottom: 2rem;
-  cursor: pointer;
-  border: 1px solid rgba(192,192,192,0.25);
-  box-shadow: 0 0 18px rgba(0,191,255,0.08);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(0,191,255,0.18);
-}
-
-/* 🌌 Imagen de fondo */
-.card-img {
-  display: block;
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 14px;
-  filter: brightness(1.15) saturate(1.25);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover .card-img {
-  filter: brightness(1.3) saturate(1.4);
-  transform: scale(1.03);
-}
-
-/* 🌌 Overlay para texto sobre la imagen */
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.4rem;
-  background: linear-gradient(to top, rgba(10,15,31,0.85) 0%, rgba(10,15,31,0.35) 60%);
-  border-radius: 14px;
-  z-index: 2;
-}
-
-/* 🌌 Subtítulo del servicio (arriba, izquierda) */
 .card h3 {
   position: absolute;
   top: 1.2rem;
-  left: 1.0rem;
+  left: 1.8rem; /* antes 1.6rem → desplazado 2mm más a la derecha */
   z-index: 3;
   font-size: 1.3rem;
   font-weight: 600;
@@ -536,37 +475,10 @@ body::before {
   margin: 0;
 }
 
-/* 🌌 Descripción sobre la imagen */
-.card .content {
-  position: absolute;
-  bottom: 3.2rem;
-  left: 1.4rem;
-  right: 1.4rem;
-  z-index: 3;
-  background: rgba(17,24,39,0.75);
-  color: #cbd5f5;
-  padding: 0.8rem 1rem;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  line-height: 1.4rem;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(192,192,192,0.25);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.35s ease;
-}
-
-/* 🌌 Mostrar descripción al abrir */
-.futurista-open {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* 🌌 Acción “Click para ver más” */
 .card .hint {
   position: absolute;
   bottom: 1rem;
-  left: 1.4rem;
+  left: 1.8rem; /* antes 1.6rem → desplazado 2mm más a la derecha */
   z-index: 3;
   font-size: 0.85rem;
   color: #e5e9ff;
