@@ -527,7 +527,7 @@ body::before {
 .card h3 {
   position: absolute;
   top: 1.2rem;
-  left: 1.8rem;
+  left: 1.0rem;
   z-index: 3;
   font-size: 1.3rem;
   font-weight: 600;
