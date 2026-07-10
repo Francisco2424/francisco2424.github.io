@@ -460,21 +460,73 @@ body::before {
   }
 }
 /* ========================================================= */
-/* 🌌 IMÁGENES EN TARJETAS DE SERVICIOS (AJUSTADAS) */
+/* 🌌 TARJETAS FUTURISTAS CON IMÁGENES AJUSTADAS */
 /* ========================================================= */
 
+.card {
+  background: #111827;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  border: 1px solid rgba(192,192,192,0.25);
+  box-shadow: 0 0 18px rgba(0, 191, 255, 0.08);
+  overflow: hidden; /* evita que la imagen se desborde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.18);
+}
+
+/* 🌌 Imagen dentro de la tarjeta */
 .card-img {
+  display: block;
   width: 100%;
-  height: auto;
-  max-height: 220px;        /* evita que se desborde verticalmente */
-  object-fit: cover;        /* recorta suavemente para que encaje */
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-  filter: brightness(1.1) saturate(1.2) drop-shadow(0 0 10px rgba(192,192,192,0.25));
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: 200px; /* altura fija para uniformidad */
+  object-fit: cover; /* recorta suavemente sin deformar */
+  border-bottom: 1px solid rgba(192,192,192,0.25);
+  filter: brightness(1.15) saturate(1.25);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover .card-img {
-  transform: scale(1.02);
-  filter: brightness(1.25) saturate(1.3);
+  filter: brightness(1.3) saturate(1.4);
+  transform: scale(1.03);
+}
+
+/* 🌌 Título y texto */
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e5e9ff;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.card .hint {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* 🌌 Contenido desplegable */
+.content {
+  display: none;
+  background: #1e293b;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-top: 0.8rem;
+  border: 1px solid rgba(192,192,192,0.25);
+  opacity: 0;
+  transform: scale(0.97);
+  transition: all 0.35s ease;
+}
+
+.futurista-open {
+  display: block !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
