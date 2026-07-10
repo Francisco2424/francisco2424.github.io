@@ -11,7 +11,7 @@ body {
 }
 
 /* ========================================================= */
-/* 🌌 FONDO GENERAL CON IMAGEN SUAVE */
+/* 🌌 FONDO FUTURISTA LIMPIO (SIN EFECTO TV) */
 /* ========================================================= */
 
 body::before {
@@ -19,11 +19,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(10,15,31,0.85), rgba(10,15,31,0.95)),
-    url("images/Planetatierra1.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+    linear-gradient(180deg, rgba(255,255,255,0.03), transparent),
+    linear-gradient(120deg, rgba(192,192,192,0.12) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -100,27 +97,14 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 HERO FUTURISTA CON IMAGEN */
+/* 🌌 HERO FUTURISTA */
 /* ========================================================= */
 
 .hero {
-  position: relative;
   text-align: center;
   padding: 4rem 2rem;
-  overflow: hidden;
+  background: linear-gradient(180deg, #0b1120, #050816);
   border-bottom: 1px solid rgba(192,192,192,0.25);
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("images/MundoBaseConectado.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.22;
-  filter: brightness(1.2) saturate(1.1);
-  z-index: -1;
 }
 
 .hero h1 {
@@ -321,35 +305,18 @@ body::before {
   vertical-align: middle;
   border-radius: 2px;
 }
-
 /* ========================================================= */
-/* 🌌 QUIÉN SOY — IMAGEN VERTICAL */
-/* ========================================================= */
-
-.quien-soy-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.quien-img {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 14px;
-  filter: drop-shadow(0 0 12px rgba(192,192,192,0.35));
-}
-
-/* ========================================================= */
-/* 📱 OPTIMIZACIÓN MÓVIL */
+/* 📱 OPTIMIZACIÓN MÓVIL PROFESIONAL FRANCISCO2424 */
 /* ========================================================= */
 
+/* 🔹 Ajustes generales para pantallas pequeñas */
 @media (max-width: 768px) {
 
   body {
     font-size: 15px;
   }
 
+  /* 🔹 Menú móvil */
   .nav {
     padding: 1rem 0.5rem;
   }
@@ -368,8 +335,11 @@ body::before {
     padding-bottom: 4px;
   }
 
+  /* 🔹 HERO móvil */
   .hero {
     padding: 2.5rem 1rem;
+    background-size: cover;
+    background-position: center;
   }
 
   .hero h1 {
@@ -380,6 +350,7 @@ body::before {
     font-size: 1rem;
   }
 
+  /* 🔹 Secciones */
   .section {
     padding: 2rem 1rem;
   }
@@ -388,6 +359,7 @@ body::before {
     font-size: 1.4rem;
   }
 
+  /* 🔹 Cards */
   .card {
     padding: 0.8rem 1rem;
   }
@@ -400,6 +372,7 @@ body::before {
     font-size: 0.95rem;
   }
 
+  /* 🔹 Grid móvil */
   .grid {
     grid-template-columns: 1fr;
   }
@@ -408,11 +381,13 @@ body::before {
     padding: 0.8rem;
   }
 
+  /* 🔹 Ticker móvil */
   .ticker {
     font-size: 12px;
     padding: 3px 0;
   }
 
+  /* 🔹 Tablas Mundial */
   .tabla-grupo th,
   .tabla-grupo td {
     padding: 6px;
@@ -424,6 +399,10 @@ body::before {
     height: 14px;
   }
 }
+
+/* ========================================================= */
+/* 📱 OPTIMIZACIÓN EXTRA PARA PANTALLAS MUY PEQUEÑAS */
+/* ========================================================= */
 
 @media (max-width: 480px) {
 
@@ -458,38 +437,4 @@ body::before {
   .section h2 {
     font-size: 1.2rem;
   }
-}
-/* ========================================================= */
-/* 🌌 AJUSTE DE MARGEN INTERNO PARA SUBTÍTULO Y BOTÓN */
-/* ========================================================= */
-
-.card h3 {
-  position: absolute;
-  top: 1.2rem;
-  left: 1.8rem; /* antes 1.6rem → desplazado 2mm más a la derecha */
-  z-index: 3;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(0,191,255,0.45);
-  margin: 0;
-}
-
-.card .hint {
-  position: absolute;
-  bottom: 1rem;
-  left: 1.8rem; /* antes 1.6rem → desplazado 2mm más a la derecha */
-  z-index: 3;
-  font-size: 0.85rem;
-  color: #e5e9ff;
-  background: rgba(0,191,255,0.15);
-  padding: 4px 10px;
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.card:hover .hint {
-  background: rgba(0,191,255,0.3);
-  color: #ffffff;
 }
