@@ -460,11 +460,14 @@ body::before {
   }
 }
 /* ========================================================= */
-/* 🌌 IMÁGENES EN TARJETAS DE SERVICIOS */
+/* 🌌 IMÁGENES EN TARJETAS DE SERVICIOS (AJUSTADAS) */
 /* ========================================================= */
 
 .card-img {
   width: 100%;
+  height: auto;
+  max-height: 220px;        /* evita que se desborde verticalmente */
+  object-fit: cover;        /* recorta suavemente para que encaje */
   border-radius: 10px;
   margin-bottom: 0.8rem;
   filter: brightness(1.1) saturate(1.2) drop-shadow(0 0 10px rgba(192,192,192,0.25));
