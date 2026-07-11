@@ -49,7 +49,8 @@ body::before {
 }
 
 .logo-img {
-  height: 65px;
+  width: 180px;
+  height: auto;
   margin-bottom: 0.8rem;
   filter: drop-shadow(0 0 8px rgba(192,192,192,0.45));
 }
@@ -244,7 +245,20 @@ body::before {
   z-index: 4;
 }
 
-.futurista-open {
+.content-mobile {
+  display: none;
+}
+
+/* ========================================================= */
+/* 🌌 ACTIVACIÓN DE OVERLAYS (CORRECCIÓN EMPÍRICA) */
+/* ========================================================= */
+
+.card-media.futurista-open .content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card-media.futurista-open .content-mobile {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
@@ -396,17 +410,12 @@ body::before {
 
 @media (max-width: 768px) {
 
-  body {
-    font-size: 15px;
+  .logo-img {
+    width: 150px;
   }
 
   .nav {
     padding: 1rem 0.5rem;
-  }
-
-  .logo-img {
-    height: 48px;
-    margin-bottom: 0.5rem;
   }
 
   .nav-links {
@@ -415,7 +424,6 @@ body::before {
 
   .nav-links a {
     font-size: 1rem;
-    padding-bottom: 4px;
   }
 
   .hero {
@@ -474,7 +482,7 @@ body::before {
 @media (max-width: 480px) {
 
   .logo-img {
-    height: 40px;
+    width: 140px;
   }
 
   .nav-links {
@@ -505,10 +513,6 @@ body::before {
     font-size: 1.2rem;
   }
 
-  /* ========================================================= */
-  /* 📱 VERSIONES DE TEXTO PARA MÓVIL — INTEGRACIÓN LIMPIA */
-  /* ========================================================= */
-
   /* Mostrar versión resumida en móvil */
   .content-mobile {
     display: block;
@@ -530,16 +534,5 @@ body::before {
     transform: translateY(10px);
     transition: all 0.35s ease;
     z-index: 4;
-  }
-
-  /* Ocultar versión completa en móvil */
-  .content {
-    display: none;
-  }
-
-  /* Activación del overlay móvil */
-  .futurista-open .content-mobile {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
