@@ -49,10 +49,22 @@ body::before {
 }
 
 .logo-img {
-  width: 180px;
+  width: 260px;
   height: auto;
   margin-bottom: 0.8rem;
   filter: drop-shadow(0 0 8px rgba(192,192,192,0.45));
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 200px;
+  }
 }
 
 .nav-logo {
