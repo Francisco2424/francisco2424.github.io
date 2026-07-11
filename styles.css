@@ -512,3 +512,49 @@ body::before {
     font-size: 1.2rem;
   }
 }
+/* ========================================================= */
+/* 📱 VERSIONES DE TEXTO PARA MÓVIL */
+/* ========================================================= */
+
+/* Desktop: mostrar texto completo */
+.content-mobile {
+  display: none;
+}
+
+/* Móvil: mostrar texto resumido */
+@media (max-width: 480px) {
+
+  /* Ocultar texto completo en móvil */
+  .content {
+    display: none !important;
+  }
+
+  /* Mostrar texto resumido en móvil */
+  .content-mobile {
+    display: block !important;
+    font-size: 0.9rem;
+    padding: 1rem 1.2rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(17,24,39,0.35),
+      rgba(17,24,39,0.75)
+    );
+    border-radius: 0 0 12px 12px;
+    backdrop-filter: blur(6px);
+    color: #cbd5f5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.35s ease;
+    z-index: 4;
+  }
+
+  /* Activación del overlay móvil */
+  .futurista-open .content-mobile {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
