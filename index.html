@@ -11,10 +11,12 @@
 
 <body>
 
+  <!-- TICKER -->
   <div class="ticker">
     <div class="ticker-track" id="ticker-track"></div>
   </div>
 
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-logo">
       <img src="logo/Logo_Francisco2424.jpeg" alt="Francisco2424" class="logo-img">
@@ -27,22 +29,24 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <header class="hero">
     <h1>Soluciones Avanzadas en Sistemas y Automatización</h1>
     <p>Software, análisis, automatización y herramientas para PyMEs y profesionales.</p>
   </header>
 
+  <!-- SERVICIOS -->
   <section id="servicios" class="section" style="display:none;">
     <h2>Servicios</h2>
 
     <!-- SOFTWARE A MEDIDA -->
-    <div class="card futurista" onclick="toggle('s1')">
-      <div class="card-media">
+    <div class="card futurista" onclick="toggle('card1')">
+      <div id="card1" class="card-media">
         <img src="images/vialactea1.jpeg" class="card-img">
         <h3>Software a Medida (End to End)</h3>
         <p class="hint">Click para ver más</p>
 
-        <div id="s1" class="content futurista-content">
+        <div class="content futurista-content">
           <p><strong>Desarrollo completo de soluciones empresariales</strong> creadas desde cero según la realidad de cada cliente.</p>
           <p>Incluye levantamiento de información, validación de procesos, diseño de flujos eficientes, construcción de módulos funcionales e integración con sistemas existentes.</p>
           <p>Finaliza con reportes ejecutivos, paneles de control y documentación clara para asegurar continuidad operativa.</p>
@@ -56,13 +60,13 @@
     </div>
 
     <!-- AUTOMATIZACIÓN PEQUEÑA -->
-    <div class="card futurista" onclick="toggle('s2')">
-      <div class="card-media">
+    <div class="card futurista" onclick="toggle('card2')">
+      <div id="card2" class="card-media">
         <img src="images/vialactea2.jpeg" class="card-img">
         <h3>Automatización Pequeña</h3>
         <p class="hint">Click para ver más</p>
 
-        <div id="s2" class="content futurista-content">
+        <div class="content futurista-content">
           <p><strong>Soluciones rápidas y precisas</strong> para tareas repetitivas, bases de datos pequeñas o cálculos operativos.</p>
           <p>Incluye organización y validación de datos, generación automática de reportes y eliminación de procesos manuales.</p>
           <p>Ideal para PyMEs y áreas administrativas que buscan orden y eficiencia sin invertir en sistemas completos.</p>
@@ -76,13 +80,13 @@
     </div>
 
     <!-- ANÁLISIS DE DATOS -->
-    <div class="card futurista" onclick="toggle('s6')">
-      <div class="card-media">
+    <div class="card futurista" onclick="toggle('card3')">
+      <div id="card3" class="card-media">
         <img src="images/vialactea3.jpeg" class="card-img">
         <h3>Análisis de Datos</h3>
         <p class="hint">Click para ver más</p>
 
-        <div id="s6" class="content futurista-content">
+        <div class="content futurista-content">
           <p><strong>Transforma información dispersa en conocimiento útil.</strong></p>
           <p>Incluye dashboards, reportes ejecutivos e indicadores clave para decisiones rápidas sin depender de múltiples archivos Excel.</p>
           <p>Orientado a empresas que buscan menos estrés, menos manejo de plantillas y más productividad.</p>
@@ -96,13 +100,13 @@
     </div>
 
     <!-- ACTUALIZACIÓN DE SOFTWARE HEREDADO -->
-    <div class="card futurista" onclick="toggle('s3')">
-      <div class="card-media">
+    <div class="card futurista" onclick="toggle('card4')">
+      <div id="card4" class="card-media">
         <img src="images/vialactea4.jpeg" class="card-img">
         <h3>Actualización de Software Heredado</h3>
         <p class="hint">Click para ver más</p>
 
-        <div id="s3" class="content futurista-content">
+        <div class="content futurista-content">
           <p><strong>Modernización de sistemas antiguos que siguen siendo críticos para la operación.</strong></p>
           <p>Incluye nuevos módulos, corrección de errores, optimización de rendimiento y actualización tecnológica sin reconstrucción total.</p>
           <p>Permite proteger la inversión histórica y mejorar la estabilidad sin interrumpir la operación.</p>
@@ -116,13 +120,13 @@
     </div>
 
     <!-- SOFTWARE FINANCIEROS -->
-    <div class="card futurista" onclick="toggle('s4')">
-      <div class="card-media">
+    <div class="card futurista" onclick="toggle('card5')">
+      <div id="card5" class="card-media">
         <img src="images/vialactea5.jpeg" class="card-img">
         <h3>Software Financieros</h3>
         <p class="hint">Click para ver más</p>
 
-        <div id="s4" class="content futurista-content">
+        <div class="content futurista-content">
           <p><strong>Herramientas enfocadas en la eficiencia del negocio y la toma de decisiones.</strong></p>
           <p>Incluye identificación de fugas operativas, análisis financiero profundo, automatización de cálculos y control de gastos.</p>
           <p>Diseñado para empresas que necesitan ver su negocio con claridad y actuar con datos reales.</p>
@@ -136,13 +140,13 @@
     </div>
 
     <!-- SOFTWARE CONTABLES PERSONALIZADOS -->
-    <div class="card futurista" onclick="toggle('s5')">
-      <div class="card-media">
+    <div class="card futurista" onclick="toggle('card6')">
+      <div id="card6" class="card-media">
         <img src="images/vialactea6.jpeg" class="card-img">
         <h3>Software Contables Personalizados</h3>
         <p class="hint">Click para ver más</p>
 
-        <div id="s5" class="content futurista-content">
+        <div class="content futurista-content">
           <p><strong>Sistemas contables diseñados para adaptarse a la operación real de cada empresa.</strong></p>
           <p>Incluye integración con APIs oficiales, carga automática de documentos, conciliaciones y paneles de control.</p>
           <p>Permite ordenar la contabilidad, reducir errores y asegurar cumplimiento normativo.</p>
@@ -173,6 +177,7 @@
     <div id="contenedor-grupos"></div>
   </section>
 
+  <!-- SCRIPTS -->
   <script>
     function toggle(id) {
       const el = document.getElementById(id);
