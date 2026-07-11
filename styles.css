@@ -157,14 +157,14 @@ body::before {
 
 .card {
   background: #111827;
-  padding: 0; /* ahora la imagen ocupa el espacio superior */
+  padding: 0;
   border-radius: 12px;
   margin-bottom: 1rem;
   cursor: pointer;
   border: 1px solid rgba(192,192,192,0.25);
   transition: 0.25s ease;
   position: relative;
-  overflow: hidden; /* evita que el texto se salga */
+  overflow: hidden;
 }
 
 .card:hover {
@@ -233,18 +233,11 @@ body::before {
   bottom: 0;
   left: 0;
   right: 0;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(17,24,39,0.35),
-    rgba(17,24,39,0.75)
-  );
-
+  background: linear-gradient(to bottom, rgba(17,24,39,0.35), rgba(17,24,39,0.75));
   color: #cbd5f5;
   padding: 1rem 1.2rem;
   border-radius: 0 0 12px 12px;
   backdrop-filter: blur(6px);
-
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.35s ease;
@@ -511,27 +504,14 @@ body::before {
   .section h2 {
     font-size: 1.2rem;
   }
-}
-/* ========================================================= */
-/* 📱 VERSIONES DE TEXTO PARA MÓVIL */
-/* ========================================================= */
 
-/* Desktop: mostrar texto completo */
-.content-mobile {
-  display: none;
-}
+  /* ========================================================= */
+  /* 📱 VERSIONES DE TEXTO PARA MÓVIL — INTEGRACIÓN LIMPIA */
+  /* ========================================================= */
 
-/* Móvil: mostrar texto resumido */
-@media (max-width: 480px) {
-
-  /* Ocultar texto completo en móvil */
-  .content {
-    display: none !important;
-  }
-
-  /* Mostrar texto resumido en móvil */
+  /* Mostrar versión resumida en móvil */
   .content-mobile {
-    display: block !important;
+    display: block;
     font-size: 0.9rem;
     padding: 1rem 1.2rem;
     background: linear-gradient(
@@ -552,9 +532,14 @@ body::before {
     z-index: 4;
   }
 
+  /* Ocultar versión completa en móvil */
+  .content {
+    display: none;
+  }
+
   /* Activación del overlay móvil */
   .futurista-open .content-mobile {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
