@@ -57,7 +57,7 @@ body::before {
 
 @media (max-width: 768px) {
   .logo-img {
-    width: 150px;
+    width: 100px;
   }
 }
 
