@@ -48,14 +48,12 @@ body::before {
   box-shadow: 0 0 40px rgba(192,192,192,0.18);
 }
 
-/* LOGO */
 .logo-img {
   height: 65px;
   margin-bottom: 0.8rem;
   filter: drop-shadow(0 0 8px rgba(192,192,192,0.45));
 }
 
-/* Título alternativo si no hay logo */
 .nav-logo {
   font-size: 1.3rem;
   font-weight: 600;
@@ -154,17 +152,19 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 CARDS FUTURISTAS */
+/* 🌌 TARJETAS FUTURISTAS */
 /* ========================================================= */
 
 .card {
   background: #111827;
-  padding: 1rem 1.5rem;
+  padding: 0; /* ahora la imagen ocupa el espacio superior */
   border-radius: 12px;
   margin-bottom: 1rem;
   cursor: pointer;
   border: 1px solid rgba(192,192,192,0.25);
   transition: 0.25s ease;
+  position: relative;
+  overflow: hidden; /* evita que el texto se salga */
 }
 
 .card:hover {
@@ -172,31 +172,88 @@ body::before {
   transform: translateY(-2px);
 }
 
-.hint {
-  font-size: 0.8rem;
-  color: #9ca3af;
+/* ========================================================= */
+/* 🌌 IMAGEN + OVERLAYS */
+/* ========================================================= */
+
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
 }
 
 /* ========================================================= */
-/* 🌌 CONTENIDO DESPLEGABLE FUTURISTA */
+/* 🌌 TÍTULO SOBRE LA IMAGEN */
+/* ========================================================= */
+
+.card h3 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  margin: 0;
+  padding-left: 0.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0,191,255,0.45);
+  z-index: 3;
+}
+
+/* ========================================================= */
+/* 🌌 HINT SOBRE LA IMAGEN */
+/* ========================================================= */
+
+.card .hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  padding-left: 0.2rem;
+  background: rgba(0,191,255,0.15);
+  color: #e5e9ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+}
+
+/* ========================================================= */
+/* 🌌 DESCRIPCIÓN OVERLAY */
 /* ========================================================= */
 
 .content {
-  display: none;
-  background: #1e293b;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(192,192,192,0.25);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(17,24,39,0.35),
+    rgba(17,24,39,0.75)
+  );
+
+  color: #cbd5f5;
+  padding: 1rem 1.2rem;
+  border-radius: 0 0 12px 12px;
+  backdrop-filter: blur(6px);
+
   opacity: 0;
-  transform: scale(0.97);
+  transform: translateY(10px);
   transition: all 0.35s ease;
+  z-index: 4;
 }
 
 .futurista-open {
-  display: block !important;
   opacity: 1 !important;
-  transform: scale(1) !important;
+  transform: translateY(0) !important;
 }
 
 /* ========================================================= */
@@ -323,7 +380,7 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 QUIÉN SOY — IMAGEN VERTICAL */
+/* 🌌 QUIÉN SOY */
 /* ========================================================= */
 
 .quien-soy-container {
@@ -386,10 +443,6 @@ body::before {
 
   .section h2 {
     font-size: 1.4rem;
-  }
-
-  .card {
-    padding: 0.8rem 1rem;
   }
 
   .card h3 {
@@ -458,196 +511,4 @@ body::before {
   .section h2 {
     font-size: 1.2rem;
   }
-}
-
-/* ========================================================= */
-/* 🌌 DESCRIPCIÓN SOBRE LA IMAGEN AL HACER CLICK */
-/* ========================================================= */
-
-.content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  /* Fondo translúcido: muy transparente arriba → menos transparente abajo */
-  background: linear-gradient(
-    to bottom,
-    rgba(17,24,39,0.35),
-    rgba(17,24,39,0.75)
-  );
-
-  color: #cbd5f5;
-  padding: 1rem 1.2rem;
-  border-radius: 0 0 12px 12px;
-  backdrop-filter: blur(6px);
-
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.35s ease;
-  z-index: 4;
-}
-
-/* Mostrar descripción */
-.futurista-open {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-/* ========================================================= */
-/* 🌌 TARJETAS — TÍTULO SOBRE LA IMAGEN Y DESCRIPCIÓN OVERLAY */
-/* ========================================================= */
-
-/* La tarjeta debe permitir overlays */
-.card {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Imagen intacta */
-.card-img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-  filter: brightness(1.1) saturate(1.2) drop-shadow(0 0 10px rgba(192,192,192,0.25));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Título sobre la imagen */
-.card h3 {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  margin: 0;
-  padding-left: 0.2rem; /* ajuste fino */
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(0,191,255,0.45);
-  z-index: 3;
-}
-
-/* Botón “Click para ver más” sobre la imagen */
-.card .hint {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  padding-left: 0.2rem; /* ajuste fino */
-  background: rgba(0,191,255,0.15);
-  color: #e5e9ff;
-  padding: 4px 10px;
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
-  z-index: 3;
-}
-
-/* Descripción overlay */
-.content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(17,24,39,0.35),
-    rgba(17,24,39,0.75)
-  );
-
-  color: #cbd5f5;
-  padding: 1rem 1.2rem;
-  border-radius: 0 0 12px 12px;
-  backdrop-filter: blur(6px);
-
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.35s ease;
-  z-index: 4;
-}
-
-/* Mostrar descripción */
-.futurista-open {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-/* ========================================================= */
-/* 🌌 TARJETAS — TÍTULO SOBRE LA IMAGEN Y DESCRIPCIÓN OVERLAY */
-/* ========================================================= */
-
-/* La tarjeta debe permitir overlays */
-.card {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Imagen intacta */
-.card-img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-  filter: brightness(1.1) saturate(1.2) drop-shadow(0 0 10px rgba(192,192,192,0.25));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Título sobre la imagen */
-.card h3 {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  margin: 0;
-  padding-left: 0.2rem; /* ajuste fino */
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(0,191,255,0.45);
-  z-index: 3;
-}
-
-/* Botón “Click para ver más” sobre la imagen */
-.card .hint {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  padding-left: 0.2rem; /* ajuste fino */
-  background: rgba(0,191,255,0.15);
-  color: #e5e9ff;
-  padding: 4px 10px;
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
-  z-index: 3;
-}
-
-/* Descripción overlay */
-.content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(17,24,39,0.35),
-    rgba(17,24,39,0.75)
-  );
-
-  color: #cbd5f5;
-  padding: 1rem 1.2rem;
-  border-radius: 0 0 12px 12px;
-  backdrop-filter: blur(6px);
-
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.35s ease;
-  z-index: 4;
-}
-
-/* Mostrar descripción */
-.futurista-open {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
