@@ -48,6 +48,7 @@ body::before {
   box-shadow: 0 0 40px rgba(192,192,192,0.18);
 }
 
+/* ⭐ LOGO AJUSTADO */
 .logo-img {
   width: 360px;
   height: auto;
@@ -262,7 +263,7 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 ACTIVACIÓN DE OVERLAYS (CORRECCIÓN EMPÍRICA) */
+/* 🌌 ACTIVACIÓN DE OVERLAYS */
 /* ========================================================= */
 
 .card-media.futurista-open .content {
@@ -525,7 +526,11 @@ body::before {
     font-size: 1.2rem;
   }
 
-  /* Mostrar versión resumida en móvil */
+  /* ⭐ CORRECCIÓN MÓVIL — evitar superposición */
+  .content {
+    display: none !important;
+  }
+
   .content-mobile {
     display: block;
     font-size: 0.9rem;
