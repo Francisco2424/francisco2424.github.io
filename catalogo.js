@@ -1,7 +1,7 @@
 // catalogo.js - versión robusta y profesional
 
 const WHATSAPP_NUMBER = "56963485904"; // tu número sin + ni espacios
-const MARGEN_SUGERIDO = 0.40;
+const MARGEN_SUGERIDO = 0.20;
 
 // --- Utilidades ---
 function formatCLP(n) {
@@ -138,15 +138,25 @@ function abrirModal(producto) {
     // Limpiar carrusel
     carousel.innerHTML = "";
 
-    // Cargar imágenes desde carpeta /img/
-    const baseName = producto.sku_interno || producto.sku_proveedor || producto.id;
+    // Mostrar imagen principal local
+    if (producto.imagen_url_hosting) {
+        const imgPrincipal = document.createElement("img");
+        imgPrincipal.src = producto.imagen_url_hosting;
+        imgPrincipal.alt = producto.nombre;
+        imgPrincipal.className = "carousel-img";
+        carousel.appendChild(imgPrincipal);
+    }
 
-    for (let i = 1; i <= 8; i++) {
-        const imgPath = `img/${baseName}-${i}.jpg`;
-        const img = document.createElement("img");
-        img.src = imgPath;
-        img.onerror = () => img.remove();
-        carousel.appendChild(img);
+    // Agregar imágenes del proveedor (si existen)
+    if (Array.isArray(producto.imagenes_proveedor)) {
+        producto.imagenes_proveedor.forEach(url => {
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = producto.nombre;
+            img.loading = "lazy";
+            img.className = "carousel-img";
+            carousel.appendChild(img);
+        });
     }
 
     // Información del producto
@@ -154,10 +164,15 @@ function abrirModal(producto) {
     document.getElementById("modal-sku").textContent = "SKU: " + (producto.sku_interno || producto.sku_proveedor);
     document.getElementById("modal-precio").textContent = "Precio: " + formatCLP(calcularPrecioSugerido(producto.precio_proveedor));
     document.getElementById("modal-stock").textContent = producto.stock_disponible ? "Stock: " + producto.stock_disponible : "Sin stock";
-    document.getElementById("modal-despacho").textContent = "Despacho: 3 a 5 días hábiles";
-    document.getElementById("modal-descripcion").textContent = producto.descripcion || "Producto técnico de alta calidad.";
+    document.getElementById("modal-despacho").textContent = "Despacho: " + (producto.dias_despacho || 3) + " días hábiles";
 
-    // WhatsApp del modal (este sí se mantiene)
+    // Descripción extendida
+    document.getElementById("modal-descripcion").innerHTML = `
+        <p>${producto.descripcion || "Producto técnico de alta calidad."}</p>
+        <p><a href="${producto.url_producto_proveedor}" target="_blank">Ver ficha técnica completa</a></p>
+    `;
+
+    // WhatsApp del modal
     document.getElementById("modal-whatsapp").href =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
             "Hola, quiero comprar " + producto.nombre + " - SKU: " + (producto.sku_interno || producto.sku_proveedor)
@@ -165,6 +180,27 @@ function abrirModal(producto) {
 
     // Mostrar modal
     modal.classList.remove("oculto");
+
+    // Activar carrusel automático
+    iniciarCarrusel(carousel);
+}
+
+// Carrusel automático cada 3 segundos
+function iniciarCarrusel(carousel) {
+    const imgs = carousel.querySelectorAll(".carousel-img");
+    let index = 0;
+
+    if (imgs.length <= 1) return; // si hay una sola imagen, no se mueve
+
+    imgs.forEach((img, i) => {
+        img.style.opacity = i === 0 ? "1" : "0";
+    });
+
+    setInterval(() => {
+        imgs[index].style.opacity = "0";
+        index = (index + 1) % imgs.length;
+        imgs[index].style.opacity = "1";
+    }, 3000);
 }
 
 // Cerrar modal con animación futurista
