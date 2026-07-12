@@ -54,16 +54,11 @@ function crearTarjeta(producto) {
 
       <div class="btns">
 
-        <!-- Botón WhatsApp -->
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, quiero consultar por ' + producto.nombre + ' - SKU: ' + (producto.sku_interno || producto.sku_proveedor))}"
-           target="_blank">
-          WhatsApp
-        </a>
-
         <!-- Botón Consultar -->
         <a class="btn btn-info"
-           href="formulario.html?producto=${encodeURIComponent(producto.sku_interno || producto.sku_proveedor || producto.id)}">
+           href="formulario.html?producto=${encodeURIComponent(
+             producto.sku_interno || producto.sku_proveedor || producto.id
+           )}">
           Consultar
         </a>
 
@@ -162,7 +157,7 @@ function abrirModal(producto) {
     document.getElementById("modal-despacho").textContent = "Despacho: 3 a 5 días hábiles";
     document.getElementById("modal-descripcion").textContent = producto.descripcion || "Producto técnico de alta calidad.";
 
-    // WhatsApp
+    // WhatsApp del modal (este sí se mantiene)
     document.getElementById("modal-whatsapp").href =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
             "Hola, quiero comprar " + producto.nombre + " - SKU: " + (producto.sku_interno || producto.sku_proveedor)
