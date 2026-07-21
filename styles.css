@@ -559,6 +559,36 @@ body::before {
 }
 
 /* ========================================================= */
+/* ✨ Animación lateral para imágenes — QUIÉN SOY */
+/* ========================================================= */
+
+.quien-img-side {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideInSide 1.2s ease forwards;
+}
+
+.quien-img-side.left {
+  transform: translateX(-40px);
+}
+
+@keyframes slideInSide {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--slide-start, -40px));
+  }
+  60% {
+    opacity: 0.9;
+    transform: translateX(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ========================================================= */
 /* 📱 OPTIMIZACIÓN MÓVIL */
 /* ========================================================= */
 
