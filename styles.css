@@ -538,7 +538,7 @@ body::before {
   .quien-img-side {
     width: 70%;
     height: auto;
-    max-height: 420px;
+    max-height: 450px;
     border-radius: 12px;
     justify-self: center;
   }
