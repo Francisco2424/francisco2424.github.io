@@ -473,6 +473,79 @@ body::before {
 }
 
 /* ========================================================= */
+/* 🌌 QUIÉN SOY — Versión Final Optimizada */
+/* ========================================================= */
+
+.quien-soy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Imagen base */
+.quien-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  filter: drop-shadow(0 0 12px rgba(192,192,192,0.35));
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor que permite overlay */
+.quien-soy-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Texto sobre la imagen */
+.quien-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(10, 25, 60, 0.78);
+  padding: 1.4rem;
+  border-radius: 0 0 14px 14px;
+
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 20px rgba(56,189,248,0.25);
+}
+
+/* Animación de entrada */
+.animate-entry {
+  animation: fadeInUp 1.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: drop-shadow(0 0 0 rgba(56,189,248,0));
+  }
+  60% {
+    opacity: 0.85;
+    transform: translateY(10px);
+    filter: drop-shadow(0 0 12px rgba(56,189,248,0.4));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: drop-shadow(0 0 18px rgba(56,189,248,0.6));
+  }
+}
+
+/* ========================================================= */
 /* 📱 OPTIMIZACIÓN MÓVIL */
 /* ========================================================= */
 
