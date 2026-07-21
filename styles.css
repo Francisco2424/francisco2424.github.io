@@ -473,47 +473,51 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 QUIÉN SOY — Versión Final Funcional */
+/* 🌌 QUIÉN SOY — Versión Final con Imágenes Laterales */
 /* ========================================================= */
 
 .quien-soy-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.2rem;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
-.quien-soy-wrapper {
-  position: relative;
-  display: inline-block;
-  max-width: 420px;
+.quien-soy-side {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: center;
 }
 
 .quien-img {
   width: 100%;
+  max-width: 280px;
   border-radius: 14px;
   filter: drop-shadow(0 0 12px rgba(192,192,192,0.35));
-  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Texto sobre la imagen */
-.quien-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(10, 25, 60, 0.78);
-  padding: 1.4rem;
-  border-radius: 0 0 14px 14px;
+.quien-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(56,189,248,0.45);
+}
+
+.quien-soy-text {
+  flex: 2 1 480px;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #d1d5db;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  text-align: center;
+  background: rgba(10, 25, 60, 0.6);
+  padding: 1.6rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(56,189,248,0.25);
+  backdrop-filter: blur(6px);
   opacity: 0;
   transform: translateY(20px);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 20px rgba(56,189,248,0.25);
-  z-index: 2;
 }
 
 /* ✨ Animación de entrada */
@@ -536,6 +540,22 @@ body::before {
     opacity: 1;
     transform: translateY(0);
     filter: drop-shadow(0 0 18px rgba(56,189,248,0.6));
+  }
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+  .quien-soy-container {
+    flex-direction: column;
+  }
+
+  .quien-soy-side {
+    order: 1;
+  }
+
+  .quien-soy-text {
+    order: 2;
+    margin-top: 1rem;
   }
 }
 
