@@ -473,7 +473,7 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 QUIÉN SOY — Versión Final Optimizada */
+/* 🌌 QUIÉN SOY — Versión Final Funcional */
 /* ========================================================= */
 
 .quien-soy-container {
@@ -483,20 +483,17 @@ body::before {
   gap: 1.2rem;
 }
 
-/* Imagen base */
-.quien-img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 14px;
-  filter: drop-shadow(0 0 12px rgba(192,192,192,0.35));
-  position: relative;
-  z-index: 1;
-}
-
-/* Contenedor que permite overlay */
 .quien-soy-wrapper {
   position: relative;
   display: inline-block;
+  max-width: 420px;
+}
+
+.quien-img {
+  width: 100%;
+  border-radius: 14px;
+  filter: drop-shadow(0 0 12px rgba(192,192,192,0.35));
+  display: block;
 }
 
 /* Texto sobre la imagen */
@@ -505,24 +502,21 @@ body::before {
   bottom: 0;
   left: 0;
   right: 0;
-
   background: rgba(10, 25, 60, 0.78);
   padding: 1.4rem;
   border-radius: 0 0 14px 14px;
-
   color: #d1d5db;
   font-size: 0.95rem;
   line-height: 1.55;
   text-align: center;
-
   opacity: 0;
   transform: translateY(20px);
   backdrop-filter: blur(6px);
-
   box-shadow: 0 0 20px rgba(56,189,248,0.25);
+  z-index: 2;
 }
 
-/* Animación de entrada */
+/* ✨ Animación de entrada */
 .animate-entry {
   animation: fadeInUp 1.4s ease forwards;
 }
