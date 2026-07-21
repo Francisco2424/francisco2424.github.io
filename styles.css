@@ -473,40 +473,32 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 QUIÉN SOY — Versión Final con Imágenes Laterales */
+/* 🌌 QUIÉN SOY — Imágenes laterales alargadas */
 /* ========================================================= */
 
 .quien-soy-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap;
   margin-top: 1.5rem;
 }
 
-.quien-soy-side {
-  flex: 1 1 280px;
-  display: flex;
-  justify-content: center;
-}
-
-.quien-img {
-  width: 100%;
-  max-width: 280px;
+/* Imágenes laterales alargadas */
+.quien-img-side {
+  width: 180px;
+  height: auto;
+  object-fit: cover;
   border-radius: 14px;
   filter: drop-shadow(0 0 12px rgba(192,192,192,0.35));
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  align-self: stretch;
 }
 
-.quien-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(56,189,248,0.45);
-}
-
+/* Texto central */
 .quien-soy-text {
-  flex: 2 1 480px;
+  flex: 1;
+  max-width: 600px;
   text-align: justify;
   font-size: 1rem;
   line-height: 1.6;
@@ -529,32 +521,30 @@ body::before {
   0% {
     opacity: 0;
     transform: translateY(30px);
-    filter: drop-shadow(0 0 0 rgba(56,189,248,0));
   }
   60% {
     opacity: 0.85;
     transform: translateY(10px);
-    filter: drop-shadow(0 0 12px rgba(56,189,248,0.4));
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: drop-shadow(0 0 18px rgba(56,189,248,0.6));
   }
 }
 
-/* 📱 Responsividad */
+/* 📱 Responsivo */
 @media (max-width: 768px) {
   .quien-soy-container {
     flex-direction: column;
+    align-items: center;
   }
 
-  .quien-soy-side {
-    order: 1;
+  .quien-img-side {
+    width: 70%;
+    max-width: 300px;
   }
 
   .quien-soy-text {
-    order: 2;
     margin-top: 1rem;
   }
 }
