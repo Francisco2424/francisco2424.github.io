@@ -473,24 +473,25 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 QUIÉN SOY — Imágenes laterales alargadas (ajuste final) */
+/* 🌌 QUIÉN SOY — Panel con imágenes laterales sincronizadas */
 /* ========================================================= */
 
+/* GRID PRINCIPAL */
 .quien-soy-grid {
   display: grid;
   grid-template-columns: 260px minmax(420px, 1fr) 260px;
-  align-items: start;
+  align-items: stretch; /* IMPORTANTE: permite que las imágenes crezcan */
   gap: 2rem;
   margin-top: 1.5rem;
   width: 100%;
 }
 
-/* Control de altura base para el bloque de texto (ajustable) */
+/* Variable dinámica que JS actualizará con la altura real del texto */
 :root {
-  --quien-text-min-height: 56vh; /* ajustar si quieres más/menos altura en escritorio */
+  --quien-text-height: auto;
 }
 
-/* Texto central: altura mínima que define la altura de las imágenes */
+/* TEXTO CENTRAL */
 .quien-soy-text {
   padding: 1.8rem 2rem;
   color: #e6eef8;
@@ -500,78 +501,37 @@ body::before {
   background: rgba(10,25,60,0.06);
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(2,6,23,0.25);
-  min-height: var(--quien-text-min-height);
   display: flex;
   align-items: center;
 }
 
-/* Imágenes laterales: verticales, alargadas y un poco más altas que el texto */
+/* ========================================================= */
+/* IMÁGENES LATERALES — altura sincronizada + animación */
+/* ========================================================= */
+
 .quien-img-side {
   width: 100%;
-  height: calc(var(--quien-text-min-height) + 48px); /* 48px más que el texto */
-  max-height: calc(100vh - 120px);
+  height: var(--quien-text-height); /* ALTURA REAL DEL TEXTO */
   object-fit: cover;
   border-radius: 14px;
   filter: drop-shadow(0 10px 28px rgba(0,0,0,0.36));
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
   justify-self: center;
-}
 
-/* Hover sutil para las imágenes */
-.quien-img-side:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 22px 48px rgba(56,189,248,0.18);
-}
-
-/* Animación de entrada (solo para el texto) */
-.animate-entry {
-  animation: fadeInUp 1.2s cubic-bezier(.2,.9,.2,1) forwards;
+  /* Animación lateral */
   opacity: 0;
-  transform: translateY(20px);
-}
-
-@keyframes fadeInUp {
-  0%   { opacity: 0; transform: translateY(30px); }
-  60%  { opacity: 0.95; transform: translateY(8px); filter: drop-shadow(0 0 8px rgba(56,189,248,0.18)); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* 📱 Responsividad: en pantallas pequeñas las imágenes se apilan y se reducen */
-@media (max-width: 980px) {
-  .quien-soy-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .quien-img-side {
-    width: 72%;
-    height: auto;
-    max-height: 420px;
-    border-radius: 12px;
-    justify-self: center;
-  }
-
-  .quien-soy-text {
-    min-height: auto;
-    padding: 1.2rem;
-    order: 2;
-  }
-}
-
-/* ========================================================= */
-/* ✨ Animación lateral para imágenes — QUIÉN SOY */
-/* ========================================================= */
-
-.quien-img-side {
-  opacity: 0;
-  transform: translateX(40px);
   animation: slideInSide 1.2s ease forwards;
 }
 
+/* Dirección de entrada */
 .quien-img-side.left {
   transform: translateX(-40px);
 }
 
+.quien-img-side.right {
+  transform: translateX(40px);
+}
+
+/* Animación */
 @keyframes slideInSide {
   0% {
     opacity: 0;
@@ -587,6 +547,51 @@ body::before {
   }
 }
 
+/* Hover sutil */
+.quien-img-side:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 22px 48px rgba(56,189,248,0.18);
+}
+
+/* ========================================================= */
+/* ANIMACIÓN DEL TEXTO */
+/* ========================================================= */
+
+.animate-entry {
+  animation: fadeInUp 1.2s cubic-bezier(.2,.9,.2,1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translateY(30px); }
+  60%  { opacity: 0.95; transform: translateY(8px); filter: drop-shadow(0 0 8px rgba(56,189,248,0.18)); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================= */
+/* RESPONSIVE */
+/* ========================================================= */
+
+@media (max-width: 980px) {
+  .quien-soy-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .quien-img-side {
+    width: 72%;
+    height: auto;
+    max-height: 420px;
+    border-radius: 12px;
+    justify-self: center;
+  }
+
+  .quien-soy-text {
+    padding: 1.2rem;
+    order: 2;
+  }
+}
 
 /* ========================================================= */
 /* 📱 OPTIMIZACIÓN MÓVIL */

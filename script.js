@@ -1,10 +1,10 @@
 console.log("Página cargada correctamente (versión futurista).");
-console.log("Página cargada correctamente (versión futurista).");
 
 // Ajustar altura de imágenes laterales según el alto del texto
 function ajustarAlturaQuienSoy() {
   const texto = document.querySelector(".quien-soy-text");
   if (!texto) return;
+
   const altura = texto.offsetHeight;
   document.documentElement.style.setProperty("--quien-text-height", altura + "px");
 }
@@ -22,7 +22,7 @@ document.getElementById("btn-quien-soy").addEventListener("click", function() {
   // Reiniciar animación del texto
   const txt = document.querySelector(".quien-soy-text");
   txt.classList.remove("animate-entry");
-  void txt.offsetWidth; // reinicia animación
+  void txt.offsetWidth;
   txt.classList.add("animate-entry");
 
   // Reiniciar animación lateral de imágenes
@@ -34,4 +34,9 @@ document.getElementById("btn-quien-soy").addEventListener("click", function() {
 
   // Ajustar altura de imágenes después de que el texto esté visible
   setTimeout(ajustarAlturaQuienSoy, 80);
+});
+
+// Recalcular altura si la ventana cambia (móviles, tablets, zoom)
+window.addEventListener("resize", () => {
+  ajustarAlturaQuienSoy();
 });
