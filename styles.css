@@ -798,3 +798,27 @@ body::before {
     border-radius: 10px;
   }
 }
+/* ========================================================= */
+/* 🖥️ Ocultar versión móvil en escritorio */
+/* ========================================================= */
+
+.quien-soy-mobile {
+  display: none;
+}
+
+/* ========================================================= */
+/* 📱 Mostrar versión móvil solo en pantallas pequeñas */
+/* ========================================================= */
+
+@media (max-width: 980px) {
+
+  /* Ocultar versión escritorio */
+  .quien-soy-grid {
+    display: none !important;
+  }
+
+  /* Mostrar versión móvil */
+  .quien-soy-mobile {
+    display: flex !important;
+  }
+}
