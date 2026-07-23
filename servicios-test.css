@@ -1,0 +1,110 @@
+/* CONTENEDOR GENERAL DEL STACK */
+.stack-wrapper {
+  position: relative;
+  max-width: 960px;
+  margin: 3rem auto;
+  height: 420px;
+}
+
+/* TARJETA BASE */
+.stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0b0f1a;
+  border: 1px solid rgba(0,191,255,0.35);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: row;
+}
+
+/* TARJETA PRINCIPAL (entra desde la izquierda) */
+.stack-card-main {
+  transform: translateX(-40px);
+  opacity: 0;
+  animation: stackMainIn 0.7s ease-out forwards;
+}
+
+/* TARJETA SECUNDARIA (se apila encima) */
+.stack-card-secondary {
+  transform: translateX(40px) translateY(40px);
+  opacity: 0;
+  animation: stackSecondaryIn 0.9s ease-out forwards;
+}
+
+/* MEDIA (IMAGEN) */
+.stack-card-media {
+  flex: 0 0 45%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.stack-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENIDO */
+.stack-card-content {
+  flex: 1;
+  padding: 2rem;
+  color: #e6eef8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stack-card-content h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.6rem;
+  color: #00bfff;
+  text-shadow: 0 0 14px rgba(0,191,255,0.55);
+}
+
+.stack-card-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ANIMACIONES TIPO ACCENTURE: PANEL QUE ENTRA Y SE APILA */
+@keyframes stackMainIn {
+  from {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes stackSecondaryIn {
+  from {
+    transform: translateX(80px) translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(40px) translateY(40px);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE SIMPLE */
+@media (max-width: 768px) {
+  .stack-card {
+    flex-direction: column;
+  }
+
+  .stack-card-media {
+    flex: 0 0 40%;
+    height: 180px;
+  }
+
+  .stack-wrapper {
+    height: auto;
+  }
+}
