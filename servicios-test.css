@@ -2,8 +2,9 @@
 .stack-wrapper {
   position: relative;
   max-width: 960px;
-  margin: 3rem auto;
+  margin: 4rem auto;
   height: 420px;
+  perspective: 1200px;
 }
 
 /* TARJETA BASE */
@@ -14,38 +15,48 @@
   width: 100%;
   border-radius: 18px;
   overflow: hidden;
-  background: #0b0f1a;
+  background: linear-gradient(145deg, #0b0f1a 60%, #101828 100%);
   border: 1px solid rgba(0,191,255,0.35);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
   display: flex;
   flex-direction: row;
+  transform-style: preserve-3d;
 }
 
 /* TARJETA PRINCIPAL (entra desde la izquierda) */
 .stack-card-main {
-  transform: translateX(-40px);
+  transform: translateX(-40px) rotateY(-6deg);
   opacity: 0;
-  animation: stackMainIn 0.7s ease-out forwards;
+  animation: stackMainIn 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
 /* TARJETA SECUNDARIA (se apila encima) */
 .stack-card-secondary {
-  transform: translateX(40px) translateY(40px);
+  transform: translateX(40px) translateY(40px) rotateY(6deg);
   opacity: 0;
-  animation: stackSecondaryIn 0.9s ease-out forwards;
+  animation: stackSecondaryIn 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
 /* MEDIA (IMAGEN) */
 .stack-card-media {
-  flex: 0 0 45%;
+  flex: 0 0 50%;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .stack-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  filter: brightness(0.85) contrast(1.1);
+  transition: transform 0.8s ease-out, filter 0.8s ease-out;
+}
+
+.stack-card-media img:hover {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.25);
 }
 
 /* CONTENIDO */
@@ -56,6 +67,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: rgba(11, 15, 26, 0.7);
+  backdrop-filter: blur(6px);
+  border-left: 2px solid rgba(0,191,255,0.4);
 }
 
 .stack-card-content h3 {
@@ -70,25 +84,25 @@
   line-height: 1.7;
 }
 
-/* ANIMACIONES TIPO ACCENTURE: PANEL QUE ENTRA Y SE APILA */
+/* ANIMACIONES TIPO ACCENTURE */
 @keyframes stackMainIn {
   from {
-    transform: translateX(-80px);
+    transform: translateX(-80px) rotateY(-10deg);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateX(0) rotateY(0deg);
     opacity: 1;
   }
 }
 
 @keyframes stackSecondaryIn {
   from {
-    transform: translateX(80px) translateY(80px);
+    transform: translateX(80px) translateY(80px) rotateY(10deg);
     opacity: 0;
   }
   to {
-    transform: translateX(40px) translateY(40px);
+    transform: translateX(40px) translateY(40px) rotateY(0deg);
     opacity: 1;
   }
 }
@@ -97,6 +111,7 @@
 @media (max-width: 768px) {
   .stack-card {
     flex-direction: column;
+    transform: none;
   }
 
   .stack-card-media {
