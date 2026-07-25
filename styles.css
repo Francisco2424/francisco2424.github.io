@@ -1003,3 +1003,52 @@ body::before {
     font-size: 2rem;
   }
 }
+
+/* ========================================================= */
+/* ⭐ TEXTO DESCRIPTIVO AL PASAR EL CURSOR SOBRE LA IMAGEN */
+/* ========================================================= */
+
+.overlay-beneficios {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 280px;
+
+  background: rgba(5, 10, 25, 0.85);
+  border: 1px solid rgba(0, 191, 255, 0.35);
+  border-radius: 14px;
+
+  padding: 1.2rem;
+  color: #e6eef8;
+  font-size: 0.95rem;
+  line-height: 1.45;
+
+  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.35s ease;
+  pointer-events: none; /* evita interferencias */
+}
+
+.overlay-beneficios h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  color: #00bfff;
+}
+
+.overlay-beneficios ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.overlay-beneficios li {
+  margin-bottom: 0.4rem;
+}
+
+/* ⭐ Mostrar beneficios al pasar el cursor por la imagen lateral */
+.overlay-side-image:hover + .overlay-beneficios {
+  opacity: 1;
+  transform: translateY(0);
+}
