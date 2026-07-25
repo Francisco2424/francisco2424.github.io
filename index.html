@@ -512,6 +512,47 @@
   });
 </script>
 
+<script>
+  // Activar beneficios al pasar el cursor por la imagen lateral
+  document.querySelectorAll('.overlay-side-image').forEach(img => {
+    img.addEventListener('mouseenter', () => {
+      const modulo = img.closest('.overlay-accenture');
+      modulo.classList.add('beneficios-activos');
+    });
+  });
+
+  // Al cerrar el módulo, quitar la clase
+  function cerrarModulo(id) {
+    const el = document.getElementById(id);
+    el.style.display = 'none';
+    el.classList.remove('beneficios-activos');
+  }
+
+  // Cerrar con ESC también limpia la clase
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      const modulos = [
+        "modulo-software",
+        "modulo-automatizacion",
+        "modulo-analisis",
+        "modulo-heredado",
+        "modulo-financieros",
+        "modulo-contables"
+      ];
+
+      modulos.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.style.display === "flex") {
+          el.style.display = "none";
+          el.classList.remove('beneficios-activos');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+</script>
+
 
 </body>
 </html>

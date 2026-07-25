@@ -1010,20 +1010,20 @@ body::before {
 
 .overlay-beneficios {
   position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
-  width: 280px;
+  right: 2rem;
+  top: 2rem;
+  width: 360px;
 
-  background: rgba(5, 10, 25, 0.85);
-  border: 1px solid rgba(0, 191, 255, 0.35);
-  border-radius: 14px;
+  background: rgba(5, 10, 25, 0.88);
+  border: 1px solid rgba(0, 191, 255, 0.45);
+  border-radius: 16px;
 
-  padding: 1.2rem;
+  padding: 1.6rem;
   color: #e6eef8;
-  font-size: 0.95rem;
-  line-height: 1.45;
+  font-size: 1.05rem;
+  line-height: 1.55;
 
-  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
+  box-shadow: 0 0 32px rgba(0, 191, 255, 0.28);
 
   opacity: 0;
   transform: translateY(10px);
@@ -1033,22 +1033,22 @@ body::before {
 
 .overlay-beneficios h3 {
   margin-top: 0;
-  margin-bottom: 0.6rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
   color: #00bfff;
 }
 
 .overlay-beneficios ul {
   margin: 0;
-  padding-left: 1.2rem;
+  padding-left: 1.3rem;
 }
 
 .overlay-beneficios li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
-/* ⭐ Mostrar beneficios al pasar el cursor por la imagen lateral */
-.overlay-side-image:hover + .overlay-beneficios {
-  opacity: 1;
-  transform: translateY(0);
+/* ⭐ Cuando el módulo está activo, los beneficios quedan visibles */
+.overlay-accenture.beneficios-activos .overlay-beneficios {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
