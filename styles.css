@@ -924,6 +924,14 @@ body::before {
   transform: scale(1.15);
 }
 
+/* ⭐ Panel con scroll interno */
+.overlay-panel {
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+
 /* Animación */
 @keyframes accentureFadeIn {
   from {
@@ -1051,4 +1059,27 @@ body::before {
 .overlay-accenture.beneficios-activos .overlay-beneficios {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+/* ⭐ Secciones internas del módulo */
+.modulo-section {
+  padding: 2rem;
+  margin: 1.5rem 0;
+  background: rgba(10, 15, 30, 0.55);
+  border-radius: 14px;
+  box-shadow: 0 0 22px rgba(0, 191, 255, 0.18);
+  color: #e6eef8;
+}
+
+.modulo-section h3 {
+  margin-top: 0;
+  color: #00bfff;
+}
+
+.modulo-section ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.modulo-section li {
+  margin-bottom: 0.5rem;
 }
