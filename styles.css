@@ -855,10 +855,10 @@ body::before {
 
 /* Fondo grande */
 .overlay-bg {
-  flex: 1.4;
+  flex: 1.2;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.9) saturate(1.15);
+  filter: brightness(0.85) saturate(1.1);
 }
 
 /* Imagen lateral */
@@ -872,7 +872,7 @@ body::before {
 }
 
 .overlay-side-image img {
-  width: 85%;
+  width: 80%;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 191, 255, 0.35);
 }
