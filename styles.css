@@ -1130,7 +1130,7 @@ body::before {
 /* ⭐ Tarjetas grandes tipo pantalla */
 .modulo-screen {
   width: 100%;
-  min-height: 70vh;
+  min-height: 85vh;
   padding: 3rem 2rem;
   margin: 3rem 0;
   background: rgba(10, 15, 30, 0.65);
