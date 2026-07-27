@@ -937,9 +937,14 @@ body::before {
   text-shadow: 0 0 6px rgba(0,191,255,0.25);
 }
 
-/* ========================================================= */
-/* ⭐ FIN BLOQUE A REEMPLAZAR — OVERLAY ACCENTURE COMPLETO */
-/* ========================================================= */
+/* ✅ Corrección de posición inicial del módulo */
+.overlay-panel {
+  margin-top: 6vh; /* separa el módulo del borde superior */
+}
+
+.modulo-screen:first-of-type {
+  padding-top: 8vh; /* asegura que el título y texto inicial estén visibles */
+}
 
 /* ========================================================= */
 /* 📱 RESPONSIVE */
