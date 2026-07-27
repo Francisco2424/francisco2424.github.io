@@ -828,7 +828,7 @@ body::before {
 /* ========================================================= */
 
 .overlay-accenture {
-  position: fixed;
+  position: absolute;
   inset: 0;
   display: none; /* Se activa con abrirModulo() */
   justify-content: center;
