@@ -17,17 +17,17 @@
   </div>
 
   <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-logo">
-      <img src="Logo/EspacioFrancisco2424_Horizontal1.jpeg" alt="Francisco2424" class="logo-img">
-    </div>
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="Logo/EspacioFrancisco2424_Horizontal1.jpeg" alt="Francisco2424" class="logo-img">
+  </div>
 
-    <div class="nav-links">
-      <a href="#servicios" id="menu-servicios">Servicios</a>
-      <a href="#quien-soy" id="menu-quien">Quién Soy</a>
-      <a href="catalogo.html">Catálogo</a>
-    </div>
-  </nav>
+  <div class="nav-links">
+    <a href="#servicios" id="menu-servicios">Servicios</a>
+    <a href="#quien-soy" id="menu-quien">Quién Soy</a>
+    <a href="catalogo.html">Catálogo</a>
+  </div>
+</nav>
 
   <!-- HERO -->
   <header class="hero">
@@ -40,7 +40,7 @@
     <h2>Servicios</h2>
 
     <!-- SOFTWARE A MEDIDA -->
-    <div class="card futurista" onclick="abrirModulo('modulo-software')">
+    <div class="card futurista" onclick="toggle('card1')">
       <div id="card1" class="card-media">
         <img src="images/vialactea1.jpeg" class="card-img">
         <h3>Software a Medida (End to End)</h3>
@@ -53,13 +53,15 @@
         </div>
 
         <div class="content-mobile futurista-content">
+          <!-- p>Soluciones empresariales desarrolladas desde cero según la realidad del cliente. Optimización de procesos, integración con sistemas existentes y automatización avanzada.</p> -->
           <p><strong>Desarrollo completo de soluciones empresariales</strong> creadas desde cero según la realidad de cada cliente. Incluye levantamiento de información, validación de procesos, diseño de flujos eficientes, construcción de módulos funcionales e integración con sistemas existentes. Finaliza con reportes ejecutivos, paneles de control y documentación clara para asegurar continuidad operativa.</p>
         </div>
+
       </div>
     </div>
 
     <!-- AUTOMATIZACIÓN PEQUEÑA -->
-    <div class="card futurista" onclick="abrirModulo('modulo-automatizacion')">
+    <div class="card futurista" onclick="toggle('card2')">
       <div id="card2" class="card-media">
         <img src="images/vialactea2.jpeg" class="card-img">
         <h3>Automatización Pequeña</h3>
@@ -72,13 +74,15 @@
         </div>
 
         <div class="content-mobile futurista-content">
+          <!-- p>Automatización de tareas repetitivas y cálculos operativos. Organización y validación de datos y reportes automáticos.</p>-->
           <p><strong>Soluciones rápidas y precisas</strong> para tareas repetitivas, bases de datos pequeñas o cálculos operativos. Incluye organización y validación de datos, generación automática de reportes y eliminación de procesos manuales. Ideal para PyMEs y áreas administrativas que buscan orden y eficiencia sin invertir en sistemas completos.</p>
         </div>
+
       </div>
     </div>
 
     <!-- ANÁLISIS DE DATOS -->
-    <div class="card futurista" onclick="abrirModulo('modulo-analisis')">
+    <div class="card futurista" onclick="toggle('card3')">
       <div id="card3" class="card-media">
         <img src="images/vialactea3.jpeg" class="card-img">
         <h3>Análisis de Datos</h3>
@@ -91,13 +95,15 @@
         </div>
 
         <div class="content-mobile futurista-content">
+          <!-- p>Transformación de datos dispersos en información útil mediante dashboards e indicadores clave.</p>--->
           <p><strong>Transforma información dispersa en conocimiento útil.</strong> Incluye dashboards, reportes ejecutivos e indicadores clave para decisiones rápidas sin depender de múltiples archivos Excel. Orientado a empresas que buscan menos estrés, menos manejo de plantillas y más productividad.</p>
         </div>
+
       </div>
     </div>
 
     <!-- ACTUALIZACIÓN DE SOFTWARE HEREDADO -->
-    <div class="card futurista" onclick="abrirModulo('modulo-heredado')">
+    <div class="card futurista" onclick="toggle('card4')">
       <div id="card4" class="card-media">
         <img src="images/vialactea4.jpeg" class="card-img">
         <h3>Actualización de Software Heredado</h3>
@@ -110,13 +116,15 @@
         </div>
 
         <div class="content-mobile futurista-content">
+          <!--p>Modernización de sistemas críticos sin reconstrucción total. Mejoras en rendimiento y actualización tecnológica.</p>-->
           <p><strong>Modernización de sistemas antiguos que siguen siendo críticos para la operación.</strong> Incluye nuevos módulos, corrección de errores, optimización de rendimiento y actualización tecnológica sin reconstrucción total. Permite proteger la inversión histórica y mejorar la estabilidad sin interrumpir la operación.</p>
         </div>
+
       </div>
     </div>
 
     <!-- SOFTWARE FINANCIEROS -->
-    <div class="card futurista" onclick="abrirModulo('modulo-financieros')">
+    <div class="card futurista" onclick="toggle('card5')">
       <div id="card5" class="card-media">
         <img src="images/vialactea5.jpeg" class="card-img">
         <h3>Software Financieros</h3>
@@ -129,13 +137,15 @@
         </div>
 
         <div class="content-mobile futurista-content">
+          <!--p>Herramientas financieras para mejorar eficiencia y rentabilidad mediante análisis y automatización.</p>-->
           <p><strong>Herramientas enfocadas en la eficiencia del negocio y la toma de decisiones.</strong> Incluye identificación de fugas operativas, análisis financiero profundo, automatización de cálculos y control de gastos. Diseñado para empresas que necesitan ver su negocio con claridad y actuar con datos reales.</p>
         </div>
+
       </div>
     </div>
 
-    <!-- SOFTWARE CONTABLES -->
-    <div class="card futurista" onclick="abrirModulo('modulo-contables')">
+    <!-- SOFTWARE CONTABLES PERSONALIZADOS -->
+    <div class="card futurista" onclick="toggle('card6')">
       <div id="card6" class="card-media">
         <img src="images/vialactea6.jpeg" class="card-img">
         <h3>Software Contables Personalizados</h3>
@@ -148,786 +158,69 @@
         </div>
 
         <div class="content-mobile futurista-content">
+          <!--p>Sistemas contables adaptados a la operación real con integración oficial y paneles claros.</p>-->
           <p><strong>Sistemas contables diseñados para adaptarse a la operación real de cada empresa.</strong> Incluye integración con APIs oficiales, carga automática de documentos, conciliaciones y paneles de control. Permite ordenar la contabilidad, reducir errores y asegurar cumplimiento normativo.</p>
         </div>
+
       </div>
     </div>
 
   </section>
 
-  <!-- QUIÉN SOY -->
-  <section id="quien-soy" class="section" style="display:none;">
-    <h2>Quién Soy</h2>
+<!-- QUIÉN SOY -->
+<section id="quien-soy" class="section" style="display:none;">
+  <h2>Quién Soy</h2>
 
-    <div class="quien-soy-grid">
-      <img src="images/esferacostadoizquierdo1.jpeg" class="quien-img-side left">
+  <!-- 🌐 Versión escritorio -->
+  <div class="quien-soy-grid">
+    <img src="images/esferacostadoizquierdo1.jpeg" class="quien-img-side left" alt="Imagen lateral izquierda">
 
-      <div class="quien-soy-text animate-entry" id="quien-soy-text">
-        <p>
-          Soy Francisco Mallea Yañez, personalmente me considero un generador de ideas y soluciones...
-        </p>
-      </div>
-
-      <img src="images/esferacostadoderecho1.jpeg" class="quien-img-side right">
+    <div class="quien-soy-text animate-entry" id="quien-soy-text">
+      <p>
+        Soy Francisco Mallea Yañez, personalmente me considero un generador de ideas y soluciones. En lo técnico y en lo personal, funciono igual: pienso, imagino, diseño y construyo.
+        <br><br>
+        A lo largo de mi vida he enfrentado suficientes batallas que me han dado la experiencia necesaria para entender cómo funcionan los equipos, las personas y la información. Sé cuándo una solución es seria, cuándo es eficiente y cuándo es simplemente ruido. Mi trabajo se basa en automatizar con criterio, ordenar procesos y entregar resultados que realmente sirven.
+        <br><br>
+        Tengo 47 años y me considero un buen tipo, un clásico. Me importa el impacto que genero en quienes trabajan conmigo y en quienes confían en mis soluciones, esa es mi responsabilidad. No improviso: pienso, evalúo y actúo. Soy un soñador, pero uno preparado, con criterio y con experiencia.
+        <br><br>
+        Soy un profesional que aporta claridad, estructura y sentido.
+        <br><br>
+	        Un profesional que ve donde vas y te ayuda a llegar más rápido.
+        <br><br>
+      </p>
     </div>
 
-    <div class="quien-soy-mobile">
-      <div class="quien-soy-text transparente" id="quien-soy-text-mobile">
-        <p>
-          Soy Francisco Mallea Yañez, personalmente me considero un generador de ideas y soluciones...
-        </p>
-      </div>
+    <img src="images/esferacostadoderecho1.jpeg" class="quien-img-side right" alt="Imagen lateral derecha">
+  </div>
 
-      <img src="images/MundoBaseconenlacesluz.jpg" class="quien-img-mobile">
+  <!-- 📱 Versión móvil -->
+  <div class="quien-soy-mobile">
+    <div class="quien-soy-text transparente" id="quien-soy-text-mobile">
+      <p>
+        Soy Francisco Mallea Yañez, personalmente me considero un generador de ideas y soluciones. En lo técnico y en lo personal, funciono igual: pienso, imagino, diseño y construyo.
+        <br><br>
+        A lo largo de mi vida he enfrentado suficientes batallas que me han dado la experiencia necesaria para entender cómo funcionan los equipos, las personas y la información. Sé cuándo una solución es seria, cuándo es eficiente y cuándo es simplemente ruido. Mi trabajo se basa en automatizar con criterio, ordenar procesos y entregar resultados que realmente sirven.
+        <br><br>
+        Tengo 47 años y me considero un buen tipo, un clásico. Me importa el impacto que genero en quienes trabajan conmigo y en quienes confían en mis soluciones, esa es mi responsabilidad. No improviso: pienso, evalúo y actúo. Soy un soñador, pero uno preparado, con criterio y con experiencia.
+        <br><br>
+        Soy un profesional que aporta claridad, estructura y sentido.
+        <br><br>
+        Un profesional que ve donde vas y te ayuda a llegar más rápido.
+        <br><br>
+      </p>
     </div>
+
+    <img src="images/MundoBaseconenlacesluz.jpg" class="quien-img-mobile" alt="Imagen fondo móvil">
+  </div>
+</section>
+
+  <!-- MODO MUNDIAL -->
+  <section id="modo-mundial" class="section" style="display:none;">
+    <h2>Modo Mundial 2026</h2>
+    <div id="contenedor-grupos"></div>
   </section>
-
-  <!-- ========================================================= -->
-  <!-- ⭐ MÓDULOS ACCENTURE (Overlay centrado) ⭐ -->
-  <!-- ========================================================= -->
-
-  <!-- MODULO SOFTWARE A MEDIDA -->
-<div id="modulo-software" class="overlay-accenture beneficios-activos">
-  <div class="overlay-panel">
-
-    <!-- ⭐ IMAGEN PRINCIPAL -->
-    <div class="overlay-bg" style="background-image:url('ImgServicios/Software_EndToEnd.jpeg');"></div>
-
-    <!-- ⭐ IMAGEN LATERAL -->
-    <div class="overlay-side-image">
-      <img src="ImgServicios/Software_EndToEnd2.jpeg">
-    </div>
-
-    <!-- ⭐ BENEFICIOS PERSISTENTES -->
-    <div class="overlay-beneficios">
-      <h3>Ventajas del Servicio</h3>
-      <ul>
-        <li>Solución diseñada 100% según la operación real del cliente.</li>
-        <li>Automatización completa de procesos críticos.</li>
-        <li>Integración con sistemas existentes sin interrumpir la operación.</li>
-        <li>Documentación clara y paneles ejecutivos.</li>
-        <li>Reducción de errores y tiempos operativos.</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ CONTENEDOR DE TARJETAS SCROLL-STORYTELLING -->
-    <div class="modulo-scroll">
-
-      <!-- ⭐ SECCIÓN 1 -->
-      <section class="modulo-screen">
-        <h2>Software a Medida (End to End)</h2>
-        <p>
-          Construimos soluciones empresariales diseñadas desde cero para adaptarse
-          exactamente a tu operación real. Eliminamos procesos manuales, errores,
-          desorden operativo y dependencia de Excel.
-        </p>
-        <p>
-          Este servicio es ideal para empresas que necesitan orden, control y eficiencia,
-          sin depender de plantillas genéricas o sistemas que no se ajustan a su negocio.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 2 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Empresa de Logística</h3>
-        <p>
-          Una empresa con 14 rutas diarias redujo un 72% los tiempos de despacho gracias
-          a un sistema que automatiza asignaciones, rutas, tiempos y reportes.
-        </p>
-        <p>
-          El sistema detecta retrasos, optimiza rutas y genera reportes automáticos
-          sin intervención humana.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 3 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Retail Regional</h3>
-        <p>
-          Control total de inventario y reposición automática.
-          El sistema identifica quiebres de stock, analiza rotación y genera órdenes
-          de compra sin intervención humana.
-        </p>
-        <p>
-          Resultado: aumento del 28% en disponibilidad de productos estratégicos.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 4 -->
-      <section class="modulo-screen">
-        <h3>Mejoras Obtenidas</h3>
-        <ul>
-          <li>Procesos más rápidos y ordenados.</li>
-          <li>Menos dependencia de Excel.</li>
-          <li>Reducción de errores humanos.</li>
-          <li>Mayor claridad en la operación diaria.</li>
-          <li>Automatización de tareas críticas.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 5 -->
-      <section class="modulo-screen">
-        <h3>Cifras del Servicio</h3>
-        <ul>
-          <li><strong>+40%</strong> productividad promedio.</li>
-          <li><strong>-60%</strong> tiempo operativo.</li>
-          <li><strong>+85%</strong> precisión en reportes.</li>
-          <li><strong>100%</strong> integración con sistemas existentes.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 6 -->
-      <section class="modulo-screen">
-        <h3>Ventajas Visuales</h3>
-        <p>
-          Paneles futuristas, indicadores claros, gráficos automáticos y navegación
-          intuitiva para equipos operativos, administrativos y gerenciales.
-        </p>
-        <p>
-          La interfaz está diseñada para reducir estrés, mejorar la toma de decisiones
-          y entregar claridad total en la operación.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 7 -->
-      <section class="modulo-screen">
-        <h3>¿Quieres un sistema diseñado para tu operación?</h3>
-        <p>
-          Podemos analizar tus procesos y construir un sistema que elimine tareas
-          repetitivas, errores y desorden operativo.
-        </p>
-        <p>
-          Este servicio es ideal para empresas que necesitan eficiencia real,
-          control total y crecimiento sostenido.
-        </p>
-      </section>
-
-    </div>
-
-    <!-- ⭐ BOTÓN DE CIERRE -->
-    <span class="overlay-close" onclick="cerrarModulo('modulo-software')">×</span>
-
-  </div>
-</div>
-
-
-  <!-- MODULO AUTOMATIZACIÓN -->
-<div id="modulo-automatizacion" class="overlay-accenture beneficios-activos">
-  <div class="overlay-panel">
-
-    <!-- ⭐ IMAGEN PRINCIPAL -->
-    <div class="overlay-bg" style="background-image:url('ImgServicios/Automatizaciones.jpeg');"></div>
-
-    <!-- ⭐ IMAGEN LATERAL -->
-    <div class="overlay-side-image">
-      <img src="ImgServicios/Automatizaciones2.jpeg">
-    </div>
-
-    <!-- ⭐ BENEFICIOS PERSISTENTES -->
-    <div class="overlay-beneficios">
-      <h3>Ventajas del Servicio</h3>
-      <ul>
-        <li>Elimina tareas repetitivas y manuales.</li>
-        <li>Reduce errores operativos.</li>
-        <li>Generación automática de reportes.</li>
-        <li>Ideal para PyMEs y áreas administrativas.</li>
-        <li>Implementación rápida y económica.</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ CONTENEDOR DE TARJETAS SCROLL-STORYTELLING -->
-    <div class="modulo-scroll">
-
-      <!-- ⭐ SECCIÓN 1 -->
-      <section class="modulo-screen">
-        <h2>Automatización Pequeña</h2>
-        <p>
-          Automatizamos tareas repetitivas que consumen tiempo, generan errores y
-          ralentizan la operación diaria. Este servicio es ideal para PyMEs, oficinas
-          administrativas y empresas que dependen de Excel para procesos críticos.
-        </p>
-        <p>
-          La automatización pequeña permite transformar procesos manuales en flujos
-          automáticos, ordenados y confiables.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 2 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: PyME de Ventas</h3>
-        <p>
-          Una PyME que generaba reportes diarios manuales logró automatizar todo el proceso.
-          Resultado: ahorro de 2 horas por día y reportes listos antes de abrir la oficina.
-        </p>
-        <p>
-          El sistema toma datos, los ordena y genera reportes automáticos sin intervención humana.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 3 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Estudio Contable</h3>
-        <p>
-          Un estudio contable redujo un 80% los errores al automatizar la carga de documentos
-          y la clasificación de gastos.
-        </p>
-        <p>
-          El sistema detecta documentos nuevos, los clasifica y los integra en el flujo contable.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 4 -->
-      <section class="modulo-screen">
-        <h3>Mejoras Obtenidas</h3>
-        <ul>
-          <li>Procesos más rápidos y ordenados.</li>
-          <li>Menos dependencia de Excel.</li>
-          <li>Reducción de errores humanos.</li>
-          <li>Mayor claridad en la operación diaria.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 5 -->
-      <section class="modulo-screen">
-        <h3>Cifras del Servicio</h3>
-        <ul>
-          <li><strong>+55%</strong> eficiencia operativa.</li>
-          <li><strong>-70%</strong> errores manuales.</li>
-          <li><strong>+40%</strong> velocidad en reportes.</li>
-          <li><strong>Implementación en 48–72 horas.</strong></li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 6 -->
-      <section class="modulo-screen">
-        <h3>Ventajas Visuales</h3>
-        <p>
-          Paneles futuristas, indicadores claros, gráficos automáticos y navegación intuitiva
-          para equipos administrativos y operativos.
-        </p>
-        <p>
-          La interfaz está diseñada para reducir errores y entregar claridad inmediata.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 7 -->
-      <section class="modulo-screen">
-        <h3>¿Quieres automatizar tu operación?</h3>
-        <p>
-          Podemos revisar tus procesos y eliminar tareas repetitivas que hoy te quitan tiempo
-          y generan errores.
-        </p>
-        <p>
-          La automatización pequeña es rápida, económica y transforma tu día a día.
-        </p>
-      </section>
-
-    </div>
-
-    <!-- ⭐ BOTÓN DE CIERRE -->
-    <span class="overlay-close" onclick="cerrarModulo('modulo-automatizacion')">×</span>
-
-  </div>
-</div>
-
-  <!-- MODULO ANÁLISIS -->
-<div id="modulo-analisis" class="overlay-accenture beneficios-activos">
-  <div class="overlay-panel">
-
-    <!-- ⭐ IMAGEN PRINCIPAL -->
-    <div class="overlay-bg" style="background-image:url('ImgServicios/AnalisisDatos.jpeg');"></div>
-
-    <!-- ⭐ IMAGEN LATERAL -->
-    <div class="overlay-side-image">
-      <img src="ImgServicios/AnalisisDatos2.jpeg">
-    </div>
-
-    <!-- ⭐ BENEFICIOS PERSISTENTES -->
-    <div class="overlay-beneficios">
-      <h3>Ventajas del Servicio</h3>
-      <ul>
-        <li>Transformación de datos dispersos en información útil.</li>
-        <li>Dashboards ejecutivos para decisiones rápidas.</li>
-        <li>Indicadores clave sin depender de múltiples Excel.</li>
-        <li>Menos estrés y más productividad.</li>
-        <li>Identificación de oportunidades y riesgos.</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ CONTENEDOR DE TARJETAS SCROLL-STORYTELLING -->
-    <div class="modulo-scroll">
-
-      <!-- ⭐ SECCIÓN 1 -->
-      <section class="modulo-screen">
-        <h2>Análisis de Datos</h2>
-        <p>
-          Convertimos datos dispersos, duplicados o desordenados en información clara,
-          visual y accionable. Ideal para empresas que necesitan tomar decisiones basadas
-          en cifras reales y no en intuiciones.
-        </p>
-        <p>
-          Este servicio permite transformar caos informativo en claridad operativa,
-          revelando patrones, tendencias y oportunidades ocultas.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 2 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Empresa de Transporte</h3>
-        <p>
-          Una empresa con más de 40 vehículos logró reducir un 35% los costos de combustible
-          gracias a un análisis profundo de rutas, tiempos muertos y patrones de conducción.
-        </p>
-        <p>
-          El sistema detecta desvíos, optimiza rutas y genera reportes automáticos diarios.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 3 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Retail Regional</h3>
-        <p>
-          Un retail regional aumentó un 28% las ventas de productos estratégicos gracias
-          a dashboards que revelaron patrones de compra, horarios de mayor demanda y
-          productos con alta rotación.
-        </p>
-        <p>
-          El sistema identifica oportunidades y recomienda acciones concretas.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 4 -->
-      <section class="modulo-screen">
-        <h3>Mejoras Obtenidas</h3>
-        <ul>
-          <li>Información clara y centralizada.</li>
-          <li>Reportes automáticos sin depender de Excel.</li>
-          <li>Identificación de tendencias y riesgos.</li>
-          <li>Decisiones más rápidas y precisas.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 5 -->
-      <section class="modulo-screen">
-        <h3>Cifras del Servicio</h3>
-        <ul>
-          <li><strong>+60%</strong> velocidad en toma de decisiones.</li>
-          <li><strong>-50%</strong> tiempo perdido buscando información.</li>
-          <li><strong>+70%</strong> claridad en indicadores clave.</li>
-          <li><strong>100%</strong> automatización de reportes críticos.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 6 -->
-      <section class="modulo-screen">
-        <h3>Ventajas Visuales</h3>
-        <p>
-          Dashboards futuristas, gráficos automáticos, indicadores clave y navegación intuitiva
-          para gerencias, operaciones y equipos administrativos.
-        </p>
-        <p>
-          La interfaz está diseñada para entregar claridad inmediata y facilitar decisiones
-          estratégicas basadas en datos reales.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 7 -->
-      <section class="modulo-screen">
-        <h3>¿Quieres claridad total en tus datos?</h3>
-        <p>
-          Podemos analizar tu operación y construir dashboards ejecutivos que revelen
-          oportunidades, riesgos y mejoras reales.
-        </p>
-        <p>
-          Este servicio es ideal para empresas que necesitan control, precisión y visión
-          estratégica basada en información confiable.
-        </p>
-      </section>
-
-    </div>
-
-    <!-- ⭐ BOTÓN DE CIERRE -->
-    <span class="overlay-close" onclick="cerrarModulo('modulo-analisis')">×</span>
-
-  </div>
-</div>
-
-  <!-- MODULO HEREDADO -->
-<div id="modulo-heredado" class="overlay-accenture beneficios-activos">
-  <div class="overlay-panel">
-
-    <!-- ⭐ IMAGEN PRINCIPAL -->
-    <div class="overlay-bg" style="background-image:url('ImgServicios/SoftwareHeredados.jpeg');"></div>
-
-    <!-- ⭐ IMAGEN LATERAL -->
-    <div class="overlay-side-image">
-      <img src="ImgServicios/SoftwareHeredados2.jpeg">
-    </div>
-
-    <!-- ⭐ BENEFICIOS PERSISTENTES -->
-    <div class="overlay-beneficios">
-      <h3>Ventajas del Servicio</h3>
-      <ul>
-        <li>Modernización sin reconstrucción total.</li>
-        <li>Corrección de errores históricos.</li>
-        <li>Mejor rendimiento y estabilidad.</li>
-        <li>Protección de la inversión tecnológica previa.</li>
-        <li>Actualización sin detener la operación.</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ CONTENEDOR DE TARJETAS SCROLL-STORYTELLING -->
-    <div class="modulo-scroll">
-
-      <!-- ⭐ SECCIÓN 1 -->
-      <section class="modulo-screen">
-        <h2>Actualización de Software Heredado</h2>
-        <p>
-          Modernizamos sistemas antiguos que aún son críticos para la operación,
-          mejorando rendimiento, estabilidad y compatibilidad sin necesidad de
-          reconstruir todo desde cero.
-        </p>
-        <p>
-          Este servicio es ideal para empresas que dependen de software histórico
-          pero necesitan avanzar tecnológicamente sin detener su operación.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 2 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Industria Manufacturera</h3>
-        <p>
-          Un sistema de producción creado en 2008 fue optimizado sin detener la operación.
-          Resultado: un aumento del 48% en velocidad de procesamiento y reducción de fallas.
-        </p>
-        <p>
-          Se corrigieron errores acumulados por años y se integraron nuevas funciones
-          sin alterar la base original.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 3 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Empresa de Servicios</h3>
-        <p>
-          Un software administrativo con caídas frecuentes fue estabilizado completamente.
-          En 6 meses: 0 interrupciones y compatibilidad con sistemas modernos.
-        </p>
-        <p>
-          Se reestructuró el código, se eliminaron dependencias obsoletas y se mejoró
-          el rendimiento general.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 4 -->
-      <section class="modulo-screen">
-        <h3>Mejoras Obtenidas</h3>
-        <ul>
-          <li>Mayor estabilidad del sistema.</li>
-          <li>Compatibilidad con tecnologías actuales.</li>
-          <li>Corrección de fallas acumuladas por años.</li>
-          <li>Menor riesgo operativo.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 5 -->
-      <section class="modulo-screen">
-        <h3>Cifras del Servicio</h3>
-        <ul>
-          <li><strong>+65%</strong> rendimiento promedio.</li>
-          <li><strong>-80%</strong> errores críticos.</li>
-          <li><strong>+90%</strong> compatibilidad con sistemas modernos.</li>
-          <li><strong>0%</strong> interrupción de la operación durante la actualización.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 6 -->
-      <section class="modulo-screen">
-        <h3>Ventajas Visuales</h3>
-        <p>
-          Interfaz renovada, paneles futuristas, navegación clara y módulos optimizados
-          que permiten trabajar con sistemas antiguos como si fueran modernos.
-        </p>
-        <p>
-          La experiencia visual facilita la adopción del sistema por parte de los equipos.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 7 -->
-      <section class="modulo-screen">
-        <h3>¿Tu software heredado necesita modernización?</h3>
-        <p>
-          Podemos actualizar tu sistema actual, corregir errores históricos y mejorar
-          su rendimiento sin detener tu operación.
-        </p>
-        <p>
-          Este servicio es ideal para empresas que necesitan estabilidad, compatibilidad
-          y continuidad operativa.
-        </p>
-      </section>
-
-    </div>
-
-    <!-- ⭐ BOTÓN DE CIERRE -->
-    <span class="overlay-close" onclick="cerrarModulo('modulo-heredado')">×</span>
-
-  </div>
-</div>
-
-  <!-- MODULO FINANCIEROS -->
-<div id="modulo-financieros" class="overlay-accenture beneficios-activos">
-  <div class="overlay-panel">
-
-    <!-- ⭐ IMAGEN PRINCIPAL -->
-    <div class="overlay-bg" style="background-image:url('ImgServicios/SoftwareFinancieros.jpeg');"></div>
-
-    <!-- ⭐ IMAGEN LATERAL -->
-    <div class="overlay-side-image">
-      <img src="ImgServicios/SoftwareFinancieros2.jpeg">
-    </div>
-
-    <!-- ⭐ BENEFICIOS PERSISTENTES -->
-    <div class="overlay-beneficios">
-      <h3>Ventajas del Servicio</h3>
-      <ul>
-        <li>Control total de gastos y flujos financieros.</li>
-        <li>Identificación de fugas operativas.</li>
-        <li>Análisis financiero profundo y automatizado.</li>
-        <li>Automatización de cálculos complejos.</li>
-        <li>Decisiones basadas en datos reales y actualizados.</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ CONTENEDOR DE TARJETAS SCROLL-STORYTELLING -->
-    <div class="modulo-scroll">
-
-      <!-- ⭐ SECCIÓN 1 -->
-      <section class="modulo-screen">
-        <h2>Software Financieros</h2>
-        <p>
-          Sistemas diseñados para entregar claridad financiera total, automatizar cálculos,
-          detectar fugas y entregar reportes ejecutivos que permiten tomar decisiones
-          basadas en cifras reales y no en estimaciones.
-        </p>
-        <p>
-          Ideal para empresas que necesitan control, precisión y visión estratégica.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 2 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Empresa de Servicios</h3>
-        <p>
-          Una empresa con múltiples centros de costos redujo un 33% sus gastos operativos
-          gracias a un sistema que detecta fugas, clasifica gastos y genera reportes
-          automáticos diarios.
-        </p>
-        <p>
-          El sistema identifica patrones de gasto anormales y alerta a gerencia en tiempo real.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 3 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Retail Regional</h3>
-        <p>
-          Un retail regional aumentó un 18% sus márgenes al implementar un sistema que
-          analiza rentabilidad por producto, categoría y proveedor.
-        </p>
-        <p>
-          El sistema revela productos con baja rentabilidad y recomienda ajustes de precios.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 4 -->
-      <section class="modulo-screen">
-        <h3>Mejoras Obtenidas</h3>
-        <ul>
-          <li>Mayor claridad en ingresos, gastos y márgenes.</li>
-          <li>Reportes automáticos sin depender de Excel.</li>
-          <li>Detección temprana de problemas financieros.</li>
-          <li>Optimización de decisiones estratégicas.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 5 -->
-      <section class="modulo-screen">
-        <h3>Cifras del Servicio</h3>
-        <ul>
-          <li><strong>+75%</strong> claridad financiera.</li>
-          <li><strong>-50%</strong> errores en cálculos manuales.</li>
-          <li><strong>+40%</strong> velocidad en reportes financieros.</li>
-          <li><strong>100%</strong> automatización de procesos críticos.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 6 -->
-      <section class="modulo-screen">
-        <h3>Ventajas Visuales</h3>
-        <p>
-          Paneles financieros futuristas, gráficos automáticos, indicadores clave,
-          comparativas históricas y navegación intuitiva para gerencias y equipos contables.
-        </p>
-        <p>
-          La interfaz está diseñada para entregar claridad inmediata y facilitar decisiones
-          estratégicas basadas en datos reales.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 7 -->
-      <section class="modulo-screen">
-        <h3>¿Quieres claridad financiera total?</h3>
-        <p>
-          Podemos analizar tus flujos, gastos y procesos financieros para construir
-          un sistema que elimine errores y entregue información clara y confiable.
-        </p>
-        <p>
-          Este servicio es ideal para empresas que necesitan control, precisión y
-          crecimiento sostenido.
-        </p>
-      </section>
-
-    </div>
-
-    <!-- ⭐ BOTÓN DE CIERRE -->
-    <span class="overlay-close" onclick="cerrarModulo('modulo-financieros')">×</span>
-
-  </div>
-</div>
-
-  <!-- MODULO CONTABLES -->
-<div id="modulo-contables" class="overlay-accenture beneficios-activos">
-  <div class="overlay-panel">
-
-    <!-- ⭐ IMAGEN PRINCIPAL -->
-    <div class="overlay-bg" style="background-image:url('ImgServicios/Software_Contables.jpeg');"></div>
-
-    <!-- ⭐ IMAGEN LATERAL -->
-    <div class="overlay-side-image">
-      <img src="ImgServicios/Software_Contables2.jpeg">
-    </div>
-
-    <!-- ⭐ BENEFICIOS PERSISTENTES -->
-    <div class="overlay-beneficios">
-      <h3>Ventajas del Servicio</h3>
-      <ul>
-        <li>Integración con APIs oficiales (SII, TGR, Previred).</li>
-        <li>Carga automática de documentos tributarios.</li>
-        <li>Conciliaciones rápidas y precisas.</li>
-        <li>Paneles de control contable y financiero.</li>
-        <li>Reducción de errores y cumplimiento normativo.</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ CONTENEDOR DE TARJETAS SCROLL-STORYTELLING -->
-    <div class="modulo-scroll">
-
-      <!-- ⭐ SECCIÓN 1 -->
-      <section class="modulo-screen">
-        <h2>Software Contables Personalizados</h2>
-        <p>
-          Sistemas contables diseñados para adaptarse exactamente a la operación real
-          de cada empresa. Eliminan errores, automatizan procesos tributarios y entregan
-          claridad total en la gestión financiera y contable.
-        </p>
-        <p>
-          Ideal para estudios contables, PyMEs y empresas con alto volumen de documentos.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 2 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: Estudio Contable</h3>
-        <p>
-          Un estudio contable con más de 120 clientes automatizó la carga de documentos
-          tributarios, reduciendo más de 3 horas de trabajo manual por día.
-        </p>
-        <p>
-          El sistema detecta documentos nuevos, los clasifica y los integra en el flujo
-          contable sin intervención humana.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 3 -->
-      <section class="modulo-screen">
-        <h3>Caso Real: PyME Comercial</h3>
-        <p>
-          Una PyME con alto volumen de ventas implementó conciliación bancaria automática.
-          Resultado: 0 errores en 4 meses y cierres contables 2.5 veces más rápidos.
-        </p>
-        <p>
-          El sistema compara movimientos bancarios con ventas, compras y boletas electrónicas,
-          detectando diferencias en segundos.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 4 -->
-      <section class="modulo-screen">
-        <h3>Mejoras Obtenidas</h3>
-        <ul>
-          <li>Menos errores en procesos contables.</li>
-          <li>Mayor velocidad en cierres mensuales.</li>
-          <li>Automatización de tareas tributarias críticas.</li>
-          <li>Información clara para decisiones financieras.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 5 -->
-      <section class="modulo-screen">
-        <h3>Cifras del Servicio</h3>
-        <ul>
-          <li><strong>+80%</strong> velocidad en procesos contables.</li>
-          <li><strong>-90%</strong> errores en conciliaciones.</li>
-          <li><strong>+70%</strong> eficiencia en cierres tributarios.</li>
-          <li><strong>100%</strong> cumplimiento normativo automatizado.</li>
-        </ul>
-      </section>
-
-      <!-- ⭐ SECCIÓN 6 -->
-      <section class="modulo-screen">
-        <h3>Ventajas Visuales</h3>
-        <p>
-          Paneles contables futuristas, indicadores claros, gráficos automáticos y
-          navegación intuitiva para equipos contables y financieros.
-        </p>
-        <p>
-          La interfaz está diseñada para entregar claridad inmediata y reducir errores.
-        </p>
-      </section>
-
-      <!-- ⭐ SECCIÓN 7 -->
-      <section class="modulo-screen">
-        <h3>¿Quieres un sistema contable adaptado a tu operación?</h3>
-        <p>
-          Podemos integrar tus procesos tributarios, automatizar conciliaciones y
-          construir paneles contables que eliminen errores y entreguen claridad total.
-        </p>
-        <p>
-          Este servicio es ideal para empresas que necesitan orden, precisión y
-          cumplimiento normativo sin estrés.
-        </p>
-      </section>
-
-    </div>
-
-    <!-- ⭐ BOTÓN DE CIERRE -->
-    <span class="overlay-close" onclick="cerrarModulo('modulo-contables')">×</span>
-
-  </div>
-</div>
-
 
   <!-- SCRIPTS -->
-  <script>
-    function abrirModulo(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-
-    function cerrarModulo(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
-
   <script>
     function toggle(id) {
       const el = document.getElementById(id);
@@ -1035,92 +328,6 @@
   </script>
 
   <script src="mundial.js"></script>
-
-<script>
-  // Cerrar módulos Accenture con tecla ESC
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-
-      // Lista de módulos Accenture
-      const modulos = [
-        "modulo-software",
-        "modulo-automatizacion",
-        "modulo-analisis",
-        "modulo-heredado",
-        "modulo-financieros",
-        "modulo-contables"
-      ];
-
-      // Cerrar cualquier módulo que esté visible
-      modulos.forEach(id => {
-        const el = document.getElementById(id);
-        if (el && el.style.display === "flex") {
-          el.style.display = "none";
-        }
-      });
-
-      // Volver al Home (scroll arriba)
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  });
-</script>
-
-<script>
-  // Activar beneficios al pasar el cursor por la imagen lateral
-  document.querySelectorAll('.overlay-side-image').forEach(img => {
-    img.addEventListener('mouseenter', () => {
-      const modulo = img.closest('.overlay-accenture');
-      modulo.classList.add('beneficios-activos');
-    });
-  });
-
-  // Al cerrar el módulo, quitar la clase
-  function cerrarModulo(id) {
-    const el = document.getElementById(id);
-    el.style.display = 'none';
-    el.classList.remove('beneficios-activos');
-  }
-
-  // Cerrar con ESC también limpia la clase
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-      const modulos = [
-        "modulo-software",
-        "modulo-automatizacion",
-        "modulo-analisis",
-        "modulo-heredado",
-        "modulo-financieros",
-        "modulo-contables"
-      ];
-
-      modulos.forEach(id => {
-        const el = document.getElementById(id);
-        if (el && el.style.display === "flex") {
-          el.style.display = "none";
-          el.classList.remove('beneficios-activos');
-        }
-      });
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  });
-</script>
-
-<script>
-  // ⭐ Detectar cuando cada tarjeta entra en pantalla
-  const screens = document.querySelectorAll('.modulo-screen');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.4 });
-
-  screens.forEach(screen => observer.observe(screen));
-</script>
-
 
 </body>
 </html>
