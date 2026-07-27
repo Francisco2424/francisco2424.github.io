@@ -29,7 +29,7 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 MENÚ PRINCIPAL */
+/* 🌌 MENÚ PRINCIPAL CENTRADO Y DESTACADO */
 /* ========================================================= */
 
 .nav {
@@ -55,8 +55,63 @@ body::before {
   filter: drop-shadow(0 0 8px rgba(192,192,192,0.45));
 }
 
+@media (max-width: 768px) {
+  .logo-img {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 220px;
+  }
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e5e9ff;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.nav-links a {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #cbd5f5;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 6px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #c0c0c0, #00bfff);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 /* ========================================================= */
-/* 🌌 HERO */
+/* 🌌 HERO FUTURISTA CON IMAGEN */
 /* ========================================================= */
 
 .hero {
@@ -77,6 +132,36 @@ body::before {
   opacity: 0.22;
   filter: brightness(1.2) saturate(1.1);
   z-index: -1;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cbd5f5;
+}
+
+/* ========================================================= */
+/* 🌌 SECCIONES */
+/* ========================================================= */
+
+.section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #e5e9ff;
+  border-bottom: 1px solid rgba(192,192,192,0.25);
+  padding-bottom: 0.5rem;
 }
 
 /* ========================================================= */
@@ -101,13 +186,651 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 OVERLAY ACCENTURE */
+/* 🌌 IMAGEN + OVERLAYS */
+/* ========================================================= */
+
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ========================================================= */
+/* 🌌 TÍTULO SOBRE LA IMAGEN */
+/* ========================================================= */
+
+.card h3 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  margin: 0;
+  padding-left: 0.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0,191,255,0.45);
+  z-index: 3;
+}
+
+/* ========================================================= */
+/* 🌌 HINT SOBRE LA IMAGEN */
+/* ========================================================= */
+
+.card .hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  padding-left: 0.2rem;
+  background: rgba(0,191,255,0.15);
+  color: #e5e9ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+}
+
+/* ========================================================= */
+/* 🌌 DESCRIPCIÓN OVERLAY */
+/* ========================================================= */
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(17,24,39,0.35), rgba(17,24,39,0.75));
+  color: #cbd5f5;
+  padding: 1rem 1.2rem;
+  border-radius: 0 0 12px 12px;
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.35s ease;
+  z-index: 4;
+}
+
+.content-mobile {
+  display: none;
+}
+
+/* ========================================================= */
+/* 🌌 ACTIVACIÓN DE OVERLAYS */
+/* ========================================================= */
+
+.card-media.futurista-open .content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card-media.futurista-open .content-mobile {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ========================================================= */
+/* 🌌 BARRAS FUTURISTAS */
+/* ========================================================= */
+
+.bar {
+  background: #0f172a;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(192,192,192,0.25);
+  font-size: 0.95rem;
+}
+
+/* ========================================================= */
+/* 🌌 GRID FUTURISTA */
+/* ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.box {
+  background: #111827;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid rgba(192,192,192,0.25);
+  transition: 0.25s ease;
+}
+
+.box:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
+
+/* ========================================================= */
+/* 🌌 TICKER FUTURISTA */
+/* ========================================================= */
+
+.ticker {
+  width: 100%;
+  background: #0d1b2a;
+  color: #e0e6ed;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(192,192,192,0.25);
+  padding: 4px 0;
+  font-size: 14px;
+  position: relative;
+}
+
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ========================================================= */
+/* 🌌 TABLAS MUNDIAL FUTURISTAS */
+/* ========================================================= */
+
+.grupo-card {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #111827;
+  border-radius: 12px;
+  border: 1px solid rgba(192,192,192,0.25);
+}
+
+.grupo-card h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #e5e9ff;
+  text-align: center;
+}
+
+.tabla-grupo {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #0f172a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabla-grupo th,
+.tabla-grupo td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(192,192,192,0.25);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.tabla-grupo th {
+  background: #1b233a;
+  color: #cbd5f5;
+  font-weight: 600;
+}
+
+.tabla-grupo tr:hover {
+  background: #1e293b;
+}
+
+.bandera {
+  width: 24px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+/* ========================================================= */
+/* 🌌 QUIÉN SOY — Versión Final Optimizada */
+/* ========================================================= */
+
+.quien-soy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Imagen base */
+.quien-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  filter: drop-shadow(0 0 12px rgba(192,192,192,0.35));
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor que permite overlay */
+.quien-soy-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Texto sobre la imagen */
+.quien-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(10, 25, 60, 0.78);
+  padding: 1.4rem;
+  border-radius: 0 0 14px 14px;
+
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 20px rgba(56,189,248,0.25);
+}
+
+/* Animación de entrada */
+.animate-entry {
+  animation: fadeInUp 1.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: drop-shadow(0 0 0 rgba(56,189,248,0));
+  }
+  60% {
+    opacity: 0.85;
+    transform: translateY(10px);
+    filter: drop-shadow(0 0 12px rgba(56,189,248,0.4));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: drop-shadow(0 0 18px rgba(56,189,248,0.6));
+  }
+}
+
+/* ========================================================= */
+/* 🌌 QUIÉN SOY — Panel con imágenes laterales sincronizadas */
+/* ========================================================= */
+
+/* GRID PRINCIPAL */
+.quien-soy-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(420px, 1fr) 260px;
+  align-items: stretch; /* IMPORTANTE: permite que las imágenes crezcan */
+  gap: 2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* Variable dinámica que JS actualizará con la altura real del texto */
+:root {
+  --quien-text-height: auto;
+}
+
+/* TEXTO CENTRAL */
+.quien-soy-text {
+  padding: 1.8rem 2rem;
+  color: #e6eef8;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: left;
+  background: rgba(10,25,60,0.06);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.25);
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================================= */
+/* IMÁGENES LATERALES — altura sincronizada + animación */
+/* ========================================================= */
+
+.quien-img-side {
+  width: 100%;
+  height: var(--quien-text-height); /* ALTURA REAL DEL TEXTO */
+  object-fit: cover;
+  border-radius: 14px;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.36));
+  justify-self: center;
+
+  /* Animación lateral */
+  opacity: 0;
+  animation: slideInSide 1.2s ease forwards;
+}
+
+/* Dirección de entrada */
+.quien-img-side.left {
+  transform: translateX(-40px);
+}
+
+.quien-img-side.right {
+  transform: translateX(40px);
+}
+
+/* Animación */
+@keyframes slideInSide {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--slide-start, -40px));
+  }
+  60% {
+    opacity: 0.9;
+    transform: translateX(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover sutil */
+.quien-img-side:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 22px 48px rgba(56,189,248,0.18);
+}
+
+/* ========================================================= */
+/* ANIMACIÓN DEL TEXTO */
+/* ========================================================= */
+
+.animate-entry {
+  animation: fadeInUp 1.2s cubic-bezier(.2,.9,.2,1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translateY(30px); }
+  60%  { opacity: 0.95; transform: translateY(8px); filter: drop-shadow(0 0 8px rgba(56,189,248,0.18)); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================= */
+/* RESPONSIVE */
+/* ========================================================= */
+
+@media (max-width: 980px) {
+  .quien-soy-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .quien-img-side {
+    width: 72%;
+    height: auto;
+    max-height: 420px;
+    border-radius: 12px;
+    justify-self: center;
+  }
+
+  .quien-soy-text {
+    padding: 1.2rem;
+    order: 2;
+  }
+}
+
+/* ========================================================= */
+/* 📱 OPTIMIZACIÓN MÓVIL */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+
+  .logo-img {
+    width: 150px;
+  }
+
+  .nav {
+    padding: 1rem 0.5rem;
+  }
+
+  .nav-links {
+    gap: 1.4rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    padding: 0.8rem;
+  }
+
+  .ticker {
+    font-size: 12px;
+    padding: 3px 0;
+  }
+
+  .tabla-grupo th,
+  .tabla-grupo td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .bandera {
+    width: 20px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .logo-img {
+    width: 140px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .content {
+    font-size: 0.9rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+  }
+
+  /* ⭐ CORRECCIÓN MÓVIL — evitar superposición */
+  .content {
+    display: none !important;
+  }
+
+  .content-mobile {
+    display: block;
+    font-size: 0.9rem;
+    padding: 1rem 1.2rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(17,24,39,0.35),
+      rgba(17,24,39,0.75)
+    );
+    border-radius: 0 0 12px 12px;
+    backdrop-filter: blur(6px);
+    color: #cbd5f5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.35s ease;
+    z-index: 4;
+  }
+}
+
+/* ========================================================= */
+/* 📱 QUIÉN SOY — Versión móvil con imagen de fondo */
+/* ========================================================= */
+
+@media (max-width: 980px) {
+
+  /* Ocultar versión escritorio */
+  .quien-soy-grid {
+    display: none !important;
+  }
+
+  /* Contenedor móvil */
+  .quien-soy-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Imagen móvil */
+  .quien-img-mobile {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: drop-shadow(0 0 18px rgba(56,189,248,0.35));
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Texto transparente sobre la imagen */
+  .quien-soy-text.transparente {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 1.6rem;
+    color: #e6eef8;
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: center;
+
+    background: transparent;
+    z-index: 2;
+
+    text-shadow: 0 0 12px rgba(56,189,248,0.45);
+  }
+}
+
+/* ========================================================= */
+/* 📱 Ajuste extra para pantallas muy pequeñas */
+/* ========================================================= */
+
+@media (max-width: 480px) {
+
+  .quien-soy-text.transparente {
+    padding: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .quien-img-mobile {
+    border-radius: 10px;
+  }
+}
+
+/* ========================================================= */
+/* 🖥️ Ocultar versión móvil en escritorio */
+/* ========================================================= */
+
+.quien-soy-mobile {
+  display: none;
+}
+
+/* ========================================================= */
+/* 📱 Mostrar versión móvil solo en pantallas pequeñas */
+/* ========================================================= */
+
+@media (max-width: 980px) {
+
+  /* Ocultar versión escritorio */
+  .quien-soy-grid {
+    display: none !important;
+  }
+
+  /* Mostrar versión móvil */
+  .quien-soy-mobile {
+    display: flex !important;
+  }
+}
+
+/* ========================================================= */
+/* ⭐ OVERLAY ACCENTURE — Estilo Híbrido Futurista + Corporativo */
 /* ========================================================= */
 
 .overlay-accenture {
   position: fixed;
   inset: 0;
-  display: none;
+  display: none; /* Se activa con abrirModulo() */
   justify-content: center;
   align-items: center;
   background: rgba(5, 10, 25, 0.78);
@@ -116,128 +839,75 @@ body::before {
   padding: 2rem;
 }
 
-/* ⭐ PANEL PRINCIPAL */
+/* Panel principal */
 .overlay-panel {
   position: relative;
   width: min(1200px, 95%);
   background: rgba(15, 20, 40, 0.85);
   border-radius: 18px;
-  overflow-y: auto;
-  max-height: 90vh;
-  scroll-behavior: smooth;
+  overflow: auto;
   box-shadow: 0 0 45px rgba(0, 191, 255, 0.25),
               0 0 90px rgba(0, 191, 255, 0.15);
-
-  /* ⭐ CORRECCIÓN CRÍTICA */
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  animation: accentureFadeIn 0.55s ease forwards;
 }
 
-/* ⭐ IMAGEN PRINCIPAL */
+/* Fondo grande */
 .overlay-bg {
-  width: 100%;
-  height: 260px;
+  flex: 3;
   background-size: cover;
   background-position: center;
   filter: brightness(0.9) saturate(1.15);
-  border-radius: 14px;
 }
 
-/* ⭐ IMAGEN LATERAL */
+/* Imagen lateral */
 .overlay-side-image {
-  width: 100%;
+  flex: 2;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  background: rgba(10, 15, 30, 0.55);
+  backdrop-filter: blur(6px);
 }
 
 .overlay-side-image img {
-  width: 90%;
+  width: 120%;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 191, 255, 0.35);
 }
 
-/* ⭐ BENEFICIOS */
-.overlay-beneficios {
+/* Texto */
+.overlay-text {
   position: absolute;
-  right: 2rem;
-  top: 2rem;
-  width: 360px;
-  background: rgba(5, 10, 25, 0.88);
-  border: 1px solid rgba(0, 191, 255, 0.45);
-  border-radius: 16px;
-  padding: 1.6rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(5, 10, 25, 0.85),
+    rgba(5, 10, 25, 0.45)
+  );
+
+  padding: 1.8rem;
   color: #e6eef8;
-  box-shadow: 0 0 32px rgba(0, 191, 255, 0.28);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.35s ease;
-  pointer-events: none;
+  text-shadow: 0 0 12px rgba(0, 191, 255, 0.35);
 }
 
-.overlay-accenture.beneficios-activos .overlay-beneficios {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+.overlay-text h2 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-/* ========================================================= */
-/* ⭐ CONTENEDOR DE TARJETAS SCROLL-STORYTELLING */
-/* ========================================================= */
-
-.modulo-scroll {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  width: 100%;
-  padding-bottom: 3rem;
+.overlay-text p {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #cbd5f5;
 }
 
-/* ========================================================= */
-/* ⭐ TARJETAS CINEMATOGRÁFICAS */
-/* ========================================================= */
-
-.modulo-screen {
-  width: 100%;
-  min-height: 85vh;
-  padding: 3rem 2rem;
-  background: rgba(10, 15, 30, 0.65);
-  border-radius: 18px;
-  box-shadow: 0 0 32px rgba(0, 191, 255, 0.22);
-  color: #e6eef8;
-  opacity: 0;
-  transform: translateY(80px);
-  transition: all 0.8s ease;
-}
-
-.modulo-screen.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.modulo-screen h2,
-.modulo-screen h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #00bfff;
-  font-size: 2rem;
-}
-
-.modulo-screen p,
-.modulo-screen li {
-  font-size: 1.2rem;
-  line-height: 1.7;
-}
-
-.modulo-screen ul {
-  margin: 0;
-  padding-left: 1.4rem;
-}
-
-/* ========================================================= */
-/* ⭐ BOTÓN DE CIERRE */
-/* ========================================================= */
-
+/* Botón de cierre */
 .overlay-close {
   position: absolute;
   top: 1rem;
@@ -253,3 +923,244 @@ body::before {
   color: #00bfff;
   transform: scale(1.15);
 }
+
+/* ⭐ Panel con scroll interno */
+.overlay-panel {
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+
+/* Animación */
+@keyframes accentureFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+    box-shadow: 0 0 0 rgba(0, 191, 255, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================================= */
+/* 📱 RESPONSIVE */
+/* ========================================================= */
+
+@media (max-width: 980px) {
+
+  .overlay-panel {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .overlay-bg {
+    height: 240px;
+  }
+
+  .overlay-side-image {
+    padding: 1rem 0;
+  }
+
+  .overlay-side-image img {
+    width: 92%;
+  }
+
+  .overlay-text {
+    position: relative;
+    background: rgba(5, 10, 25, 0.85);
+    padding: 1.4rem;
+    text-align: center;
+  }
+
+  .overlay-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .overlay-text p {
+    font-size: 0.95rem;
+  }
+
+  .overlay-close {
+    top: 0.6rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .overlay-bg {
+    height: 180px;
+  }
+
+  .overlay-text {
+    padding: 1.2rem;
+  }
+
+  .overlay-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .overlay-text p {
+    font-size: 0.9rem;
+  }
+
+  .overlay-close {
+    font-size: 2rem;
+  }
+}
+
+/* ========================================================= */
+/* ⭐ TEXTO DESCRIPTIVO AL PASAR EL CURSOR SOBRE LA IMAGEN */
+/* ========================================================= */
+
+.overlay-beneficios {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 360px;
+
+  background: rgba(5, 10, 25, 0.88);
+  border: 1px solid rgba(0, 191, 255, 0.45);
+  border-radius: 16px;
+
+  padding: 1.6rem;
+  color: #e6eef8;
+  font-size: 1.05rem;
+  line-height: 1.55;
+
+  box-shadow: 0 0 32px rgba(0, 191, 255, 0.28);
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.35s ease;
+  pointer-events: none; /* evita interferencias */
+}
+
+.overlay-beneficios h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+  color: #00bfff;
+}
+
+.overlay-beneficios ul {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.overlay-beneficios li {
+  margin-bottom: 0.5rem;
+}
+
+/* ⭐ Cuando el módulo está activo, los beneficios quedan visibles */
+.overlay-accenture.beneficios-activos .overlay-beneficios {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+/* ⭐ Secciones internas del módulo */
+.modulo-section {
+  padding: 2rem;
+  margin: 1.5rem 0;
+  background: rgba(10, 15, 30, 0.55);
+  border-radius: 14px;
+  box-shadow: 0 0 22px rgba(0, 191, 255, 0.18);
+  color: #e6eef8;
+}
+
+.modulo-section h3 {
+  margin-top: 0;
+  color: #00bfff;
+}
+
+.modulo-section ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.modulo-section li {
+  margin-bottom: 0.5rem;
+}
+/* ⭐ Secciones grandes tipo landing dentro del módulo */
+.modulo-section {
+  padding: 3rem 2.2rem;
+  margin: 2.2rem 0;
+  background: rgba(10, 15, 30, 0.65);
+  border-radius: 18px;
+  box-shadow: 0 0 32px rgba(0, 191, 255, 0.22);
+  color: #e6eef8;
+  animation: fadeSection 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modulo-section h2,
+.modulo-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #00bfff;
+  font-size: 1.6rem;
+}
+
+.modulo-section p,
+.modulo-section li {
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.modulo-section ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+/* ⭐ Tarjetas grandes tipo pantalla */
+.modulo-screen {
+  width: 100%;
+  min-height: 85vh;
+  padding: 3rem 2rem;
+  margin: 4rem 0;
+  background: rgba(10, 15, 30, 0.65);
+  border-radius: 18px;
+  box-shadow: 0 0 32px rgba(0, 191, 255, 0.22);
+  color: #e6eef8;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
+}
+
+/* ⭐ Cuando la tarjeta entra en pantalla */
+.modulo-screen.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ⭐ Títulos */
+.modulo-screen h2,
+.modulo-screen h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #00bfff;
+  font-size: 2rem;
+}
+
+/* ⭐ Texto */
+.modulo-screen p,
+.modulo-screen li {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.modulo-screen ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
