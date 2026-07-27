@@ -939,11 +939,11 @@ body::before {
 
 /* ✅ Corrección de posición inicial del módulo */
 .overlay-panel {
-  margin-top: 6vh; /* separa el módulo del borde superior */
+  margin-top: 10vh; /* separa el módulo del borde superior */
 }
 
 .modulo-screen:first-of-type {
-  padding-top: 8vh; /* asegura que el título y texto inicial estén visibles */
+  padding-top: 6vh; /* asegura que el título y texto inicial estén visibles */
 }
 
 /* ========================================================= */
