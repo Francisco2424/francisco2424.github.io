@@ -873,6 +873,7 @@ body::before {
 
 .overlay-side-image img {
   width: 80%;
+  max-height: 420px;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 191, 255, 0.35);
 }
@@ -1131,15 +1132,15 @@ body::before {
 .modulo-screen {
   width: 100%;
   min-height: 45vh;
-  padding: 2rem 1.8rem;
-  margin: 1.8rem 0;
+  padding: 2rem 2.2rem;
+  margin: 1.6rem 0;
   background: rgba(10, 15, 30, 0.65);
-  border-radius: 18px;
-  box-shadow: 0 0 32px rgba(0, 191, 255, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 0 24px rgba(0, 191, 255, 0.18);
   color: #e6eef8;
   opacity: 0;
-  transform: translateY(80px);
-  transition: all 0.8s ease;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
 }
 
 /* ⭐ Cuando la tarjeta entra en pantalla */
