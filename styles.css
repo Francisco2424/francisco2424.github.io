@@ -926,9 +926,14 @@ body::before {
 
 /* ⭐ Panel con scroll interno */
 .overlay-panel {
-  max-height: 90vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+  width: min(1200px, 95%);
+  background: rgba(15, 20, 40, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 0 45px rgba(0, 191, 255, 0.25),
+              0 0 90px rgba(0, 191, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  animation: accentureFadeIn 0.55s ease forwards;
 }
 
 
