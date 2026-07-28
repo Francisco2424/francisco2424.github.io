@@ -886,10 +886,20 @@ body::before {
   color: #e6eef8;
   box-shadow: 0 0 32px rgba(0, 191, 255, 0.22);
   position: relative;
+
+  /* Flotación suave */
   animation: float 4s ease-in-out infinite;
+
+  /* Estado inicial invisible */
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Estado visible */
+.capsula.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Flotación suave */
