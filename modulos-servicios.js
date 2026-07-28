@@ -1,18 +1,7 @@
 /* ============================================================
    ⭐ CONTROL DE MÓDULOS DE SERVICIOS — ACCENTURE
-   Cada módulo tiene su propia función:
-   - iniciarModuloSoftware()
-   - iniciarModuloAutomatizacion()
-   - iniciarModuloAnalisis()
-   - iniciarModuloFinancieros()
-   - iniciarModuloContables()
-   - iniciarModuloHeredados()
    ============================================================ */
 
-
-/* ============================================================
-   ⭐ FUNCIÓN BASE (UTILIZADA POR CADA MÓDULO)
-   ============================================================ */
 function iniciarModuloGenerico(idModulo) {
 
   const modulo = document.getElementById(idModulo);
@@ -22,7 +11,9 @@ function iniciarModuloGenerico(idModulo) {
     return;
   }
 
-  // Esperar a que el módulo esté visible
+  /* ============================================================
+     ⭐ ESPERAR A QUE EL MÓDULO ESTÉ VISIBLE
+     ============================================================ */
   function esperarModulo() {
     const slidesContainer = modulo.querySelector(".slides-container");
     const slides = modulo.querySelectorAll(".slide");
@@ -32,22 +23,28 @@ function iniciarModuloGenerico(idModulo) {
       return;
     }
 
-    // SLIDE CONTROL
+    /* ============================================================
+       ⭐ CONTROL DE SLIDES
+       ============================================================ */
     let currentSlide = 0;
+    const totalSlides = slides.length;
 
-    modulo.querySelector(".slide-right").onclick = () => {
-      currentSlide = 1;
-      slidesContainer.style.transform = "translateX(-50%)";
-      activarCapsulas(slides[1]);
-    };
+    const leftArrow = modulo.querySelector(".slide-left");
+    const rightArrow = modulo.querySelector(".slide-right");
 
-    modulo.querySelector(".slide-left").onclick = () => {
-      currentSlide = 0;
-      slidesContainer.style.transform = "translateX(0%)";
-      activarCapsulas(slides[0]);
-    };
+    /* ============================================================
+       ⭐ FUNCIÓN PARA ACTUALIZAR FLECHAS
+       ============================================================ */
+    function actualizarFlechas() {
+      leftArrow.style.display = currentSlide === 0 ? "none" : "block";
+      rightArrow.style.display = currentSlide === totalSlides - 1 ? "none" : "block";
+    }
 
-    // ⭐ ANIMACIÓN SECUENCIAL DE CÁPSULAS
+    actualizarFlechas(); // inicial
+
+    /* ============================================================
+       ⭐ ANIMACIÓN SECUENCIAL DE CÁPSULAS
+       ============================================================ */
     function activarCapsulas(slide) {
       const capsulas = slide.querySelectorAll(".capsula");
 
@@ -60,17 +57,35 @@ function iniciarModuloGenerico(idModulo) {
             bar.style.width = bar.dataset.width;
           });
 
-        }, i * 150); // 0.15s entre cápsulas
+        }, i * 150);
       });
     }
 
-    // Activar cápsulas de la primera pantalla
-    activarCapsulas(slides[0]);
+    activarCapsulas(slides[0]); // primera pantalla
+
+    /* ============================================================
+       ⭐ FLECHA DERECHA
+       ============================================================ */
+    rightArrow.onclick = () => {
+      currentSlide = Math.min(currentSlide + 1, totalSlides - 1);
+      slidesContainer.style.transform = `translateX(-${currentSlide * 50}%)`;
+      activarCapsulas(slides[currentSlide]);
+      actualizarFlechas();
+    };
+
+    /* ============================================================
+       ⭐ FLECHA IZQUIERDA
+       ============================================================ */
+    leftArrow.onclick = () => {
+      currentSlide = Math.max(currentSlide - 1, 0);
+      slidesContainer.style.transform = `translateX(-${currentSlide * 50}%)`;
+      activarCapsulas(slides[currentSlide]);
+      actualizarFlechas();
+    };
   }
 
   esperarModulo();
 }
-
 
 /* ============================================================
    ⭐ FUNCIONES POR MÓDULO
@@ -100,7 +115,6 @@ function iniciarModuloHeredados() {
   iniciarModuloGenerico("modulo-heredados");
 }
 
-
 /* ============================================================
    ⭐ FUNCIÓN PARA ABRIR MÓDULOS
    ============================================================ */
@@ -109,34 +123,27 @@ function abrirModulo(idModulo) {
   const modulo = document.getElementById(idModulo);
   modulo.style.display = "flex";
 
-  // Llamar la función correcta según el módulo
   switch (idModulo) {
     case "modulo-software":
       iniciarModuloSoftware();
       break;
-
     case "modulo-automatizacion":
       iniciarModuloAutomatizacion();
       break;
-
     case "modulo-analisis":
       iniciarModuloAnalisis();
       break;
-
     case "modulo-financieros":
       iniciarModuloFinancieros();
       break;
-
     case "modulo-contables":
       iniciarModuloContables();
       break;
-
     case "modulo-heredados":
       iniciarModuloHeredados();
       break;
   }
 }
-
 
 /* ============================================================
    ⭐ FUNCIÓN PARA CERRAR MÓDULOS
@@ -146,7 +153,6 @@ function cerrarModulo(idModulo) {
   const modulo = document.getElementById(idModulo);
   modulo.style.display = "none";
 
-  // limpiar estado visual
   modulo.querySelectorAll(".capsula").forEach(c => {
     c.classList.remove("visible");
   });
