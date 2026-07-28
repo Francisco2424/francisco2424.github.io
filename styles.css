@@ -922,6 +922,22 @@ body::before {
   color: #e6eef8;
 }
 
+.capsula-img {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.capsula-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.95;
+}
+
+
 /* ========================= */
 /* ⭐ GRÁFICOS ANIMADOS */
 /* ========================= */
