@@ -70,3 +70,31 @@ document.getElementById("btn-quien-soy").addEventListener("click", function() {
 
   setTimeout(ajustarAlturaQuienSoy, 80);
 });
+
+// SLIDE CONTROL
+let currentSlide = 0;
+const slidesContainer = document.querySelector(".slides-container");
+
+document.querySelector(".slide-right").onclick = () => {
+  currentSlide = 1;
+  slidesContainer.style.transform = "translateX(-50%)";
+};
+
+document.querySelector(".slide-left").onclick = () => {
+  currentSlide = 0;
+  slidesContainer.style.transform = "translateX(0%)";
+};
+
+// ANIMACIÓN DE BARRAS
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".bar span").forEach(bar => {
+        bar.style.width = bar.getAttribute("style").split(":")[1];
+      });
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll(".capsula").forEach(c => observer.observe(c));
