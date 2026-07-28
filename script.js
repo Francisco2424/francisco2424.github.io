@@ -78,23 +78,32 @@ const slidesContainer = document.querySelector(".slides-container");
 document.querySelector(".slide-right").onclick = () => {
   currentSlide = 1;
   slidesContainer.style.transform = "translateX(-50%)";
+  activarCapsulas(1);
 };
 
 document.querySelector(".slide-left").onclick = () => {
   currentSlide = 0;
   slidesContainer.style.transform = "translateX(0%)";
+  activarCapsulas(0);
 };
 
-// ANIMACIÓN DE BARRAS
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll(".bar span").forEach(bar => {
-        bar.style.width = bar.getAttribute("style").split(":")[1];
-      });
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.3 });
+// ⭐ ANIMACIÓN SECUENCIAL DE CÁPSULAS
+function activarCapsulas(slideIndex) {
+  const slide = document.querySelectorAll(".slide")[slideIndex];
+  const capsulas = slide.querySelectorAll(".capsula");
 
-document.querySelectorAll(".capsula").forEach(c => observer.observe(c));
+  capsulas.forEach((capsula, i) => {
+    setTimeout(() => {
+      capsula.classList.add("visible");
+
+      // activar barras
+      capsula.querySelectorAll(".bar span").forEach(bar => {
+        bar.style.width = bar.dataset.width;
+      });
+
+    }, i * 150); // 0.15s entre cápsulas
+  });
+}
+
+// Activar cápsulas de la primera pantalla al abrir
+activarCapsulas(0);

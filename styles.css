@@ -892,11 +892,6 @@ body::before {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.capsula.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Flotación suave */
 @keyframes float {
   0% { transform: translateY(0); }
@@ -979,7 +974,6 @@ body::before {
   from { opacity: 0; transform: scale(0.96); }
   to { opacity: 1; transform: scale(1); }
 }
-
 
 /* ========================================================= */
 /* 📱 RESPONSIVE */
