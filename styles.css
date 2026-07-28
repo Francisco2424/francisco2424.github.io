@@ -1045,6 +1045,61 @@ body::before {
   pointer-events: none;
 }
 
+/* ========================================================= */
+/* ⭐ NUEVO DISEÑO DE TARJETAS VERTICALES DE SERVICIOS */
+/* ========================================================= */
+
+.servicio-card {
+  width: 280px;
+  height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin: 1rem;
+  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
+}
+
+.servicio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.servicio-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  color: #e6eef8;
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+}
+
+.servicio-card:hover .servicio-overlay {
+  transform: translateY(0);
+}
+
+.servicio-overlay h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.servicio-overlay p {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
 
 /* ========================================================= */
 /* 📱 RESPONSIVE */
