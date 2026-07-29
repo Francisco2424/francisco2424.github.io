@@ -149,10 +149,16 @@ function abrirModulo(idModulo) {
    ⭐ FUNCIÓN PARA CERRAR MÓDULOS
    ============================================================ */
 
-function cerrarModulo(idModulo) {
-  const modulo = document.getElementById(idModulo);
+function cerrarModulo() {
+  // Detecta el módulo donde está el botón
+  const modulo = event.target.closest('.overlay-accenture');
+
+  if (!modulo) return;
+
+  // Oculta el módulo
   modulo.style.display = "none";
 
+  // Limpia animaciones
   modulo.querySelectorAll(".capsula").forEach(c => {
     c.classList.remove("visible");
   });
@@ -161,5 +167,12 @@ function cerrarModulo(idModulo) {
     bar.style.width = "0";
   });
 
-  modulo.querySelector(".slides-container").style.transform = "translateX(0%)";
+  // Resetea slides
+  const slidesContainer = modulo.querySelector(".slides-container");
+  if (slidesContainer) {
+    slidesContainer.style.transform = "translateX(0%)";
+  }
+
+  // Vuelve a la sección Servicios sin recargar
+  document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
 }

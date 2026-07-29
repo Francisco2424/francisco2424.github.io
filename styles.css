@@ -1143,6 +1143,22 @@ body::before {
   position: relative;
 }
 
+.btn-volver {
+  margin: 2rem auto 0 auto;
+  display: block;
+  padding: 0.8rem 1.6rem;
+  background: #00bfff;
+  color: #0a0f1e;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: #33ccff;
+}
 
 /* ========================================================= */
 /* 📱 RESPONSIVE */
