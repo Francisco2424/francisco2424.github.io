@@ -1471,3 +1471,44 @@ body::before {
 .servicio-card:hover .servicio-overlay {
   transform: translate(-50%, -50%); /* se mueve al centro */
 }
+
+/* ⭐ Tarjetas más anchas y adaptadas al ancho total */
+#servicios {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+.servicio-card {
+  flex: 1 1 15%;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ⭐ Aislar ticker para que nunca se bloquee */
+.ticker {
+  isolation: isolate;
+}
+
+.ticker-track {
+  will-change: transform;
+}
+
+.ticker-track {
+  position: relative;
+  z-index: 1000;
+}
+
