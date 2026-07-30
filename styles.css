@@ -1512,3 +1512,27 @@ body::before {
   z-index: 1000;
 }
 
+/* ⭐ Título 'Servicios' en línea independiente y alineado a la izquierda */
+#servicios h2 {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1.8rem;
+  padding-left: 3rem; /* ajusta según tu gusto */
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #e6eef8;
+  text-shadow: 0 0 12px rgba(0,191,255,0.45);
+}
+/* ⭐ Imágenes nítidas en las tarjetas */
+.servicio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none !important; /* elimina brillo/contraste borroso */
+  transition: transform 0.4s ease;
+}
+
+/* Efecto sutil al pasar el cursor */
+.servicio-card:hover .servicio-img {
+  transform: scale(1.05);
+}
