@@ -1577,20 +1577,20 @@ body::before {
 
 
 /* ========================================================= */
-/* ⭐ SECCIÓN SERVICIOS — BLOQUE ÚNICO AJUSTADO */
+/* ⭐ SECCIÓN SERVICIOS — BLOQUE ÚNICO AJUSTADO Y PRIORITARIO */
 /* ========================================================= */
 
 /* Contenedor de la sección Servicios */
 #servicios {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
   gap: 1.5rem;
   width: 100%;
   max-width: 95vw;
   margin: 0 auto;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 /* Tarjeta de servicio */
@@ -1622,7 +1622,7 @@ body::before {
   filter: brightness(1.05) contrast(1.05);
 }
 
-/* Título de la tarjeta (arriba) */
+/* Título de la tarjeta */
 .servicio-titulo {
   position: absolute;
   top: 0;
@@ -1637,7 +1637,7 @@ body::before {
   z-index: 4;
 }
 
-/* Overlay de texto (entra desde la derecha) */
+/* Overlay de texto */
 .servicio-overlay {
   position: absolute;
   top: 50%;
@@ -1658,7 +1658,7 @@ body::before {
   transform: translate(-50%, -50%);
 }
 
-/* Botón volver dentro de los módulos */
+/* Botón volver */
 .btn-volver {
   margin: 2rem auto 0 auto;
   display: block;
@@ -1676,7 +1676,7 @@ body::before {
   background: #33ccff;
 }
 
-/* Panel del overlay (para que el botón no se corte) */
+/* Panel del overlay */
 .overlay-panel {
   overflow: visible;
 }
