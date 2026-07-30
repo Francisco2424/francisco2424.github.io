@@ -1708,8 +1708,8 @@ body::before {
 .servicio-titulo {
   position: absolute;
   top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 1rem;
+  transform: none;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1722,6 +1722,8 @@ body::before {
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
   z-index: 4;
+  white-space: nowrap;         /* ⭐ evita que el texto se corte o salte */
+  pointer-events: none;        /* ⭐ evita que el overlay lo empuje o tape */
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
