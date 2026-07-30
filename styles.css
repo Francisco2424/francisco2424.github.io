@@ -1725,10 +1725,10 @@ body::before {
 /* Al hover: aparece texto y se difumina la imagen */
 .servicio-card:hover .servicio-overlay {
   transform: translate(-50%, -50%);
-  opacity: 1;
-  backdrop-filter: blur(6px); /* blur solo cuando el texto está visible */
+  opacity: 0;
+  backdrop-filter: blur(2px); /* blur solo cuando el texto está visible */
 }
 
 .servicio-card:hover .servicio-img {
-  filter: blur(4px);
+  filter: blur(2px);
 }
