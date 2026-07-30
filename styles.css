@@ -1387,19 +1387,6 @@ body::before {
   overflow: visible !important;
 }
 
-/* ⭐ Corrección fila única */
-#servicios {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: center;
-  gap: 1.5rem;
-  overflow-x: auto;
-}
-
-/* ⭐ Corrección imagen borrosa */
-.servicio-img {
-  filter: brightness(1.05) contrast(1.05);
-}
 
 /* ⭐ Corrección overlay abajo */
 .servicio-overlay {
@@ -1561,9 +1548,8 @@ body::before {
   flex: 1 1 15%;
 }
 
-#servicios .servicio-card:nth-child(n+2) {
-  /* todas las tarjetas, sin el h2 */
-  display: inline-block;
+#servicios .servicio-card {
+  display: flex;
 }
 
 .servicio-img {
@@ -1678,7 +1664,7 @@ body::before {
   height: 100%;
   object-fit: cover;
   filter: none;              /* ⭐ sin difuminado */
-  transition: filter 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 /* Cuando el overlay aparece (hover en la tarjeta) */
