@@ -1733,3 +1733,42 @@ body::before {
 #servicios .servicio-card:hover .servicio-overlay {
   transform: translate(-50%, -50%);
 }
+
+
+/* ========================================================= */
+/* ⭐ CORRECCIÓN DEFINITIVA — IMAGEN NÍTIDA + BLUR SOLO EN HOVER */
+/* ========================================================= */
+
+/* Imagen siempre nítida */
+.servicio-img {
+  filter: none !important;
+  transition: filter 0.4s ease;
+}
+
+/* Overlay realmente fuera de la tarjeta */
+.servicio-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(200%, -50%);   /* ⭐ ahora sí está fuera */
+  width: 80%;
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  color: #e6eef8;
+  text-align: justify;
+  border-radius: 12px;
+  transition: transform 0.45s ease;
+  z-index: 3;
+}
+
+/* Cuando aparece el texto, la imagen se difumina */
+.servicio-card:hover .servicio-img {
+  filter: blur(4px);
+}
+
+/* Texto entra al centro */
+.servicio-card:hover .servicio-overlay {
+  transform: translate(-50%, -50%);
+}
+
