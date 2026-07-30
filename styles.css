@@ -1045,37 +1045,22 @@ body::before {
   pointer-events: none;
 }
 
-/* ========================================================= */
-/* ⭐ NUEVO DISEÑO DE TARJETAS VERTICALES DE SERVICIOS */
-/* ========================================================= */
-
-.servicio-card {
-  width: 280px;
-  height: 360px;
-  border-radius: 18px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  margin: 1rem;
-  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
-  transition: transform 0.3s ease;
-}
-
-.servicio-card:hover {
-  transform: translateY(-8px);
-}
+/****************
 
 .servicio-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(1.05) contrast(1.05);
+  filter: none !important;
+  transition: transform 0.4s ease;
 }
 
-.servicio-card:hover .servicio-overlay {
-  transform: translateY(0);
+.servicio-card:hover .servicio-img {
+  transform: scale(1.05);
 }
+
+
+/*************************
 
 .servicio-overlay h3 {
   margin: 0;
