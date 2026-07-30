@@ -1536,3 +1536,39 @@ body::before {
 .servicio-card:hover .servicio-img {
   transform: scale(1.05);
 }
+
+/* Línea propia para el título Servicios */
+#servicios {
+  display: flex;
+  flex-direction: column;      /* primero el título, luego las tarjetas */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+#servicios h2 {
+  align-self: flex-start;      /* alineado a la izquierda */
+  margin: 0 0 0.5rem 3rem;     /* ajusta el 3rem según tu gusto */
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #e6eef8;
+  text-shadow: 0 0 12px rgba(0,191,255,0.45);
+}
+
+/* fila de tarjetas debajo del título */
+#servicios .servicio-card {
+  flex: 1 1 15%;
+}
+
+#servicios .servicio-card:nth-child(n+2) {
+  /* todas las tarjetas, sin el h2 */
+  display: inline-block;
+}
+
+.servicio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none !important;
+}
