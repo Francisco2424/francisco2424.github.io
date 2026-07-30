@@ -1577,7 +1577,7 @@ body::before {
 
 
 /* ========================================================= */
-/* ⭐ SECCIÓN SERVICIOS — 2 FILAS × 3 TARJETAS */
+/* ⭐ SECCIÓN SERVICIOS — AJUSTE FINAL CON ANIMACIÓN IZQUIERDA */
 /* ========================================================= */
 
 #servicios {
@@ -1590,7 +1590,7 @@ body::before {
   box-sizing: border-box;
 }
 
-/* Título */
+/* Título principal */
 #servicios > h2 {
   width: 100%;
   text-align: left;
@@ -1601,27 +1601,65 @@ body::before {
   text-shadow: 0 0 12px rgba(0,191,255,0.45);
 }
 
-/* Contenedor general de tarjetas */
-.servicios-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-}
-
-/* Cada fila con 3 tarjetas */
-.fila {
+/* Layout general: animación izquierda + tarjetas derecha */
+.servicios-layout {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Columna izquierda */
+.servicios-animacion {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #0a0f1e 40%, #001f33 100%);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.25);
+}
+
+/* Texto animado */
+.animacion-texto {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #e6eef8;
+  text-align: center;
+  animation: tornado 6s linear infinite;
+}
+
+/* Animación tipo remolino */
+@keyframes tornado {
+  0%   { transform: rotate(0deg) scale(1); opacity: 0.3; }
+  25%  { transform: rotate(90deg) scale(1.1); opacity: 0.7; }
+  50%  { transform: rotate(180deg) scale(1.2); opacity: 1; }
+  75%  { transform: rotate(270deg) scale(1.1); opacity: 0.7; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.3; }
+}
+
+/* Columna derecha: tarjetas */
+.servicios-grid {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-end; /* ⭐ Alinea las filas a la derecha */
+}
+
+/* Filas de tarjetas */
+.fila {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; /* ⭐ Alinea las tarjetas a la derecha */
   gap: 1.5rem;
 }
 
 /* Tarjetas */
 .servicio-card {
-  flex: 1;
-  min-width: 200px;
-  max-width: 260px;
+  flex: 0 0 240px;
   height: 380px;
   display: flex;
   flex-direction: column;
@@ -1652,16 +1690,16 @@ body::before {
   top: 0;
   width: 100%;
   text-align: center;
-  padding: 0.8rem 0;
+  padding: 0.6rem 0; /* ⭐ más compacto */
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
-  font-size: 1.2rem;
+  font-size: 1rem; /* ⭐ reducido para legibilidad */
   font-weight: 600;
   color: #e6eef8;
   z-index: 4;
 }
 
-/* Overlay */
+/* Overlay (sin cambios) */
 .servicio-overlay {
   position: absolute;
   top: 50%;
