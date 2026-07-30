@@ -1680,89 +1680,37 @@ body::before {
 .overlay-panel {
   overflow: visible;
 }
+
 /* ========================================================= */
-/* ⭐ SECCIÓN SERVICIOS — CORRECCIÓN DEFINITIVA */
+/* ⭐ SECCIÓN SERVICIOS — CORRECCIÓN FINAL REAL */
 /* ========================================================= */
 
-/* Liberar ancho de la sección */
-#servicios.section {
-  max-width: 100% !important;
-  width: 100% !important;
-  padding: 2rem 0 !important;
-}
-
-/* Contenedor de tarjetas */
 #servicios {
   display: flex !important;
   flex-wrap: nowrap !important;
   justify-content: space-between !important;
   align-items: stretch !important;
   gap: 1.5rem;
-  width: 100%;
-  margin: 0 auto;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+
+  /* ⭐ CLAVE: liberar del grid padre */
+  grid-column: 1 / -1 !important;
 }
 
-/* Tarjeta de servicio */
+/* Tarjetas */
 .servicio-card {
-  display: flex !important;        /* CORRECCIÓN CRÍTICA */
+  flex: 1 1 auto;
+  min-width: 180px;
+  max-width: 240px;
+  height: 380px;
+  display: flex !important;
   flex-direction: column;
-  flex: 1 1 15%;
-  min-width: 180px;                /* REDUCCIÓN DE ANCHO */
-  max-width: 240px;                /* REDUCCIÓN DE ANCHO */
-  height: 380px;                   /* ALTURA PRUDENTE */
   border-radius: 18px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
   transition: transform 0.3s ease;
-}
-
-.servicio-card:hover {
-  transform: translateY(-8px);
-}
-
-/* Imagen */
-.servicio-img {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(1.05) contrast(1.05);
-}
-
-/* Título */
-.servicio-titulo {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.8rem 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e6eef8;
-  z-index: 4;
-}
-
-/* Overlay */
-.servicio-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  color: #e6eef8;
-  text-align: justify;
-  border-radius: 12px;
-  transform: translate(100%, -50%);
-  transition: transform 0.45s ease;
-  z-index: 3;
-}
-
-.servicio-card:hover .servicio-overlay {
-  transform: translate(-50%, -50%);
 }
