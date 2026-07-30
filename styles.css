@@ -1698,10 +1698,23 @@ body::before {
   transition: filter 0.4s ease;
 }
 
-/* Título sin blur permanente */
+/* ========================================================= */
+/* ⭐ CORRECCIÓN FINAL — TÍTULO NÍTIDO SIN RECTÁNGULO BORROSO */
+/* ========================================================= */
+
 .servicio-titulo {
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: none !important;
+  position: absolute;
+  top: 1rem;                /* separa el texto del borde superior */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.3rem 0.8rem;   /* solo fondo detrás del texto */
+  background: transparent;  /* elimina el rectángulo oscuro */
+  backdrop-filter: none !important; /* elimina el blur permanente */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e6eef8;
+  text-shadow: 0 0 8px rgba(0,191,255,0.45);
+  z-index: 4;
 }
 
 /* Overlay fuera de la tarjeta mientras está oculto */
