@@ -1681,15 +1681,60 @@ body::before {
   overflow: visible;
 }
 
-/* ⭐ Corrección definitiva — orientación horizontal */
+/* ========================================================= */
+/* ⭐ SECCIÓN SERVICIOS — CORRECCIÓN FINAL Y DISTRIBUCIÓN */
+/* ========================================================= */
+
+/* Contenedor general */
 #servicios {
   display: flex !important;
-  flex-direction: row !important;   /* ← CLAVE */
+  flex-direction: column !important; /* el título arriba, tarjetas abajo */
+  align-items: flex-start !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 auto !important;
+  padding: 2rem 3rem !important;
+  box-sizing: border-box;
+}
+
+/* Título “Servicios” en su propia fila */
+#servicios > h2 {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #e6eef8;
+  text-shadow: 0 0 12px rgba(0,191,255,0.45);
+}
+
+/* Contenedor interno de tarjetas */
+#servicios .servicios-fila {
+  display: flex !important;
+  flex-direction: row !important;   /* tarjetas en horizontal */
   flex-wrap: nowrap !important;
   justify-content: space-between !important;
   align-items: stretch !important;
   gap: 1.5rem !important;
-  width: 100% !important;
-  max-width: 100vw !important;
-  margin: 0 auto !important;
+  width: 100%;
+}
+
+/* Tarjetas individuales */
+.servicio-card {
+  flex: 1 1 auto;
+  min-width: 180px;
+  max-width: 220px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
 }
