@@ -1714,3 +1714,26 @@ body::before {
   box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
   transition: transform 0.3s ease;
 }
+
+/* ⭐ CORRECCIÓN FINAL — TARJETAS EN HORIZONTAL */
+
+#servicios.section {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+#servicios {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  gap: 1.5rem !important;
+}
+
+.servicio-card {
+  display: flex !important;
+  flex-direction: column;
+  min-width: 180px !important;
+  max-width: 220px !important;
+  height: 360px !important;
+  margin: 0 !important;
+}
