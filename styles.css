@@ -1692,3 +1692,44 @@ body::before {
 .servicio-card:hover .servicio-overlay {
   transform: translate(-50%, -50%);
 }
+
+
+/* ========================================================= */
+/* ⭐ CORRECCIÓN FINAL SERVICIOS — IMAGEN NÍTIDA + BLUR SOLO CON TEXTO */
+/* ========================================================= */
+
+/* Imagen de las tarjetas de servicios: siempre nítida por defecto */
+#servicios .servicio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none !important;          /* ⭐ elimina cualquier filtro previo */
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* Cuando aparece el texto (hover en la tarjeta), la imagen se difumina */
+#servicios .servicio-card:hover .servicio-img {
+  filter: blur(4px);                /* ⭐ blur solo en hover */
+}
+
+/* Overlay de texto centrado (se mantiene como lo tienes) */
+#servicios .servicio-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(100%, -50%);
+  width: 80%;
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  color: #e6eef8;
+  text-align: justify;
+  border-radius: 12px;
+  transition: transform 0.45s ease;
+  z-index: 3;
+}
+
+/* Al hover, el texto entra al centro */
+#servicios .servicio-card:hover .servicio-overlay {
+  transform: translate(-50%, -50%);
+}
