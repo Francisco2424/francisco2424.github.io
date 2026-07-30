@@ -1657,19 +1657,10 @@ body::before {
   filter: blur(4px); /* ⭐ desenfoque suave solo al hover */
 }
 
-/* Título dentro de la tarjeta */
+/* Título sin blur permanente */
 .servicio-titulo {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.6rem 0; /* ⭐ más compacto */
-  background: rgba(0, 0, 0, 0.45);
-/*  backdrop-filter: blur(4px); */
-  font-size: 1rem; /* ⭐ reducido para legibilidad */
-  font-weight: 600;
-  color: #e6eef8;
-  z-index: 4;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: none !important;
 }
 
 /* Overlay (sin cambios) */
@@ -1695,80 +1686,49 @@ body::before {
 
 
 /* ========================================================= */
-/* ⭐ CORRECCIÓN FINAL SERVICIOS — IMAGEN NÍTIDA + BLUR SOLO CON TEXTO */
-/* ========================================================= */
-
-/* Imagen de las tarjetas de servicios: siempre nítida por defecto */
-#servicios .servicio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: none !important;          /* ⭐ elimina cualquier filtro previo */
-  transition: filter 0.4s ease, transform 0.4s ease;
-}
-
-/* Cuando aparece el texto (hover en la tarjeta), la imagen se difumina */
-#servicios .servicio-card:hover .servicio-img {
-  filter: blur(4px);                /* ⭐ blur solo en hover */
-}
-
-/* Overlay de texto centrado (se mantiene como lo tienes) */
-#servicios .servicio-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(100%, -50%);
-  width: 80%;
-  padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  color: #e6eef8;
-  text-align: justify;
-  border-radius: 12px;
-  transition: transform 0.45s ease;
-  z-index: 3;
-}
-
-/* Al hover, el texto entra al centro */
-#servicios .servicio-card:hover .servicio-overlay {
-  transform: translate(-50%, -50%);
-}
-
-
-/* ========================================================= */
-/* ⭐ CORRECCIÓN DEFINITIVA — IMAGEN NÍTIDA + BLUR SOLO EN HOVER */
+/* ⭐ CORRECCIÓN FINAL — IMAGEN NÍTIDA + BLUR SOLO EN HOVER */
 /* ========================================================= */
 
 /* Imagen siempre nítida */
 .servicio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: none !important;
   transition: filter 0.4s ease;
 }
 
-/* Overlay realmente fuera de la tarjeta */
+/* Título sin blur permanente */
+.servicio-titulo {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: none !important;
+}
+
+/* Overlay fuera de la tarjeta mientras está oculto */
 .servicio-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(200%, -50%);   /* ⭐ ahora sí está fuera */
+  transform: translate(200%, -50%); /* realmente fuera del área visible */
   width: 80%;
   padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: none !important; /* sin blur mientras está oculto */
   color: #e6eef8;
   text-align: justify;
   border-radius: 12px;
-  transition: transform 0.45s ease;
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.3s ease;
   z-index: 3;
 }
 
-/* Cuando aparece el texto, la imagen se difumina */
+/* Al hover: aparece texto y se difumina la imagen */
+.servicio-card:hover .servicio-overlay {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  backdrop-filter: blur(6px); /* blur solo cuando el texto está visible */
+}
+
 .servicio-card:hover .servicio-img {
   filter: blur(4px);
 }
-
-/* Texto entra al centro */
-.servicio-card:hover .servicio-overlay {
-  transform: translate(-50%, -50%);
-}
-
