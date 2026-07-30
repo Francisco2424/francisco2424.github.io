@@ -1680,3 +1680,9 @@ body::before {
 .overlay-panel {
   overflow: visible;
 }
+/* ⭐ Corrección definitiva: liberar ancho de la sección Servicios */
+#servicios.section {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 2rem 0 !important;
+}
