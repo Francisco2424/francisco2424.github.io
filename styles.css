@@ -1701,20 +1701,36 @@ body::before {
 /* ========================================================= */
 /* ⭐ TÍTULO NÍTIDO SIN RECTÁNGULO BORROSO */
 /* ========================================================= */
+/* ========================================================= */
+/* ⭐ TÍTULO PROFESIONAL Y ARMÓNICO */
+/* ========================================================= */
 
 .servicio-titulo {
   position: absolute;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  padding: 0;                     /* sin fondo */
-  background: transparent !important;
-  backdrop-filter: none !important;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  letter-spacing: 0.5px;
   color: #e6eef8;
-  text-shadow: 0 0 8px rgba(0,191,255,0.45);
+  text-shadow:
+    0 0 6px rgba(0,191,255,0.45),
+    0 0 12px rgba(0,191,255,0.25);
+  background: transparent;
+  backdrop-filter: none !important;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
   z-index: 4;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* ⭐ Efecto sutil al pasar el cursor */
+.servicio-card:hover .servicio-titulo {
+  color: #00bfff;
+  text-shadow:
+    0 0 10px rgba(0,191,255,0.65),
+    0 0 20px rgba(0,191,255,0.45);
 }
 
 /* ========================================================= */
