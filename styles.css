@@ -1681,68 +1681,15 @@ body::before {
   overflow: visible;
 }
 
-/* ========================================================= */
-/* ⭐ SECCIÓN SERVICIOS — CORRECCIÓN FINAL REAL */
-/* ========================================================= */
-
+/* ⭐ Corrección definitiva — orientación horizontal */
 #servicios {
-  /* ⭐ CLAVE: liberar del grid padre */
-  grid-column: 1 / -1 !important;
-
   display: flex !important;
+  flex-direction: row !important;   /* ← CLAVE */
   flex-wrap: nowrap !important;
   justify-content: space-between !important;
   align-items: stretch !important;
-  gap: 1.5rem;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-}
-
-/* Tarjetas */
-.servicio-card {
-  flex: 1 1 auto;
-  min-width: 180px;
-  max-width: 240px;
-  height: 380px;
-  display: flex !important;
-  flex-direction: column;
-  border-radius: 18px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
-  transition: transform 0.3s ease;
-}
-
-/* ⭐ CORRECCIÓN FINAL — TARJETAS EN HORIZONTAL */
-
-#servicios.section {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-#servicios {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: space-between !important;
   gap: 1.5rem !important;
-}
-
-.servicio-card {
-  display: flex !important;
-  flex-direction: column;
-  min-width: 180px !important;
-  max-width: 220px !important;
-  height: 360px !important;
-  margin: 0 !important;
-}
-
-/* ⭐ Corrección de ancho real para la sección Servicios */
-#servicios {
-  width: 100vw !important;        /* ocupa todo el ancho de la ventana */
-  max-width: 100vw !important;    /* evita el límite de 900px */
-  margin: 0 !important;           /* elimina márgenes laterales */
-  padding: 0 2rem !important;     /* mantiene respiración visual */
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100vw !important;
+  margin: 0 auto !important;
 }
