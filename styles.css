@@ -1686,6 +1686,9 @@ body::before {
 /* ========================================================= */
 
 #servicios {
+  /* ⭐ CLAVE: liberar del grid padre */
+  grid-column: 1 / -1 !important;
+
   display: flex !important;
   flex-wrap: nowrap !important;
   justify-content: space-between !important;
@@ -1694,9 +1697,6 @@ body::before {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 auto !important;
-
-  /* ⭐ CLAVE: liberar del grid padre */
-  grid-column: 1 / -1 !important;
 }
 
 /* Tarjetas */
