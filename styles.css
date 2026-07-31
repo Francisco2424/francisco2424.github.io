@@ -1699,86 +1699,48 @@ body::before {
 }
 
 /* ========================================================= */
-/* ⭐ TÍTULO NÍTIDO SIN RECTÁNGULO BORROSO */
-/* ========================================================= */
-/* ========================================================= */
-/* ⭐ TÍTULO PROFESIONAL Y ARMÓNICO */
+/* ⭐ CORRECCIÓN FINAL — TÍTULO NÍTIDO SIN RECTÁNGULO BORROSO */
 /* ========================================================= */
 
 .servicio-titulo {
   position: absolute;
-  top: 1rem;
-  right: 50%;
+  top: 1rem;                /* separa el texto del borde superior */
+  left: 50%;
   transform: translateX(-50%);
-  font-size: 1.15rem;
+  padding: 0.3rem 0.8rem;   /* solo fondo detrás del texto */
+  background: transparent;  /* elimina el rectángulo oscuro */
+  backdrop-filter: none !important; /* elimina el blur permanente */
+  font-size: 1.1rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
   color: #e6eef8;
-  text-shadow:
-    0 0 6px rgba(0,191,255,0.45),
-    0 0 12px rgba(0,191,255,0.25);
-  background: transparent;
-  backdrop-filter: none !important;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
+  text-shadow: 0 0 8px rgba(0,191,255,0.45);
   z-index: 4;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* ⭐ Efecto sutil al pasar el cursor */
-.servicio-card:hover .servicio-titulo {
-  color: #00bfff;
-  text-shadow:
-    0 0 10px rgba(0,191,255,0.65),
-    0 0 20px rgba(0,191,255,0.45);
-}
-
-/* ========================================================= */
-/* ⭐ IMAGEN SIEMPRE NÍTIDA */
-/* ========================================================= */
-
-.servicio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: none !important;        /* elimina cualquier blur o brillo previo */
-  transition: filter 0.4s ease;
-}
-
-/* ========================================================= */
-/* ⭐ OVERLAY OCULTO — FUERA DE LA TARJETA */
-/* ========================================================= */
-
+/* Overlay fuera de la tarjeta mientras está oculto */
 .servicio-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(200%, -50%);   /* realmente fuera de la tarjeta */
+  transform: translate(200%, -50%); /* realmente fuera del área visible */
   width: 80%;
   padding: 1.2rem;
   background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: none !important;   /* sin blur mientras está oculto */
+  backdrop-filter: none !important; /* sin blur mientras está oculto */
   color: #e6eef8;
   text-align: justify;
   border-radius: 12px;
-  opacity: 0;                          /* oculto */
+  opacity: 0;
   transition: transform 0.45s ease, opacity 0.3s ease;
   z-index: 3;
 }
 
-/* ========================================================= */
-/* ⭐ HOVER — TEXTO ENTRA DESDE LA DERECHA Y SE CENTRA */
-/* ========================================================= */
-
+/* Al hover: aparece texto y se difumina la imagen */
 .servicio-card:hover .servicio-overlay {
-  transform: translate(-50%, -50%);   /* entra desde la derecha */
-  opacity: 1;                         /* aparece */
-  backdrop-filter: blur(6px);         /* blur SOLO cuando está visible */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  backdrop-filter: blur(2px); /* blur solo cuando el texto está visible */
 }
-
-/* ========================================================= */
-/* ⭐ HOVER — IMAGEN SE DIFUMINA SUAVEMENTE */
-/* ========================================================= */
 
 .servicio-card:hover .servicio-img {
   filter: blur(2px);
