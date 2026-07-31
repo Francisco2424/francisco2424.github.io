@@ -1091,9 +1091,28 @@ body::before {
   transform: translateY(0);
 }
 
+.servicio-titulo {
+  position: absolute;
+  bottom: 0;           /* título fijo abajo */
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e6eef8;
+}
+
+#servicios {
+  display: flex;
+  flex-wrap: nowrap;     /* todas en una fila */
+  gap: 1.5rem;
+  justify-content: center;
+}
 
 .servicio-card {
-  width: 200px;          /* ajusta si quieres más ancho */
+  width: 260px;          /* ajusta si quieres más ancho */
   height: 360px;         /* misma altura que ya tienes */
   position: relative;
 }
@@ -1372,6 +1391,36 @@ body::before {
   transform: translateY(0);
 }
 
+/* ⭐ Corrección título fijo */
+.servicio-titulo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e6eef8;
+  z-index: 4;
+}
+
+
+/* ⭐ TÍTULO FIJO ARRIBA */
+.servicio-titulo {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e6eef8;
+  z-index: 4;
+}
 
 /* ⭐ TEXTO QUE ENTRA DESDE LA DERECHA */
 .servicio-overlay {
@@ -1608,10 +1657,19 @@ body::before {
   filter: blur(4px); /* ⭐ desenfoque suave solo al hover */
 }
 
-/* Título sin blur permanente */
+/* Título dentro de la tarjeta */
 .servicio-titulo {
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: none !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.6rem 0; /* ⭐ más compacto */
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 1rem; /* ⭐ reducido para legibilidad */
+  font-weight: 600;
+  color: #e6eef8;
+  z-index: 4;
 }
 
 /* Overlay (sin cambios) */
@@ -1633,112 +1691,4 @@ body::before {
 
 .servicio-card:hover .servicio-overlay {
   transform: translate(-50%, -50%);
-}
-
-
-/* ========================================================= */
-/* ⭐ CORRECCIÓN FINAL — IMAGEN NÍTIDA + BLUR SOLO EN HOVER */
-/* ========================================================= */
-
-/* Imagen siempre nítida */
-.servicio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: none !important;
-  transition: filter 0.4s ease;
-}
-
-/* ========================================================= */
-/* ⭐ CORRECCIÓN FINAL — TÍTULO NÍTIDO SIN RECTÁNGULO BORROSO */
-/* ========================================================= */
-
-.servicio-titulo {
-  position: absolute;
-  top: 1rem;                /* separa el texto del borde superior */
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.3rem 0.8rem;   /* solo fondo detrás del texto */
-  background: transparent;  /* elimina el rectángulo oscuro */
-  backdrop-filter: none !important; /* elimina el blur permanente */
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #e6eef8;
-  text-shadow: 0 0 8px rgba(0,191,255,0.45);
-  z-index: 4;
-}
-
-/* Overlay fuera de la tarjeta mientras está oculto */
-.servicio-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(200%, -50%); /* realmente fuera del área visible */
-  width: 80%;
-  padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: none !important; /* sin blur mientras está oculto */
-  color: #e6eef8;
-  text-align: justify;
-  border-radius: 12px;
-  opacity: 0;
-  transition: transform 0.45s ease, opacity 0.3s ease;
-  z-index: 3;
-}
-
-/* Al hover: aparece texto y se difumina la imagen */
-.servicio-card:hover .servicio-overlay {
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  backdrop-filter: blur(2px); /* blur solo cuando el texto está visible */
-}
-
-.servicio-card:hover .servicio-img {
-  filter: blur(2px);
-}
-
-
-/* ========================================================= */
-/* ⭐ TÍTULO FINAL — PROFESIONAL, ARMÓNICO Y A LA DERECHA */
-/* ========================================================= */
-
-.servicio-card {
-  position: relative;     /* contenedor del título */
-  overflow: hidden;       /* evita desbordes */
-}
-
-.servicio-titulo {
-  position: absolute;
-  top: 1rem;              /* ubicación profesional */
-  right: 1rem;            /* alineado a la derecha */
-  transform: none;        /* elimina centrado heredado */
-  
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: #e6eef8;
-
-  text-shadow:
-    0 0 6px rgba(0,191,255,0.45),
-    0 0 12px rgba(0,191,255,0.25);
-
-  background: transparent !important;
-  backdrop-filter: none !important;
-
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-
-  z-index: 10;            /* siempre encima de la imagen */
-  white-space: nowrap;    /* evita saltos de línea */
-  pointer-events: none;   /* evita interferencia con overlay */
-
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* ⭐ Efecto sutil al pasar el cursor */
-.servicio-card:hover .servicio-titulo {
-  color: #00bfff;
-  text-shadow:
-    0 0 10px rgba(0,191,255,0.65),
-    0 0 20px rgba(0,191,255,0.45);
 }
