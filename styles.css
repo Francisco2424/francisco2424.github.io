@@ -1091,6 +1091,19 @@ body::before {
   transform: translateY(0);
 }
 
+.servicio-titulo {
+  position: absolute;
+  bottom: 0;           /* título fijo abajo */
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e6eef8;
+}
+
 #servicios {
   display: flex;
   flex-wrap: nowrap;     /* todas en una fila */
@@ -1378,6 +1391,36 @@ body::before {
   transform: translateY(0);
 }
 
+/* ⭐ Corrección título fijo */
+.servicio-titulo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e6eef8;
+  z-index: 4;
+}
+
+
+/* ⭐ TÍTULO FIJO ARRIBA */
+.servicio-titulo {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e6eef8;
+  z-index: 4;
+}
 
 /* ⭐ TEXTO QUE ENTRA DESDE LA DERECHA */
 .servicio-overlay {
@@ -1665,8 +1708,8 @@ body::before {
 .servicio-titulo {
   position: absolute;
   top: 1rem;
-  right: 1rem;
-  transform: none;
+  right: 50%;
+  transform: translateX(-50%);
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1679,8 +1722,6 @@ body::before {
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
   z-index: 4;
-  white-space: nowrap;         /* ⭐ evita que el texto se corte o salte */
-  pointer-events: none;        /* ⭐ evita que el overlay lo empuje o tape */
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
