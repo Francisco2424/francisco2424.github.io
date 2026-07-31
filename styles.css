@@ -1705,31 +1705,26 @@ body::before {
 
 .servicio-titulo {
   position: absolute;
-  top: 1rem;              /* ubicación profesional */
-  right: 1rem;            /* alineado a la derecha */
-  transform: none;        /* elimina centrado heredado */
-  
+  top: 1rem;
+  right: 1rem;                 /* ⭐ Alineado a la derecha */
+  transform: none;             /* ⭐ Elimina el centrado */
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #e6eef8;
-
   text-shadow:
     0 0 6px rgba(0,191,255,0.45),
     0 0 12px rgba(0,191,255,0.25);
-
-  background: transparent !important;
+  background: transparent;
   backdrop-filter: none !important;
-
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
-
-  /* z-index: 10;            /* siempre encima de la imagen */
-  white-space: nowrap;    /* evita saltos de línea */
-  pointer-events: none;   /* evita interferencia con overlay */
-
+  z-index: 10;                 /* ⭐ Siempre encima de la imagen */
+  white-space: nowrap;         /* ⭐ Evita que se corte o salte de línea */
+  pointer-events: none;        /* ⭐ Evita que el overlay lo empuje o tape */
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
+
 
 /* Overlay fuera de la tarjeta mientras está oculto */
 .servicio-overlay {
