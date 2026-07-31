@@ -1091,25 +1091,6 @@ body::before {
   transform: translateY(0);
 }
 
-.servicio-titulo {
-  position: absolute;
-  bottom: 0;           /* título fijo abajo */
-  width: 100%;
-  text-align: center;
-  padding: 0.8rem 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e6eef8;
-}
-
-#servicios {
-  display: flex;
-  flex-wrap: nowrap;     /* todas en una fila */
-  gap: 1.5rem;
-  justify-content: center;
-}
 
 .servicio-card {
   width: 260px;          /* ajusta si quieres más ancho */
@@ -1657,19 +1638,10 @@ body::before {
   filter: blur(4px); /* ⭐ desenfoque suave solo al hover */
 }
 
-/* Título dentro de la tarjeta */
+/* Título sin blur permanente */
 .servicio-titulo {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.6rem 0; /* ⭐ más compacto */
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1rem; /* ⭐ reducido para legibilidad */
-  font-weight: 600;
-  color: #e6eef8;
-  z-index: 4;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: none !important;
 }
 
 /* Overlay (sin cambios) */
@@ -1691,4 +1663,66 @@ body::before {
 
 .servicio-card:hover .servicio-overlay {
   transform: translate(-50%, -50%);
+}
+
+
+/* ========================================================= */
+/* ⭐ CORRECCIÓN FINAL — IMAGEN NÍTIDA + BLUR SOLO EN HOVER */
+/* ========================================================= */
+
+/* Imagen siempre nítida */
+.servicio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none !important;
+  transition: filter 0.4s ease;
+}
+
+/* ========================================================= */
+/* ⭐ CORRECCIÓN FINAL — TÍTULO NÍTIDO SIN RECTÁNGULO BORROSO */
+/* ========================================================= */
+
+.servicio-titulo {
+  position: absolute;
+  top: 1rem;                /* separa el texto del borde superior */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.3rem 0.8rem;   /* solo fondo detrás del texto */
+  background: transparent;  /* elimina el rectángulo oscuro */
+  backdrop-filter: none !important; /* elimina el blur permanente */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e6eef8;
+  text-shadow: 0 0 8px rgba(0,191,255,0.45);
+  z-index: 4;
+}
+
+/* Overlay fuera de la tarjeta mientras está oculto */
+.servicio-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(200%, -50%); /* realmente fuera del área visible */
+  width: 80%;
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: none !important; /* sin blur mientras está oculto */
+  color: #e6eef8;
+  text-align: justify;
+  border-radius: 12px;
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.3s ease;
+  z-index: 3;
+}
+
+/* Al hover: aparece texto y se difumina la imagen */
+.servicio-card:hover .servicio-overlay {
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  backdrop-filter: blur(2px); /* blur solo cuando el texto está visible */
+}
+
+.servicio-card:hover .servicio-img {
+  filter: blur(2px);
 }
