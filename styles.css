@@ -1091,28 +1091,9 @@ body::before {
   transform: translateY(0);
 }
 
-.servicio-titulo {
-  position: absolute;
-  bottom: 0;           /* título fijo abajo */
-  width: 100%;
-  text-align: center;
-  padding: 0.8rem 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e6eef8;
-}
-
-#servicios {
-  display: flex;
-  flex-wrap: nowrap;     /* todas en una fila */
-  gap: 1.5rem;
-  justify-content: center;
-}
 
 .servicio-card {
-  width: 260px;          /* ajusta si quieres más ancho */
+  width: 200px;          /* ajusta si quieres más ancho */
   height: 360px;         /* misma altura que ya tienes */
   position: relative;
 }
@@ -1391,36 +1372,6 @@ body::before {
   transform: translateY(0);
 }
 
-/* ⭐ Corrección título fijo */
-.servicio-titulo {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.8rem 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e6eef8;
-  z-index: 4;
-}
-
-
-/* ⭐ TÍTULO FIJO ARRIBA */
-.servicio-titulo {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.8rem 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e6eef8;
-  z-index: 4;
-}
 
 /* ⭐ TEXTO QUE ENTRA DESDE LA DERECHA */
 .servicio-overlay {
