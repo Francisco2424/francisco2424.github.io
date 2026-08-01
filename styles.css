@@ -345,60 +345,6 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 TABLAS MUNDIAL FUTURISTAS */
-/* ========================================================= */
-
-.grupo-card {
-  margin-bottom: 40px;
-  padding: 20px;
-  background: #111827;
-  border-radius: 12px;
-  border: 1px solid rgba(192,192,192,0.25);
-}
-
-.grupo-card h3 {
-  margin-bottom: 1rem;
-  font-weight: 600;
-  color: #e5e9ff;
-  text-align: center;
-}
-
-.tabla-grupo {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  background: #0f172a;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.tabla-grupo th,
-.tabla-grupo td {
-  padding: 10px;
-  border-bottom: 1px solid rgba(192,192,192,0.25);
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.tabla-grupo th {
-  background: #1b233a;
-  color: #cbd5f5;
-  font-weight: 600;
-}
-
-.tabla-grupo tr:hover {
-  background: #1e293b;
-}
-
-.bandera {
-  width: 24px;
-  height: 16px;
-  margin-right: 6px;
-  vertical-align: middle;
-  border-radius: 2px;
-}
-
-/* ========================================================= */
 /* 🌌 QUIÉN SOY — Versión Final Optimizada */
 /* ========================================================= */
 
@@ -1047,56 +993,6 @@ body::before {
 
 /****************
 
-.servicio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: none !important;
-  transition: transform 0.4s ease;
-}
-
-.servicio-card:hover .servicio-img {
-  transform: scale(1.05);
-}
-
-
-/*************************
-
-.servicio-overlay h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.servicio-overlay p {
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-.servicio-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  color: #e6eef8;
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
-  z-index: 3;
-}
-
-.servicio-card:hover .servicio-overlay {
-  transform: translateY(0);
-}
-
-
-.servicio-card {
-  width: 260px;          /* ajusta si quieres más ancho */
-  height: 360px;         /* misma altura que ya tienes */
-  position: relative;
-}
 
 .btn-volver {
   margin: 2rem auto 0 auto;
@@ -1339,118 +1235,6 @@ body::before {
 }
 
 
-#servicios {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: center;
-  gap: 1.5rem;
-  overflow-x: auto;
-}
-
-
-/* ⭐ Corrección botón volver */
-.overlay-panel {
-  overflow: visible !important;
-}
-
-
-/* ⭐ Corrección overlay abajo */
-.servicio-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  color: #e6eef8;
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
-  z-index: 3;
-}
-
-.servicio-card:hover .servicio-overlay {
-  transform: translateY(0);
-}
-
-/* ⭐ Corrección título fijo */
-.servicio-titulo {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.8rem 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e6eef8;
-  z-index: 4;
-}
-
-
-/* ⭐ TÍTULO FIJO ARRIBA */
-.servicio-titulo {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0.8rem 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e6eef8;
-  z-index: 4;
-}
-
-/* ⭐ TEXTO QUE ENTRA DESDE LA DERECHA */
-.servicio-overlay {
-  position: absolute;
-  top: 50%;                     /* centrado vertical */
-  left: 50%;                    /* centrado horizontal */
-  transform: translate(100%, -50%); /* oculto a la derecha */
-  width: 80%;
-  padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  color: #e6eef8;
-  text-align: justify;
-  border-radius: 12px;
-  transition: transform 0.45s ease;
-  z-index: 3;
-}
-
-/* ⭐ ANIMACIÓN AL HOVER */
-.servicio-card:hover .servicio-overlay {
-  transform: translate(-50%, -50%); /* se mueve al centro */
-}
-
-/* ⭐ Tarjetas más anchas y adaptadas al ancho total */
-#servicios {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: space-between;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 95vw;
-  margin: 0 auto;
-}
-
-.servicio-card {
-  flex: 1 1 15%;
-  height: 420px;
-  border-radius: 18px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 0 22px rgba(0, 191, 255, 0.25);
-  transition: transform 0.3s ease;
-}
-
-.servicio-card:hover {
-  transform: translateY(-8px);
-}
-
 /* ⭐ Aislar ticker para que nunca se bloquee */
 .ticker {
   isolation: isolate;
@@ -1465,71 +1249,9 @@ body::before {
   z-index: 1000;
 }
 
-/* ⭐ Título 'Servicios' en línea independiente y alineado a la izquierda */
-#servicios h2 {
-  width: 100%;
-  text-align: left;
-  margin-bottom: 1.8rem;
-  padding-left: 3rem; /* ajusta según tu gusto */
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #e6eef8;
-  text-shadow: 0 0 12px rgba(0,191,255,0.45);
-}
-/* ⭐ Imágenes nítidas en las tarjetas */
-.servicio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: none !important; /* elimina brillo/contraste borroso */
-  transition: transform 0.4s ease;
-}
-
-/* Efecto sutil al pasar el cursor */
-.servicio-card:hover .servicio-img {
-  transform: scale(1.05);
-}
-
-/* Línea propia para el título Servicios */
-#servicios {
-  display: flex;
-  flex-direction: column;      /* primero el título, luego las tarjetas */
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 95vw;
-  margin: 0 auto;
-}
-
-#servicios h2 {
-  align-self: flex-start;      /* alineado a la izquierda */
-  margin: 0 0 0.5rem 3rem;     /* ajusta el 3rem según tu gusto */
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #e6eef8;
-  text-shadow: 0 0 12px rgba(0,191,255,0.45);
-}
-
-/* fila de tarjetas debajo del título */
-#servicios .servicio-card {
-  flex: 1 1 15%;
-}
-
-#servicios .servicio-card {
-  display: flex;
-}
-
-.servicio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: none !important;
-}
-
-
-
 
 /* ========================================================= */
-/* ⭐ SECCIÓN SERVICIOS — AJUSTE FINAL CON ANIMACIÓN IZQUIERDA */
+/* ⭐ SECCIÓN SERVICIOS — CONTENEDOR PRINCIPAL */
 /* ========================================================= */
 
 #servicios {
@@ -1553,7 +1275,10 @@ body::before {
   text-shadow: 0 0 12px rgba(0,191,255,0.45);
 }
 
-/* Layout general: animación izquierda + tarjetas derecha */
+/* ========================================================= */
+/* ⭐ LAYOUT GENERAL — ANIMACIÓN IZQUIERDA + TARJETAS DERECHA */
+/* ========================================================= */
+
 .servicios-layout {
   display: flex;
   flex-direction: row;
@@ -1583,7 +1308,6 @@ body::before {
   animation: tornado 6s linear infinite;
 }
 
-/* Animación tipo remolino */
 @keyframes tornado {
   0%   { transform: rotate(0deg) scale(1); opacity: 0.3; }
   25%  { transform: rotate(90deg) scale(1.1); opacity: 0.7; }
@@ -1592,7 +1316,10 @@ body::before {
   100% { transform: rotate(360deg) scale(1); opacity: 0.3; }
 }
 
-/* Columna derecha: tarjetas */
+/* ========================================================= */
+/* ⭐ GRID DE TARJETAS — COLUMNA DERECHA */
+/* ========================================================= */
+
 .servicios-grid {
   flex: 2;
   display: flex;
@@ -1601,7 +1328,6 @@ body::before {
   align-items: flex-end; /* ⭐ Alinea las filas a la derecha */
 }
 
-/* Filas de tarjetas */
 .fila {
   display: flex;
   flex-direction: row;
@@ -1609,7 +1335,10 @@ body::before {
   gap: 1.5rem;
 }
 
-/* Tarjetas */
+/* ========================================================= */
+/* ⭐ TARJETA DE SERVICIO — FUSIÓN FINAL */
+/* ========================================================= */
+
 .servicio-card {
   flex: 0 0 240px;
   height: 380px;
@@ -1623,91 +1352,37 @@ body::before {
   transition: transform 0.3s ease;
 }
 
-/* Imagen de la tarjeta */
+.servicio-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ========================================================= */
+/* ⭐ IMAGEN — NÍTIDA + BLUR SOLO EN HOVER */
+/* ========================================================= */
+
 .servicio-img {
   flex: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: none;              /* ⭐ sin difuminado */
-  transition: transform 0.4s ease;
-}
-
-/* Cuando el overlay aparece (hover en la tarjeta) */
-.servicio-card:hover .servicio-img {
-  filter: blur(4px); /* ⭐ desenfoque suave solo al hover */
-}
-
-/* Título sin blur permanente */
-.servicio-titulo {
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: none !important;
-}
-
-/* Overlay (sin cambios) */
-.servicio-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  padding: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  color: #e6eef8;
-  text-align: justify;
-  border-radius: 12px;
-  transform: translate(100%, -50%);
-  transition: transform 0.45s ease;
-  z-index: 3;
-}
-
-.servicio-card:hover .servicio-overlay {
-  transform: translate(-50%, -50%);
-}
-
-
-/* ========================================================= */
-/* ⭐ CORRECCIÓN FINAL — IMAGEN NÍTIDA + BLUR SOLO EN HOVER */
-/* ========================================================= */
-
-/* Imagen siempre nítida */
-.servicio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   filter: none !important;
-  transition: filter 0.4s ease;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.servicio-card:hover .servicio-img {
+  filter: blur(2px);
+  transform: scale(1.05);
 }
 
 /* ========================================================= */
-/* ⭐ CORRECCIÓN FINAL — TÍTULO NÍTIDO SIN RECTÁNGULO BORROSO */
+/* ⭐ TÍTULO — FUSIÓN FINAL (Alineado a la derecha) */
 /* ========================================================= */
-
-.servicio-titulo {
-  position: absolute;
-  /*top: 1rem;                /* separa el texto del borde superior */
-  /*left: 50%;*/
-  /*transform: translateX(-50%);*/
-  padding: 0.3rem 0.8rem;   /* solo fondo detrás del texto */
-  background: transparent;  /* elimina el rectángulo oscuro */
-  backdrop-filter: none !important; /* elimina el blur permanente */
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #e6eef8;
-  text-shadow: 0 0 8px rgba(0,191,255,0.45);
-  z-index: 4;
-}
-
-.servicio-card {
-  position: relative;     /* contenedor del título */
-  overflow: hidden;       /* evita desbordes */
-}
 
 .servicio-titulo {
   position: absolute;
   top: 1rem;
-  right: 1rem;                 /* ⭐ Alineado a la derecha */
-  transform: none;             /* ⭐ Elimina el centrado */
+  right: 1rem;
+  transform: none;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1719,23 +1394,32 @@ body::before {
   backdrop-filter: none !important;
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
-  z-index: 10;                 /* ⭐ Siempre encima de la imagen */
-  white-space: nowrap;         /* ⭐ Evita que se corte o salte de línea */
-  pointer-events: none;        /* ⭐ Evita que el overlay lo empuje o tape */
+  z-index: 10;
+  white-space: nowrap;
+  pointer-events: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
+.servicio-card:hover .servicio-titulo {
+  color: #00bfff;
+  text-shadow:
+    0 0 10px rgba(0,191,255,0.65),
+    0 0 20px rgba(0,191,255,0.45);
+}
 
-/* Overlay fuera de la tarjeta mientras está oculto */
+/* ========================================================= */
+/* ⭐ OVERLAY — TEXTO QUE ENTRA DESDE LA DERECHA */
+/* ========================================================= */
+
 .servicio-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(200%, -50%); /* realmente fuera del área visible */
+  transform: translate(200%, -50%); /* ⭐ oculto fuera de la tarjeta */
   width: 80%;
   padding: 1.2rem;
   background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: none !important; /* sin blur mientras está oculto */
+  backdrop-filter: none !important;
   color: #e6eef8;
   text-align: justify;
   border-radius: 12px;
@@ -1744,13 +1428,8 @@ body::before {
   z-index: 3;
 }
 
-/* Al hover: aparece texto y se difumina la imagen */
 .servicio-card:hover .servicio-overlay {
   transform: translate(-50%, -50%);
-  opacity: 0;
-  backdrop-filter: blur(2px); /* blur solo cuando el texto está visible */
-}
-
-.servicio-card:hover .servicio-img {
-  filter: blur(2px);
+  opacity: 1;
+  backdrop-filter: blur(6px);
 }
