@@ -1288,7 +1288,7 @@ body::before {
 }
 
 /* ========================================================= */
-/* 🌌 ANIMACIÓN IZQUIERDA — EFECTO HOLOGRÁFICO PROFESIONAL */
+/* 🌌 ANIMACIÓN IZQUIERDA — IMAGEN DE FONDO + REMOLINO SUTIL */
 /* ========================================================= */
 
 .servicios-animacion {
@@ -1297,21 +1297,29 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at center, #0a0f1e 40%, #001f33 100%);
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(0, 191, 255, 0.35);
   position: relative;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 191, 255, 0.35);
+  background: url("images/MundoBaseConectado.jpg") center/cover no-repeat;
 }
 
-/* Capa de brillo giratorio */
+/* Capa de remolino transparente sobre la imagen */
 .servicios-animacion::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: conic-gradient(from 0deg, transparent 0%, rgba(0,191,255,0.25) 25%, transparent 50%, rgba(0,191,255,0.25) 75%, transparent 100%);
-  animation: giroBrillo 6s linear infinite;
-  opacity: 0.4;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(0,191,255,0.15) 25%,
+    transparent 50%,
+    rgba(0,191,255,0.15) 75%,
+    transparent 100%
+  );
+  animation: giroBrillo 8s linear infinite;
+  opacity: 0.25; /* ⭐ más sutil */
+  mix-blend-mode: screen; /* ⭐ se funde con la imagen */
 }
 
 @keyframes giroBrillo {
@@ -1319,7 +1327,7 @@ body::before {
   to { transform: rotate(360deg); }
 }
 
-/* Texto holográfico */
+/* Texto holográfico sobre la imagen */
 .animacion-texto {
   font-size: 1.8rem;
   font-weight: 700;
@@ -1333,6 +1341,7 @@ body::before {
     0 0 40px rgba(0,191,255,0.25);
   animation: tornado3D 6s linear infinite, pulso 3s ease-in-out infinite;
   transform-origin: center;
+  z-index: 2; /* ⭐ siempre sobre el remolino */
 }
 
 /* Rotación 3D */
