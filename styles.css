@@ -1291,6 +1291,12 @@ body::before {
 /* 🌌 ANIMACIÓN IZQUIERDA — IMAGEN DE FONDO + REMOLINO SUTIL */
 /* ========================================================= */
 
+.servicios-layout {
+  display: flex;
+  align-items: stretch; /* ⭐ iguala la altura de ambas columnas */
+}
+
+/* Columna izquierda */
 .servicios-animacion {
   flex: 1;
   min-width: 300px;
@@ -1302,13 +1308,7 @@ body::before {
   overflow: hidden;
   box-shadow: 0 0 40px rgba(0, 191, 255, 0.35);
   background: url("images/MundoBaseConectado.jpg") center/cover no-repeat;
-  height: 100%; /* ⭐ ocupa todo el alto disponible */
-}
-
-/* Para asegurar que el contenedor padre permita el alto completo */
-.servicios-layout {
-  display: flex;
-  align-items: stretch; /* ⭐ iguala la altura de ambas columnas */
+  height: auto; /* ⭐ se adapta al alto total del contenedor */
 }
 
 /* Capa de remolino transparente sobre la imagen */
