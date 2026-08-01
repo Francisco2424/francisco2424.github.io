@@ -1283,9 +1283,12 @@ body::before {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;   /* ⭐ CORRECCIÓN CRÍTICA */
   gap: 2rem;
 }
+
+/*   align-items: flex-start;*/
+
 
 /* ========================================================= */
 /* 🌌 ANIMACIÓN IZQUIERDA — IMAGEN DE FONDO + REMOLINO SUTIL */
