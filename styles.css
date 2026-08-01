@@ -1302,6 +1302,13 @@ body::before {
   overflow: hidden;
   box-shadow: 0 0 40px rgba(0, 191, 255, 0.35);
   background: url("images/MundoBaseConectado.jpg") center/cover no-repeat;
+  height: 100%; /* ⭐ ocupa todo el alto disponible */
+}
+
+/* Para asegurar que el contenedor padre permita el alto completo */
+.servicios-layout {
+  display: flex;
+  align-items: stretch; /* ⭐ iguala la altura de ambas columnas */
 }
 
 /* Capa de remolino transparente sobre la imagen */
@@ -1318,8 +1325,8 @@ body::before {
     transparent 100%
   );
   animation: giroBrillo 8s linear infinite;
-  opacity: 0.25; /* ⭐ más sutil */
-  mix-blend-mode: screen; /* ⭐ se funde con la imagen */
+  opacity: 0.25;
+  mix-blend-mode: screen;
 }
 
 @keyframes giroBrillo {
@@ -1327,7 +1334,7 @@ body::before {
   to { transform: rotate(360deg); }
 }
 
-/* Texto holográfico sobre la imagen */
+/* Texto holográfico */
 .animacion-texto {
   font-size: 1.8rem;
   font-weight: 700;
@@ -1341,10 +1348,9 @@ body::before {
     0 0 40px rgba(0,191,255,0.25);
   animation: tornado3D 6s linear infinite, pulso 3s ease-in-out infinite;
   transform-origin: center;
-  z-index: 2; /* ⭐ siempre sobre el remolino */
+  z-index: 2;
 }
 
-/* Rotación 3D */
 @keyframes tornado3D {
   0%   { transform: rotateY(0deg) scale(1); opacity: 0.4; }
   25%  { transform: rotateY(90deg) scale(1.1); opacity: 0.8; }
@@ -1353,7 +1359,6 @@ body::before {
   100% { transform: rotateY(360deg) scale(1); opacity: 0.4; }
 }
 
-/* Pulso de brillo */
 @keyframes pulso {
   0%, 100% { text-shadow: 0 0 10px rgba(0,191,255,0.6), 0 0 20px rgba(0,191,255,0.4); }
   50% { text-shadow: 0 0 20px rgba(0,191,255,0.9), 0 0 40px rgba(0,191,255,0.6); }
